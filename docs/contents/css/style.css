@@ -72,7 +72,7 @@ a:active {
     width: 240px;
     height: 135px;
     right: -3px;
-    top: -2px;
+    top: -3px;
     background-size: cover
 }
 
@@ -121,6 +121,12 @@ a:active {
 .card .note a{border-left: 10px solid #2eceb4;}
 .card .amazon a{border-left: 10px solid #ff9900;}
 .card .qiita a{border-left: 10px solid #55c500;}
+.card .niconico a{
+    border-left: 10px solid #55c500;
+    border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
+}
+.card .twitter a{border-left: 10px solid #1da1f2;}
+.card .melonbooks a{border-left: 10px solid #18bd67;}
 
 
 .card img{
@@ -182,6 +188,7 @@ a:active {
     top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 #title {
