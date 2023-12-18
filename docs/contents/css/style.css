@@ -180,7 +180,6 @@ a:active {
 
 /* id: #nav に適用 */
 #header {
-    width: 100vw;
     margin: 0;
     padding: 10px 0;
     background-color: #1C4C8C;
