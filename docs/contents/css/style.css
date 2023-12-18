@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* webページ全体に適用 */
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+}
+.wrapper {
+    margin: 0 auto 0 auto;
+    width: 1280px;
+}
+h1 {
+    color: #393948;
+    font-size: 26px;
+    border-bottom: 1px solid #393948;
+    margin: 20px 0px 30px 0px;
+    padding: 10px 10px 10px 20px;
+}
+
+a:link {
+    color: #1a0dab;
+    text-decoration: none;
+}
+a:visited {
+    color: #609;
+}
+a:hover {
+    color: #1a0dab;
+    text-decoration: underline;
+}
+a:active {
+    color: #1a0dab;
+}
+
+/* カードの定義 */
+.card-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-c {
+    position:relative;
+    box-sizing: border-box;
+    width: 240px;
+    height: 135px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    color: #333;
+    border: medium solid #000000;
+    /*border-radius: 3px;*/
+    transition: 0.3s;
+    background-size: cover
+}
+
+.card-d {
+    position:relative;
+    box-sizing: border-box;
+    width: 500px;
+    height: 135px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    color: #333;
+    border: medium solid #000000;
+    /*border-radius: 3px;*/
+    transition: 0.3s;
+    background-size: cover
+}
+
+.card h3{
+    margin: 0 0 -10px;
+    text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
+    -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
+    2px 0 2px #ffffff, -2px    0 2px #ffffff,
+    0 2px 2px #ffffff,    0 -2px 2px #ffffff;
+    text-overflow: ellipsis;
+}
+
+.card p{
+    flex-grow: 1;
+    margin-bottom: -10px;
+    text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
+    -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
+    1px 0 1px #ffffff, -1px 0 1px #ffffff,
+    0 1px 1px #ffffff,    0 -1px 1px #ffffff;
+}
+
+.card a{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.card .note a{border-left: 10px solid #2eceb4;}
+.card .amazon a{border-left: 10px solid #ff9900;}
+
+
+.card .disp-img{
+    background: url(images/logo.png);             /* 画像のURLを指定         */
+    background-size: cover;
+    width: 80;                                     /* 横幅のサイズを指定    */
+    height: 30pX;                                 /* 縦幅のサイズを指定    */
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+
+.card img{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -30px;
+}
+
+.content-1 {
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+
+.content-2 {
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    height: 30px;
+}
+
+.content-3 {
+    margin: 0;
+    margin-top: -50px;
+    padding: 10px 0 10px 120px;
+    font-size: 14px;
+}
+
+.card .text {
+    height: 110px;
+}
+
+
+
+
+/* id: #nav に適用 */
+#nav li {
+    display:    inline;
+    list-style-type: none;
+    padding-right: 30px;
+}
+#nav {
+    margin: 0 0 0 ;
+    padding: 10px 30px 10px 30px;
+    background-color: #1C4C8C;
+}
+#nav li a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+#nav li a:visited {
+    color: #7d95B7;
+    text-decoration: none;
+}
+#nav li a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+#nav li a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* id: footer に適用 */
+#footer {
+    text-align: center;
+    border-top: 1px solid #393948;
+    margin-top: 30px;
+    padding: 20px 0 20px 0;
+    color: #393948;
+}
+
