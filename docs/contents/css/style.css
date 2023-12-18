@@ -75,9 +75,11 @@ a:active {
     -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
     2px 0 2px #ffffff, -2px    0 2px #ffffff,
     0 2px 2px #ffffff,    0 -2px 2px #ffffff;
+    text-overflow: ellipsis;
 }
 
 .card p{
+    flex-grow: 1;
     margin-bottom: -10px;
     text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
     -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
@@ -99,7 +101,7 @@ a:active {
 
 .card .disp-img{
     background: url(images/logo.png);             /* 画像のURLを指定         */
-        background-size: cover
+    background-size: cover;
     width: 80;                                     /* 横幅のサイズを指定    */
     height: 30pX;                                 /* 縦幅のサイズを指定    */
     margin-bottom: -10px;
@@ -109,28 +111,33 @@ a:active {
 .card img{
     position: absolute;
     margin-left: 10px;
+    margin-top: -30px;
 }
 
-.content-1,
-.content-2 {
+.content-1 {
     margin: 0;
     padding: 0 0 0 10px;
 }
 
 .content-2 {
-    padding: 0.8em 0 0.8em 10px;
-    font-size: 0.8em;
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    height: 30px;
 }
 
 .content-3 {
-    margin: 0.8em 0;
-    font-size: 0.8em;
-    color: #00b5ad;
-    cursor: pointer;
+    margin: 0;
+    margin-top: -50px;
+    padding: 10px 0 10px 120px;
+    font-size: 14px;
 }
-
 .content-3:hover {
     border-bottom: #00b5ad 1px solid;
+}
+
+.card .text {
+    height: 110px;
 }
 
 
