@@ -132,9 +132,6 @@ a:active {
     padding: 10px 0 10px 120px;
     font-size: 14px;
 }
-.content-3:hover {
-    border-bottom: #00b5ad 1px solid;
-}
 
 .card .text {
     height: 110px;
