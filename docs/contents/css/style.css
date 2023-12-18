@@ -18,6 +18,10 @@ h1 {
     padding: 10px 10px 10px 20px;
 }
 
+p {
+    text-indent: 1em;
+}
+
 a:link {
     color: #1a0dab;
     text-decoration: none;
@@ -47,7 +51,7 @@ a:active {
     height: 135px;
     padding: 10px 10px;
     margin: 10px 10px;
-    color: #333;
+    color: #000000;
     border: medium solid #000000;
     /*border-radius: 3px;*/
     transition: 0.3s;
@@ -67,7 +71,7 @@ a:active {
     z-index: -1;
     width: 240px;
     height: 135px;
-    right: -2px;
+    right: -3px;
     top: -2px;
     background-size: cover
 }
@@ -85,6 +89,7 @@ a:active {
 }
 
 .card p{
+    text-indent: 0;
     flex-grow: 1;
     margin-bottom: -10px;
     text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
@@ -121,22 +126,25 @@ a:active {
 .card img{
     position: absolute;
     margin-left: 10px;
-    margin-top: -20px;
+    margin-top: -25px;
 }
 
 .card .text {
-    margin-top: -5px;
+    margin-top: 0px;
     height: 110px;
 }
 
 .content-1 {
     margin: 0;
     padding: 0 0 0 10px;
-    word-break: auto-phrase;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .content-2 {
-    margin: 5px 0 0 0;
+    margin: 2px 0 0 0;
     padding: 10px 0 10px 10px;
     height: 30px;
 }
@@ -165,33 +173,64 @@ a:active {
 
 
 /* id: #nav に適用 */
-#nav li {
-    display:    inline;
-    list-style-type: none;
-    padding-right: 30px;
-}
-#nav {
-    margin: 0 0 0 ;
-    padding: 10px 30px 10px 30px;
+#header {
+    width: 100vw;
+    margin: 0;
+    padding: 10px 0;
     background-color: #1C4C8C;
-}
-#nav li a:link {
-    color: #ffffff;
-    text-decoration: none;
-}
-#nav li a:visited {
-    color: #7d95B7;
-    text-decoration: none;
-}
-#nav li a:hover{
-    color: #ffffff;
-    text-decoration: underline;
-}
-#nav li a:active {
-    color: #ffffff;
-    text-decoration: none;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
 }
 
+#title {
+    width: 1280px;
+    margin:  auto auto;
+    padding-left: 30px;
+    font-size: 30px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav{
+    font-size: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navlink {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.navlink:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+.navlink:visited {
+    color: #bed5f5;
+}
+.navlink:hover {
+    color: #ffffff
+    text-decoration: underline;
+}
+.navlink:active {
+    color: #ffffff;
+}
+
+#mainlogo {
+    font-size: 30px;
+}
+#mainlogo:link, #mainlogo:visited, #mainlogo:hover, #mainlogo:active {
+    color: #ffffff;
+    text-decoration: none;
+}
 /* id: footer に適用 */
 #footer {
     text-align: center;
