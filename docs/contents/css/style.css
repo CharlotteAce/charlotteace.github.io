@@ -34,17 +34,16 @@ a:active {
 }
 
 /* カードの定義 */
-.card-group{
+.card-group, .card-contents{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card-c {
+.card-a, .card-b, .card-c, .card-d, .card-e {
     position:relative;
     box-sizing: border-box;
-    width: 240px;
     height: 135px;
     padding: 10px 10px;
     margin: 10px 10px;
@@ -55,19 +54,26 @@ a:active {
     background-size: cover
 }
 
-.card-d {
-    position:relative;
-    box-sizing: border-box;
-    width: 500px;
+.card-a {width: 760px;}
+.card-b, .card-c {width: 500px;}
+.card-d, .card-e {width: 240px;}
+
+.card-b .content-3,
+.card-d .content-3,
+.card-e .content-3 {display:none;}
+
+.thumbnail {
+    position: absolute;
+    z-index: -1;
+    width: 240px;
     height: 135px;
-    padding: 10px 10px;
-    margin: 10px 10px;
-    color: #333;
-    border: medium solid #000000;
-    /*border-radius: 3px;*/
-    transition: 0.3s;
+    right: -2px;
+    top: -2px;
     background-size: cover
 }
+
+.card-c .thumbnail,
+.card-e .thumbnail {display: none;}
 
 .card h3{
     margin: 0 0 -10px;
@@ -95,34 +101,43 @@ a:active {
     height:100%;
 }
 
+.logo {
+    position: absolute;
+    background-size: cover;
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: -20px;
+}
+
+.note .logo {
+    background-image: url(https://charlotteace.github.io/contents/images/note.png);
+}
 .card .note a{border-left: 10px solid #2eceb4;}
 .card .amazon a{border-left: 10px solid #ff9900;}
+.card .qiita a{border-left: 10px solid #55c500;}
 
-
-.card .disp-img{
-    background: url(images/logo.png);             /* 画像のURLを指定         */
-    background-size: cover;
-    width: 80;                                     /* 横幅のサイズを指定    */
-    height: 30pX;                                 /* 縦幅のサイズを指定    */
-    margin-bottom: -10px;
-    margin-left: 10px;
-}
 
 .card img{
     position: absolute;
     margin-left: 10px;
-    margin-top: -30px;
+    margin-top: -20px;
+}
+
+.card .text {
+    margin-top: -5px;
+    height: 110px;
 }
 
 .content-1 {
     margin: 0;
     padding: 0 0 0 10px;
+    word-break: auto-phrase;
 }
 
 .content-2 {
-    margin: 0;
+    margin: 5px 0 0 0;
     padding: 10px 0 10px 10px;
-    font-size: 14px;
     height: 30px;
 }
 
@@ -130,12 +145,21 @@ a:active {
     margin: 0;
     margin-top: -50px;
     padding: 10px 0 10px 120px;
-    font-size: 14px;
+    width: 360px;
+    height: 60px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
-.card .text {
-    height: 110px;
+.card-b .content-3,
+.card-d .content-3,
+.card-e .content-3 {
+    display:none;
 }
+
+
 
 
 
