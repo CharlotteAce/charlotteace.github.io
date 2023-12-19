@@ -56,18 +56,18 @@ p {
 }
 
 a:link {
-    color: #1a0dab;
+    color: #3e2dff;
     text-decoration: none;
 }
 a:visited {
-    color: #609;
+    color: #2c0fa1;
 }
 a:hover {
-    color: #1a0dab;
+    color: #3e2dff;
     text-decoration: underline;
 }
 a:active {
-    color: #1a0dab;
+    color: #3e2dff;
 }
 
 
@@ -131,6 +131,17 @@ a:active {
     text-decoration: none;
 }
 /* id: footer に適用 */
+#footnote {
+    border-top: 1px solid #393948;
+    margin-top: 30px;
+    padding: 20px 50px;
+    color: #393948;
+}
+#footnote p{
+    padding-left: 4em;
+    text-indent: -2em;
+}
+
 #footer {
     text-align: center;
     border-top: 1px solid #393948;
