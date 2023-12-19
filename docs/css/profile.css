@@ -7,188 +7,79 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
+    margin: auto;
+    max-width: 1020px;
 }
 
-.card h3{
-    margin: 0 0 -10px;
-    text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
-    -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
-    2px 0 2px #ffffff, -2px    0 2px #ffffff,
-    0 2px 2px #ffffff,    0 -2px 2px #ffffff;
-    text-overflow: ellipsis;
+.card {
+    position: relative;
+    height: stretch;
 }
 
-.card p{
+.card p {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+#name{
+    border-bottom: none;
+    margin: 0 0 5px;
+    padding: 0;
+}
+
+.content-1 {
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.content-2 {
+    margin: 0;
+    padding: 0;
+    padding-left: 7em;
+    text-indent: -6em;
+}
+
+#photo img{
+    width: 240px;
+    height: 320px;
+    margin: 10px;
+    border: medium solid #000000;
+}
+
+#photo small {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     text-indent: 0;
     flex-grow: 1;
-    margin-bottom: -10px;
     text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
     -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
     1px 0 1px #ffffff, -1px 0 1px #ffffff,
     0 1px 1px #ffffff,    0 -1px 1px #ffffff;
 }
 
-.card a{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+#introduction {
+    margin: 10px;
+    max-width: 480px;
+    float: left;
 }
 
-.logo {
-    position: absolute;
-    background-size: cover;
-    width: 80px;
-    height: 30px;
-    margin-left: 10px;
-    margin-top: -20px;
+#others {
+    margin: 10px;
+    height: stretch;
 }
 
-.note .logo {
-    background-image: url(https://charlotteace.github.io/contents/images/note.png);
-}
-.card .note a{border-left: 10px solid #2eceb4;}
-.card .amazon a{border-left: 10px solid #ff9900;}
-.card .qiita a{border-left: 10px solid #55c500;}
-.card .niconico a{
-    border-left: 10px solid #55c500;
-    border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
-}
-.card .twitter a{border-left: 10px solid #1da1f2;}
-.card .melonbooks a{border-left: 10px solid #18bd67;}
-.card .ace a{border-left: 10px solid #1C4C8C;}
-
-
-.card img{
-    position: absolute;
-    margin-left: 10px;
-    margin-top: -25px;
-}
-
-.card .text {
-    margin-top: -4px;
-    height: 110px;
-}
-
-.content-1 {
-    margin: 0;
-    padding: 0 0 0 10px;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-}
-
-.content-2 {
-    margin: 2px 0 0 0;
-    padding: 10px 0 10px 10px;
-    height: 30px;
-}
-
-.content-3 {
-    margin: 0;
-    margin-top: -50px;
-    padding: 10px 0 10px 120px;
-    width: 360px;
-    height: 62px;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-.card-h4a, .card-h4b, .card-h4c, .card-h4d, .card-h4e {
-    position:relative;
-    box-sizing: border-box;
-    height: 135px;
-    padding: 10px 10px;
-    margin: 10px 10px;
-    color: #000000;
-    border: medium solid #000000;
-    /*border-radius: 3px;*/
-    transition: 0.3s;
-    background-size: cover
-}
-
-.thumbnail {
-    position: absolute;
-    z-index: -1;
-    width: 238px;
-    height: 133px;
-    right: -2px;
-    top: -2px;
-    background-size: cover
-}
-
-.card-h4a {width: 760px;}
-.card-h4b, .card-h4c {width: 500px;}
-.card-h4d, .card-h4e {width: 240px;}
-
-.card-h4b .content-3,
-.card-h4d .content-3,
-.card-h4e .content-3 {display:none;}
-
-.card-h4c .thumbnail,
-.card-h4e .thumbnail {display: none;}
-
-.card-h4b .text {
-    width: 220px;
-}
-
-@media (max-width: 1151px){
-    .card-group{
-        margin: auto;
-        max-width: 800px;
+@media (max-width: 864px){
+    .card-group, .card-contents{
+        justify-content: center;
     }
-    .card-h4b .content-3,
-    .card-h4d .content-3,
-    .card-h4e .content-3 {display: -webkit-box;}
-
-    .card-h4c .thumbnail,
-    .card-h4e .thumbnail {display: initial;}
-
-    .card-h4b .text{width: initial;}
-
-    .card-h3a {width: 760px;}
-    .card-h3b, .card-h3c {width: 500px;}
-    .card-h3d, .card-h3e {width: 240px;}
-
-    .card-h3b .content-3,
-    .card-h3d .content-3,
-    .card-h3e .content-3 {display:none;}
-
-    .card-h3c .thumbnail,
-    .card-h3e .thumbnail {display: none;}
-
-    .card-h3b .text {width: 220px;}
-}
-
-@media (max-width: 863px){
-    .card-group{
-        margin: auto;
-        max-width: 600px;
+    #introduction {
+        width: 90vw;
+        max-width: inherit;
     }
-    .card-h3b .content-3,
-    .card-h3d .content-3,
-    .card-h3e .content-3 {display: -webkit-box;}
-
-    .card-h3c .thumbnail,
-    .card-h3e .thumbnail {display: initial;}
-
-    .card-h3b .text{width: initial;}
-
-    .card-h2b, .card-h2c {width: 500px;}
-    .card-h2d, .card-h2e {width: 240px;}
-
-    .card-h2b .content-3,
-    .card-h2d .content-3,
-    .card-h2e .content-3 {display:none;}
-
-    .card-h2c .thumbnail,
-    .card-h2e .thumbnail {display: none;}
-
-    .card-h2b .text {width: 220px;}
+    #others {
+        margin: -5px 0 0;
+        width: 90vw;
+    }
 }
