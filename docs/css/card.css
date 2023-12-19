@@ -69,10 +69,10 @@ a:active {
 .thumbnail {
     position: absolute;
     z-index: -1;
-    width: 240px;
-    height: 135px;
-    right: -3px;
-    top: -3px;
+    width: 238px;
+    height: 133px;
+    right: 0px;
+    top: -1px;
     background-size: cover
 }
 
@@ -127,6 +127,7 @@ a:active {
 }
 .card .twitter a{border-left: 10px solid #1da1f2;}
 .card .melonbooks a{border-left: 10px solid #18bd67;}
+.card .ace a{border-left: 10px solid #1C4C8C;}
 
 
 .card img{
@@ -139,6 +140,10 @@ a:active {
     margin-top: 0px;
     height: 110px;
 }
+.card-b .text {
+    width: 220px;
+}
+
 
 .content-1 {
     margin: 0;
