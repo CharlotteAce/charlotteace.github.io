@@ -61,12 +61,15 @@
 
 #introduction {
     margin: 10px;
-    max-width: 480px;
+    width: calc(95vw - 330px);
+    max-width: 660px;
     float: left;
 }
 
 #others {
     margin: 10px;
+    width: 88vw;
+    max-width: 930px;
     height: stretch;
 }
 
