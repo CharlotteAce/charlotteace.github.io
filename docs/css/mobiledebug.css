@@ -86,7 +86,7 @@
     }
 
     #mainlogo {
-        margin-left: min(30px,4vw);
+    font-size: min(30px, 6vw);
     }
 
     #footnote {
