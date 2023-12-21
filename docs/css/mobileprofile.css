@@ -11,6 +11,10 @@
 }
 
 
+#photo img{
+    border: 2px solid #000000;
+}
+
 .card p {
     word-break: break-all;
     overflow-wrap: initial;
