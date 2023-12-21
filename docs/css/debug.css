@@ -79,6 +79,15 @@ header {
     z-index: 1;
 }
 
+#header {
+    background-color: #1C4C8C;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
 
 #title {
 
@@ -95,7 +104,7 @@ header {
 
 
 #mainlogo {
-    font-size: 20px;
+    font-size: min(30px, 48vw);
 }
 #mainlogo:link, #mainlogo:visited, #mainlogo:hover, #mainlogo:active {
     color: #ffffff;
