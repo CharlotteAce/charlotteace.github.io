@@ -12,9 +12,8 @@ body {
     background-color: #ffffff;
 }
 .wrapper {
-    margin: 0 auto 0 auto;
-    width: 93%;
-    max-width: 1280px;
+    margin: 10px;
+    width: initial;
 
 }
 
@@ -90,7 +89,7 @@ a:active {
     padding-left: 30px;
     font-size: 30px;
     margin: 0;
-    display: flex;
+    display: initial;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -99,10 +98,11 @@ a:active {
 .nav{
     font-size: 20px;
     margin-top: 10px;
+    margin-left: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: right;
 }
 
 .navlink {
@@ -125,29 +125,5 @@ a:active {
 }
 
 #mainlogo {
-    font-size: 30px;
+    font-size: min(6.4vw,30px);
 }
-#mainlogo:link, #mainlogo:visited, #mainlogo:hover, #mainlogo:active {
-    color: #ffffff;
-    text-decoration: none;
-}
-/* id: footer に適用 */
-#footnote {
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 50px;
-    color: #393948;
-}
-#footnote p{
-    padding-left: 4em;
-    text-indent: -2em;
-}
-
-#footer {
-    text-align: center;
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 0 20px 0;
-    color: #393948;
-}
-
