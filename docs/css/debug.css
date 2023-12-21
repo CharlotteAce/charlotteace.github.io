@@ -154,7 +154,7 @@ header {
   padding: 0; /* カスタマイズしてください */
 }
 
-header a{
+header a:link{
     color: #fff;
     text-decoration: none;
 }

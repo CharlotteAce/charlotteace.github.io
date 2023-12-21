@@ -68,9 +68,9 @@ a:active {
 
 
 /* id: #nav に適用 */
-#header {
+header {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px;
     background-color: #1C4C8C;
     position: sticky;
     top: 0;
@@ -81,9 +81,8 @@ a:active {
 
 
 #title {
-    width: 1280px;
-    margin:  auto auto;
-    padding-left: 30px;
+
+    margin:  calc(50vw - min(46.5%,640px)) auto;
     font-size: 30px;
     margin: 0;
     display: flex;
@@ -92,37 +91,10 @@ a:active {
     justify-content: space-between;
 }
 
-.nav{
-    font-size: 20px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.navlink {
-    padding-left: min(30px,4vw);
-    padding-right: min(30px,4vw);
-}
-.navlink:link {
-    color: #ffffff;
-    text-decoration: none;
-}
-.navlink:visited {
-    color: #bed5f5;
-}
-.navlink:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.navlink:active {
-    color: #ffffff;
-}
-
 #mainlogo {
-    font-size: min(6.4vw,30px);
+    font-size: 20px;
 }
+
 #mainlogo:link, #mainlogo:visited, #mainlogo:hover, #mainlogo:active {
     color: #ffffff;
     text-decoration: none;
@@ -145,4 +117,88 @@ a:active {
     margin-top: 30px;
     padding: 20px 0 20px 0;
     color: #393948;
+}
+
+/*ハンバーガーアイコン*/.c-header {
+  align-items: center;
+  background-color: #1C4C8C; /* カスタマイズしてください */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc(50vw - min(46.5%,640px)); /* カスタマイズしてください */
+  width: 100%;
+}
+
+
+.c-header__list {
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.c-header__list-item {
+  list-style: none;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.c-header__list-link {
+  color: #fff; /* カスタマイズしてください */
+  display: block;
+  font-size: 20px;
+  margin-left: 20px; /* カスタマイズしてくだdさい */
+  text-decoration: none;
+  padding: 0; /* カスタマイズしてください */
+}
+
+header a:link{
+    color: #fff;
+    text-decoration: none;
+}
+header a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+header a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.c-hamburger-menu {
+  position: relative;
+}
+
+.c-hamburger-menu__input {
+  display: none;
+}
+
+.c-hamburger-menu__bg {
+  background-color: #000; /* カスタマイズしてください */
+  cursor: pointer;
+  display: none;
+  height: 100vh;
+  left: 0;
+  opacity: 0.4; /* カスタマイズしてください */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#hamburger:checked ~ .c-hamburger-menu__bg {
+  display: block;
+}
+
+.c-hamburger-menu__button {
+  display: none;
+}
+
+
+.c-hamburger-menu__button-mark {
+  background-color: #fff; /* カスタマイズしてください */
+  display: block;
+  height: 1px; /* カスタマイズしてください */
+  transition: 0.3s; /* カスタマイズしてください */
+  width: 20px; /* カスタマイズしてください */
 }
