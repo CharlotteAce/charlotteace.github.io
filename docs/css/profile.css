@@ -23,6 +23,8 @@
 }
 
 #name{
+    word-break: keep-all;
+    overflow-wrap: break-word;
     border-bottom: none;
     margin: 0 0 5px;
     padding: 0;
@@ -36,8 +38,17 @@
 .content-2 {
     margin: 0;
     padding: 0;
+    padding-left: 1em;
+}
+.bullet {
+    margin: 0;
+    padding: 0;
     padding-left: 7em;
     text-indent: -6em;
+}
+
+.split {
+    display: none;
 }
 
 #photo img{

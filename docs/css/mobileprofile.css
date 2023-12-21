@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* webページ全体に適用 */
+
+.split {
+    display: block;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+
+.card p {
+    word-break: break-all;
+    overflow-wrap: initial;
+}
