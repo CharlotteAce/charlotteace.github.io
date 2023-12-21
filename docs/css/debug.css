@@ -70,7 +70,7 @@ a:active {
 /* id: #nav に適用 */
 header {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px;
     background-color: #1C4C8C;
     position: sticky;
     top: 0;
@@ -81,9 +81,8 @@ header {
 
 
 #title {
-    width: 1280px;
-    margin:  auto auto;
-    padding-left: 30px;
+
+    margin:  calc(50vw - min(46.5%,640px)) auto;
     font-size: 30px;
     margin: 0;
     display: flex;
@@ -93,27 +92,10 @@ header {
 }
 
 
-.navlink {
-    padding-left: min(30px,4vw);
-    padding-right: min(30px,4vw);
-}
-.navlink:link {
-    color: #ffffff;
-    text-decoration: none;
-}
-.navlink:visited {
-    color: #bed5f5;
-}
-.navlink:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-.navlink:active {
-    color: #ffffff;
-}
+
 
 #mainlogo {
-    font-size: min(6.4vw,30px);
+    font-size: 20px;
 }
 #mainlogo:link, #mainlogo:visited, #mainlogo:hover, #mainlogo:active {
     color: #ffffff;
@@ -141,19 +123,14 @@ header {
 
 /*ハンバーガーアイコン*/.c-header {
   align-items: center;
-  background-color: #eeeeee; /* カスタマイズしてください */
+  background-color: #1C4C8C; /* カスタマイズしてください */
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem; /* カスタマイズしてください */
+  padding: 0.5rem calc(50vw - min(46.5%,640px)); /* カスタマイズしてください */
   width: 100%;
 }
 
-.c-header__logo {
-  color: #000; /* カスタマイズしてください */
-  min-width: 80px; /* カスタマイズしてください */
-  text-decoration: none;
-}
 
 .c-header__list {
   box-sizing: border-box;
@@ -165,43 +142,33 @@ header {
 .c-header__list-item {
   list-style: none;
   text-decoration: none;
+  margin-top: 10px;
 }
 
 .c-header__list-link {
-  color: #000; /* カスタマイズしてください */
+  color: #fff; /* カスタマイズしてください */
   display: block;
-  margin-right: 20px; /* カスタマイズしてください */
+  font-size: 20px;
+  margin-left: 20px; /* カスタマイズしてくだdさい */
   text-decoration: none;
-  padding: 10px 0px; /* カスタマイズしてください */
+  padding: 0; /* カスタマイズしてください */
 }
 
-.c-header__list-link:hover {
-  filter: opacity(0.6); /* カスタマイズしてください */
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+header a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+header a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .c-hamburger-menu {
   position: relative;
-}
-
-@media screen and (max-width: 750px) {
-  .c-hamburger-menu__list {
-    background-color: #eeeeee; /* カスタマイズしてください */
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    padding: 2rem; /* カスタマイズしてください */
-    position: absolute;
-    transform: translateX(-100%);
-    transition: 0.3s; /* カスタマイズしてください */
-    top: 100%;
-    width: 100%;
-  }
-
-  #hamburger:checked ~ .c-hamburger-menu__list {
-    transform: translateX(0%);
-    transition: 0.3s;
-  }
 }
 
 .c-hamburger-menu__input {
@@ -229,46 +196,11 @@ header {
   display: none;
 }
 
-@media screen and (max-width: 750px) {
-  .c-hamburger-menu__button {
-    align-items: center;
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* カスタマイズしてください */
-    height: 32px; /* カスタマイズしてください */
-    justify-content: center;
-    width: 32px; /* カスタマイズしてください */
-  }
-}
 
 .c-hamburger-menu__button-mark {
-  background-color: #000; /* カスタマイズしてください */
+  background-color: #fff; /* カスタマイズしてください */
   display: block;
   height: 1px; /* カスタマイズしてください */
   transition: 0.3s; /* カスタマイズしてください */
   width: 20px; /* カスタマイズしてください */
-}
-
-@media screen and (max-width: 750px) {
-  #hamburger:checked
-    ~ .c-hamburger-menu__button
-    .c-hamburger-menu__button-mark:nth-of-type(1) {
-    transform: translate(2px, 1px) rotate(45deg); /* カスタマイズしてください */
-    transform-origin: 0%; /* カスタマイズしてください */
-  }
-  #hamburger:checked
-    ~ .c-hamburger-menu__button
-    .c-hamburger-menu__button-mark:nth-of-type(2) {
-    opacity: 0;
-  }
-  #hamburger:checked
-    ~ .c-hamburger-menu__button
-    .c-hamburger-menu__button-mark:nth-of-type(3) {
-    transform: translate(2px, 3px) rotate(-45deg); /* カスタマイズしてください */
-    transform-origin: 0%; /* カスタマイズしてください */
-  }
 }
