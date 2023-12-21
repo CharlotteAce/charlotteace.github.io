@@ -4,7 +4,9 @@
 
 .split {
     display: block;
-    padding-left: 1.5em;
+}
+.split_bullet{
+    padding-left: 2.5em;
     text-indent: -1.5em;
 }
 

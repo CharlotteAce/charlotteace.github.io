@@ -39,8 +39,9 @@
     margin: 0;
     padding: 0;
     padding-left: 1em;
+    text-indent: 0px;
 }
-.bullet {
+.bullet, .split_bullet {
     margin: 0;
     padding: 0;
     padding-left: 7em;
