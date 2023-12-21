@@ -106,7 +106,7 @@ a:active {
 }
 
 .navlink {
-    padding-left: min(30px,4vw)px;
+    padding-left: min(30px,4vw);
     padding-right: min(30px,4vw);
 }
 .navlink:link {
@@ -117,7 +117,7 @@ a:active {
     color: #bed5f5;
 }
 .navlink:hover {
-    color: #ffffff
+    color: #ffffff;
     text-decoration: underline;
 }
 .navlink:active {
@@ -151,3 +151,6 @@ a:active {
     color: #393948;
 }
 
+@media screen and (max-width: 589px){
+    /*480px以上のタブレット、縦持ち（portrait）の指定*/
+}
