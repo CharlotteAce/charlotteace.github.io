@@ -75,6 +75,7 @@
 }
 
 .content-1 {
+    font-size: medium;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
@@ -115,6 +116,7 @@
     height: 165px;
     padding: 10px 10px;
     margin: 5px 5px;
+    border: 2px solid #000000;
     /*border-radius: 3px;*/
     transition: 0.3s;
     background-size: cover
@@ -123,10 +125,10 @@
 .thumbnail {
     position: absolute;
     z-index: -1;
-    width: calc(42vw - 4px);
+    width: calc(42vw - 6px);
     height: 163px;
-    right: -2px;
-    top: -2px;
+    right: -1px;
+    top: -1px;
     background-size: cover
 }
 
