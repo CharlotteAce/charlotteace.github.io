@@ -150,7 +150,3 @@ a:active {
     padding: 20px 0 20px 0;
     color: #393948;
 }
-
-@media screen and (max-width: 589px){
-    /*480px以上のタブレット、縦持ち（portrait）の指定*/
-}

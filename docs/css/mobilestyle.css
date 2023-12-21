@@ -3,114 +3,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
 
 
+@media screen and (max-width: 589px){
+    
+    /* webページ全体に適用 */
+    body {
+        font-family: 'Noto Sans JP', sans-serif;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        background-color: #ffffff;
+    }
+    .wrapper {
+        margin: 10px;
+        width: initial;
 
-/* webページ全体に適用 */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background-color: #ffffff;
-}
-.wrapper {
-    margin: 10px;
-    width: initial;
+    }
 
-}
+    #release {
+        margin: initial;
+        padding-top: 3.2em;
+    }
+    #update {
+        margin: initial;;
+    }
+    #info {
+        margin-top: -4.2em;
+        margin-bottom: 2.2em;
+    }
 
-#release {
-    margin: initial;
-    padding-top: 3.2em;
-}
-#update {
-    margin: initial;;
-}
-#info {
-    margin-top: -4.2em;
-    margin-bottom: 2.2em;
-}
-
-.quote {
-    color: #545454;
-    border-left: 5px solid #a9a9a9;
-    width: 80%;
-    max-width: 800px;
-    margin: auto;
-    padding-left: 2em;
-    font-style: italic;
-}
-.quote-body {
-    text-indent: 0px;
-}
-
-
-
-.reference {
-    margin-right: 0;
-    text-align:right;
-}
-
-a:link {
-    color: #3e2dff;
-    text-decoration: none;
-}
-a:visited {
-    color: #2c0fa1;
-}
-a:hover {
-    color: #3e2dff;
-    text-decoration: underline;
-}
-a:active {
-    color: #3e2dff;
-}
+    .quote {
+        color: #545454;
+        border-left: 5px solid #a9a9a9;
+        width: initial;
+        margin: auto 10px;
+        padding-left: 1em;
+        font-style: italic;
+        font-size: 0.95em;
+    }
+    .quote-body {
+        text-indent: 0px;
+    }
 
 
-/* id: #nav に適用 */
-#header {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #1C4C8C;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-}
+
+    .reference {
+        margin-right: 0;
+        text-align:right;
+    }
+
+    a:link {
+        color: #3e2dff;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #2c0fa1;
+    }
+    a:hover {
+        color: #3e2dff;
+        text-decoration: underline;
+    }
+    a:active {
+        color: #3e2dff;
+    }
 
 
-#title {
-    margin:  auto auto;
-    padding-left: initial;
-    font-size: 30px;
-    margin: 0;
-    display: initial;
-}
+    /* id: #nav に適用 */
+    #header {
+        position: sticky;
+        top: calc(-2 * min(6.4vw,30px) - 10px);
+    }
 
-.nav{
-    font-size: 20px;
-    margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: right;
-}
 
-.navlink {
-    padding-left: min(30px,4vw);
-    padding-right: min(30px,4vw);
-}
+    #title {
+        margin:  auto auto;
+        padding-left: initial;
+        font-size: 30px;
+        margin: 0;
+        display: initial;
+    }
 
-#mainlogo {
-    font-size: min(6.4vw,30px);
-    margin-left: min(30px,4vw);
-}
+    .nav{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: right;
+    }
 
-#footnote {
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 10px;
-    color: #393948;
-}
-#footnote p{
-    padding-left: 2em;
-    text-indent: -2em;
+    .navlink {
+        padding-left: min(30px,4vw);
+        padding-right: min(30px,4vw);
+    }
+
+    #mainlogo {
+        font-size: min(6.4vw,30px);
+        margin-left: min(30px,4vw);
+    }
+
+    #footnote {
+        border-top: 1px solid #393948;
+        margin-top: 30px;
+        padding: 20px 10px;
+        color: #393948;
+    }
+    #footnote p{
+        padding-left: 2em;
+        text-indent: -2em;
+    }
 }
