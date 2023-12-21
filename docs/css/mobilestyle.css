@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
 
-
 @media screen and (max-width: 589px){
     
     /* webページ全体に適用 */
@@ -69,7 +68,8 @@
     /* id: #nav に適用 */
     #header {
         position: sticky;
-        top: calc(-2 * min(6.4vw,30px) - 10px);
+        top: 0;
+        /* top: calc(-2 * min(6.4vw,30px) - 10px);*/
     }
 
 
@@ -95,7 +95,6 @@
     }
 
     #mainlogo {
-        font-size: min(6.4vw,30px);
         margin-left: min(30px,4vw);
     }
 
