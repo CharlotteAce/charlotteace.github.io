@@ -5,18 +5,30 @@
 		<meta name="robots" content="noindex">
 		<title>404 Not Found - シャーロットエースの部屋</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/mobilestyle.css" media="screen and (max-width:589px)">
 	</head>
 	<!-- img src="https://assets.st-note.com/img/1692360106315-0uZzouXtzz.png" width="100vw" height="56vw" -->
 	<body>
 		<!-- ヘッダー開始 -->
 		<div id="header">
-			<div id="title">
-				<a id="mainlogo" href="https://charlotteace.github.io">シャーロットエースの部屋</a>
-				<div class="nav">
-					<a class="navlink" href="https://charlotteace.github.io">トップ</a>
-					<a class="navlink" href="https://charlotteace.github.io/contents">記事</a>
-				</div>
-			</div>
+			<header class="c-header c-hamburger-menu">
+				<a href="https://charlotteace.github.io" id="mainlogo">シャーロットエースの部屋</a>
+				<input type="checkbox" name="hamburger" id="hamburger" class="c-hamburger-menu__input"/><!-- idはlabelのforと同じにする -->
+				<label for="hamburger" class="c-hamburger-menu__bg"></label><!-- ハンバーガーメニュを開いた時の背景 -->
+				<ul class="c-header__list c-hamburger-menu__list"><!-- クラスを追記 -->
+					<li class="c-header__list-item">
+						<a href="https://charlotteace.github.io" class="c-header__list-link">トップ</a>
+					</li>
+					<li class="c-header__list-item">
+						<a href="https://charlotteace.github.io/contents/" class="c-header__list-link">記事</a>
+					</li>
+				</ul>
+				<label for="hamburger" class="c-hamburger-menu__button"><!-- ハンバーガーメニューのボタン -->
+					<span class="c-hamburger-menu__button-mark"></span>
+					<span class="c-hamburger-menu__button-mark"></span>
+					<span class="c-hamburger-menu__button-mark"></span>
+				</label>
+			</header>
 		</div>
 		<!-- ヘッダー終了 -->
 		<div class="wrapper">
