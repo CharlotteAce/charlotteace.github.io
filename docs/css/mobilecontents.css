@@ -125,7 +125,7 @@
 .thumbnail {
     position: absolute;
     z-index: -1;
-    width: calc(42vw - 6px);
+    width: calc(40vw - 6px);
     height: 163px;
     right: -1px;
     top: -1px;
@@ -143,8 +143,8 @@
 
     .card-h2b .text{width: initial;}
 
-    .card-h2b, .card-h2c {width: calc(84vw + 2px);}
-    .card-h2d, .card-h2e {width: calc(42vw - 4px);}
+    .card-h2b, .card-h2c {width: calc(80vw + 2px);}
+    .card-h2d, .card-h2e {width: calc(40vw - 4px);}
 
     .card-h2b .content-3,
     .card-h2d .content-3,
