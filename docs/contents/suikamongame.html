@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=980">
 		<title>すいかもんゲーム(β) - シャーロットエースの部屋</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<link rel="stylesheet" type="text/css" href="../css/contents.css">		
@@ -30,9 +30,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="noindex, nofollow">
 		<style type="text/css">
-			#suikamongame {
-				width: 960px;
-				margin: auto;
+			.iframe-wrapper {
+			aspect-ratio: 16/9;
+			/* height: min(540px,54vw);*/
+			width: min(960px,100%);
+			position: relative;
+			margin: auto;
+			overflow: hidden;
+			}
+
+			.iframe-wrapper iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 540px;
+			width: 960px;
 			}
 		</style>
 	</head>
@@ -95,9 +107,14 @@
 			<p>
 				記載されていないバグを発見された方は<a href="https://x.com/Units_SI"target="_blank rel="noopener noreferrer>国際単位系のTwitter</a>または<a href="https://forms.gle/MqcLqNZi4CXQt2898"target="_blank rel="noopener noreferrer>バグ報告フォーム</a>までご連絡ください。
 			</p>
-			<p id="suikamongame">
-				<iframe src="https://charlotteace.github.io/contents/games/suikamongame/index.html" width="960" height="600" scrolling="no" frameborder="0"></iframe>
-			</p>
+			<div class="iframe-wrapper">
+				<iframe id="suikamongame" src="https://charlotteace.github.io/contents/games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
+			</div>
+
+			<!--
+			<div class="iframe-wrapper">
+				<iframe src="index.html" scrolling="no" frameborder="0"></iframe>
+			</div>-->
 			<!-- メイン終了 -->
 			<!-- フッター開始 -->
 			<div id="footer">
@@ -108,4 +125,6 @@
 
 		</div>
 	</body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="default.js"></script>
 </html>
