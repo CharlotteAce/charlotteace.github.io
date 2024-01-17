@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* webページ全体に適用 */
 
 /* カードの定義 */
@@ -59,6 +58,8 @@
 .card .twitter a{border-left: 10px solid #1da1f2;}
 .card .melonbooks a{border-left: 10px solid #18bd67;}
 .card .ace a{border-left: 10px solid #1C4C8C;}
+.card .uda a{border-left: 10px solid #E07798;}
+.card .sue a{border-left: 10px solid #E74727;}
 
 
 .card img{
@@ -191,4 +192,8 @@
     .card-h2e .thumbnail {display: none;}
 
     .card-h2b .text {width: 220px;}
+}
+
+#link_exchange_mobile {
+    display: none;
 }

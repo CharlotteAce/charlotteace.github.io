@@ -3,14 +3,14 @@
 /* webページ全体に適用 */
 
 /* カードの定義 */
-.card-group, .card-contents{
+.hcard-group, .hcard-contents{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card {
+.hcard {
     width: 50%;
     max-width: 500px;
     min-width: 240px;
@@ -18,7 +18,7 @@
     align-items:stretch
 }
 
-.card h3{
+.hcard h3{
     margin: 0 0 -10px;
     text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
     -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
@@ -27,7 +27,7 @@
     text-overflow: ellipsis;
 }
 
-.card p{
+.hcard p{
     text-indent: 0;
     flex-grow: 1;
     margin-bottom: -10px;
@@ -37,7 +37,7 @@
     0 1px 1px #ffffff,    0 -1px 1px #ffffff;
 }
 
-.card a{
+.hcard a{
     position:absolute;
     top:0;
     left:0;
@@ -45,24 +45,24 @@
     height:100%;
 }
 
-.card a{border-top: 10px solid #1C4C8C;}
+.hcard a{border-top: 10px solid #1C4C8C;}
 
-.card .text {
+.hcard .htext {
     margin: 0 0 10px;
     padding: 10px;
     height: auto;
 }
 
-.content-1 {
+.hcontent-1 {
     margin: 0;
     padding: 0;
 }
 
-.content-2 {
+.hcontent-2 {
     margin: 2px 0 0 0;
     padding: 0 0 0 10px;
 }
-.card-home {
+.hcard-home {
     position:relative;
     box-sizing: border-box;
     padding: 10px 10px;
