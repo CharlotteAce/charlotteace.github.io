@@ -50,6 +50,23 @@ p {
     text-align:right;
 }
 
+code {
+    padding: 0.2em 0.3em;/* 内側の余白 */
+    margin: 0 0.2em;/* 外側の余白 */
+    border-radius: 5px;/* 角の丸み */
+    background: #25292f;/* 背景色（背景を黒に） */
+    color: #fff;/* 文字色（文*/
+    font-size: 0.9em;/* 文字サイズ */
+}
+
+pre {
+    padding: 1em;/* 内側の余白 */
+    margin: 0 0 1.5em;/* 外側の余白 */
+    border: solid 1px #4d4d4d;/* 枠線（枠線を濃い黒に） */
+    background: #25292f;/* 背景色（背景を黒に） */
+    color: #fff;/* 文字色（文字を白に） */
+    }
+
 a:link {
     color: #3e2dff;
     text-decoration: none;
