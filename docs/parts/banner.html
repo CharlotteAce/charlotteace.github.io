@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>プロフィール - シャーロットエースの部屋</title>
+ 		<!-- Google tag (gtag.js) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- OGPの設定 -->
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="バナー" />
+		<meta property="og:description" content="相互リンク等で埋め込み用のバナーです" />
+		<meta property="og:url" content="https://charlotteace.github.io/parts/banner" />
+		<meta property="og:site_name" content="シャーロットエースの部屋"/>
+		<meta property="og:image" content="https://charlotteace.github.io/images/ogp/ohome.png" />
+		<!-- Twitterカードの設定 -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content="https://charlotteace.github.io/images/ogp/ohome.png" />
+
+	</head>
+	<!-- img src="https://assets.st-note.com/img/1692360106315-0uZzouXtzz.png" width="100vw" height="56vw" -->
+	<body>
+        <style>
+            @charset "utf-8";
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
+
+            /* webページ全体に適用 */
+            body {
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: min(50vh,calc(8vw));
+                margin: 0;
+                padding: 0 0 0 0;
+                color: #ffffff;
+                background-color: #1C4C8C;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position:relative;
+                height: 100dvh;
+            }
+            a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height:100%;
+                width: 100%;
+            }
+            .wapper, .banner, p{
+                margin: 0;
+                padding: 0;
+                background-color: #1C4C8C;
+            }
+            .wapper{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:100%;
+            }
+            body{font-size: min(72vh,calc((90vw - 10px) * 0.24));}
+            #si, #room{display: initial;}
+            #charlotte, #br1, #ace, #br2{display: none;}
+            @media (min-aspect-ratio: 9/4) {
+                body{font-size: min(66vh,calc((90vw - 10px) * 0.16));}
+                #ace, #room{display: initial;}
+                #si, #charlotte, #br1, #br2{display: none;}
+            }
+            @media (min-height: 48px){
+                body{font-size: min(22vh,calc((90vw - 10px) * 0.16));}
+                    #charlotte, #br1, #ace, #room{display: initial;}
+                    #si, #br2{display: none;}
+                @media (min-height: 72px) {
+                    body{font-size: min(22vh,calc((90vw - 10px) * 0.16));}
+                    #charlotte, #br1, #ace, #br2, #room{display: initial;}
+                    #si{display: none;}
+                }
+                @media (min-aspect-ratio: 7/2) {
+                    body{font-size: min(33vh,calc((90vw - 10px) * 0.1));}
+                    #charlotte, #ace, #br2, #room{display: initial;}
+                    #si, #br1{display: none;}
+                }
+            }            
+            @media (min-aspect-ratio: 9/2) {
+                body{font-size: min(66vh,calc((90vw - 10px) * 0.08));}
+                #charlotte, #ace, #room{display: initial;}
+                #si, #br1, #br2{display: none;}
+            }
+            
+        </style>
+		<div class="wrapper">
+            <div class="banner">
+                <p>
+                    <span id="si">SIの</span><span id="charlotte">シャーロット</span><br id="br1"><span id="ace">エースの</span><br id="br2"><span id="room">部屋</span>
+                </p>
+            </div>
+            <a href="https://charlotteace.github.io"></a>
+		</div>
+	</body>
+</html>
