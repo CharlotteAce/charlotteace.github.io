@@ -3,7 +3,7 @@
 /* webページ全体に適用 */
 
 /* カードの定義 */
-.card-group, .card-contents{
+.pcard-group, .pcard-contents{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -12,12 +12,12 @@
     max-width: 1020px;
 }
 
-.card {
+.pcard {
     position: relative;
     height: stretch;
 }
 
-.card p {
+.pcard p {
     word-break: keep-all;
     overflow-wrap: break-word;
 }
@@ -30,12 +30,12 @@
     padding: 0;
 }
 
-.content-1 {
+.pcontent-1 {
     margin: 5px 0 0;
     padding: 0;
 }
 
-.content-2 {
+.pcontent-2 {
     margin: 0;
     padding: 0;
     padding-left: 1em;
@@ -85,8 +85,12 @@
     height: stretch;
 }
 
+.banner {
+    display: none;
+}
+
 @media (max-width: 864px){
-    .card-group, .card-contents{
+    .pcard-group, .pcard-contents{
         justify-content: center;
     }
     #introduction {

@@ -15,7 +15,30 @@
     border: 2px solid #000000;
 }
 
-.card p {
+.pcard p {
     word-break: break-all;
     overflow-wrap: initial;
 }
+
+
+.card {display: none;}
+.banner {
+    margin: 5px;
+    display: initial;
+    min-width: 200px;
+    height: 40px;
+    position:relative;
+    white-space: nowrap;
+}
+.card-group {max-width:400px}
+.banner p {
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    text-indent: initial;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.banner a {color: #3e2dff;}
