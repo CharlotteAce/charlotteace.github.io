@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* webページ全体に適用 */
 body {
@@ -50,22 +51,36 @@ p {
     text-align:right;
 }
 
+.code {
+    max-width: 800px;
+    margin: auto;
+    counter-reset: line-number;
+    background-color: #272822;
+    color: #fff;
+    font-size: 0;
+    padding: 5px;
+}
 code {
-    padding: 0.2em 0.3em;/* 内側の余白 */
-    margin: 0 0.2em;/* 外側の余白 */
-    border-radius: 5px;/* 角の丸み */
-    background: #25292f;/* 背景色（背景を黒に） */
-    color: #fff;/* 文字色（文*/
-    font-size: 0.9em;/* 文字サイズ */
+    background-color: #272822;
+    color: #fff;
+    font-family: 'Roboto Mono', sans-serif;
+}
+.code code {padding: 0;}
+.code span {
+    font-size: initial;
+    font-size: 0.8rem;
+    line-height: 1.5em;
+    counter-increment: line-number;
+    display: list-item;
+    padding-left: 1rem;
+    margin-left: 1rem;
 }
 
-pre {
-    padding: 1em;/* 内側の余白 */
-    margin: 0 0 1.5em;/* 外側の余白 */
-    border: solid 1px #4d4d4d;/* 枠線（枠線を濃い黒に） */
-    background: #25292f;/* 背景色（背景を黒に） */
-    color: #fff;/* 文字色（文字を白に） */
-    }
+.code span::marker {
+    content: counter(line-number);
+    color: #aaa;
+}
+  
 
 a:link {
     color: #3e2dff;
