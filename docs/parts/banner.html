@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="noindex">
 		<title>シャーロットエースの部屋</title>
+        <meta property="og:description" content="埋め込み用バナー" />
         <link rel="icon" href="https://charlotteace.github.io/favicon.ico">
 	</head>
 	<!-- img src="https://assets.st-note.com/img/1692360106315-0uZzouXtzz.png" width="100vw" height="56vw" -->
@@ -47,33 +48,43 @@
                 transform:translate(-50%,-50%);
                 width:100%;
             }
+            #logo {
+                width: min(100vh, 100vw);
+                height: min(100vh, 100vw);
+                width: min(100dvh, 100vw);
+                height: min(100dvh, 100vw);
+            }
             body{font-size: min(72vh,calc((90vw - 10px) * 0.24));}
             #si, #room{display: initial;}
-            #charlotte, #br1, #ace, #br2{display: none;}
+            #logo, #charlotte, #br1, #ace, #br2{display: none;}
             @media (min-aspect-ratio: 9/4) {
                 body{font-size: min(66vh,calc((90vw - 10px) * 0.16));}
                 #ace, #room{display: initial;}
-                #si, #charlotte, #br1, #br2{display: none;}
+                #logo, #si, #charlotte, #br1, #br2{display: none;}
             }
             @media (min-height: 48px){
                 body{font-size: min(22vh,calc((90vw - 10px) * 0.16));}
                     #charlotte, #br1, #ace, #room{display: initial;}
-                    #si, #br2{display: none;}
+                    #logo, #si, #br2{display: none;}
                 @media (min-height: 72px) {
                     body{font-size: min(22vh,calc((90vw - 10px) * 0.16));}
                     #charlotte, #br1, #ace, #br2, #room{display: initial;}
-                    #si{display: none;}
+                    #logo, #si{display: none;}
                 }
                 @media (min-aspect-ratio: 7/2) {
                     body{font-size: min(33vh,calc((90vw - 10px) * 0.1));}
                     #charlotte, #ace, #br2, #room{display: initial;}
-                    #si, #br1{display: none;}
+                    #logo, #si, #br1{display: none;}
                 }
             }            
             @media (min-aspect-ratio: 9/2) {
                 body{font-size: min(66vh,calc((90vw - 10px) * 0.08));}
                 #charlotte, #ace, #room{display: initial;}
-                #si, #br1, #br2{display: none;}
+                #logo, #si, #br1, #br2{display: none;}
+            }
+            @media (max-aspect-ratio: 5/4) {
+                #logo {display: initial;}
+                #si, #charlotte, #br1, #ace, #br2, #room{display: none;}
             }
             
         </style>
@@ -82,6 +93,7 @@
                 <p>
                     <span id="si">SIの</span><span id="charlotte">シャーロット</span><br id="br1"><span id="ace">エースの</span><br id="br2"><span id="room">部屋</span>
                 </p>
+                <img id="logo" src="https://charlotteace.github.io/images/logo/ace.png" alt="site's logo">
             </div>
             <a href="https://charlotteace.github.io" target="_blank"></a>
 		</div>
