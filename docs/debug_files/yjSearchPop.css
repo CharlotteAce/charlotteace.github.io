@@ -1,0 +1,35 @@
+#yjSearchPop, #yjSearchPop a {
+    display: block;
+}
+
+#yjSearchPop {
+    animation: fade 0.25s ease-out 1;
+    position: absolute;
+    top: 0;
+    border-radius: 4px;
+    background: #464646 url(../../img/icon_search_white.png) no-repeat 10px center / 18px 18px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.34);
+    z-index: 99999999;
+}
+
+@keyframes fade {
+    0%   {
+        opacity: 0;
+        transform: translate(0, -4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+#yjSearchPop:hover { opacity: 0.96; }
+
+#yjSearchPop a {
+    padding: 11px 13px 11px 35px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    font-family: Hiragino Kaku Gothic Pro, Meiryo, Arial;
+    text-decoration: none;
+}
