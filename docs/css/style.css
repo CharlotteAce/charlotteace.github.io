@@ -26,6 +26,10 @@ p {
     text-indent: 1em;
 }
 
+.blog{
+    line-height: 2rem;
+}
+
 #release, #update {
     text-align:right;
     padding: 0;
@@ -49,6 +53,42 @@ p {
     margin-right: 0;
     text-align:right;
 }
+
+.code {
+    max-width: 800px;
+    margin: auto;
+    counter-reset: line-number;
+    background-color: #272822;
+    color: #fff;
+    font-size: 0;
+    padding: 5px;
+}
+code {
+    background-color: #272822;
+    color: #fff;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 0.8rem;
+    padding: 0.1rem;
+}
+.code code {
+    padding: 0;
+    font-size: 0;
+}
+.code span {
+    font-size: initial;
+    font-size: 0.8rem;
+    line-height: 1.5em;
+    counter-increment: line-number;
+    display: list-item;
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.code span::marker {
+    content: counter(line-number);
+    color: #aaa;
+}
+  
 
 a:link {
     color: #3e2dff;
