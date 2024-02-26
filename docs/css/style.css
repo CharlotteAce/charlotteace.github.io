@@ -32,7 +32,7 @@ p {
 figure{
     width: 90%;
     max-width: 540px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 figure img{
     width: 100%;
@@ -41,6 +41,9 @@ figcaption {
     width: fit-content;
     margin-right: auto; /* 右から左に寄せる */
     margin-left: auto; /* 左から右に寄せる */
+}
+.twitter-tweet{
+    margin: 0 auto;
 }
 
 #release, #update {
