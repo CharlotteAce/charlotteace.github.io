@@ -30,8 +30,12 @@ p {
     line-height: 2rem;
 }
 figure{
-    width: min(90vw,540px);
+    width: 90%;
+    max-width: 540px;
     margin: 0 auto;
+}
+figure img{
+    width: 100%;
 }
 figcaption {
     width: fit-content;
