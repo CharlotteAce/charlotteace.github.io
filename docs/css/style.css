@@ -29,6 +29,15 @@ p {
 .blog{
     line-height: 2rem;
 }
+figure{
+    width: min(90vw,540px);
+    margin: 0 auto;
+}
+figcaption {
+    width: fit-content;
+    margin-right: auto; /* 右から左に寄せる */
+    margin-left: auto; /* 左から右に寄せる */
+}
 
 #release, #update {
     text-align:right;
