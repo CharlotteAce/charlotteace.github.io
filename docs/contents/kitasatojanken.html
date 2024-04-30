@@ -30,34 +30,31 @@
 		<div class="wrapper">
 			<div id="kita" class="box">
 				<input value="山" type="text" id="name" name="name"/>
+				<!--div class="hand"><span id="kitar">&#x270a;&#x1f3fb;</span><span id="kitas">&#x270c;&#x1f3fb;</span><span id="kitap">&#x1f590;&#x1f3fb;</span></div-->
 				<div id="kitalose"></div>
 			</div>
 			<div id="sato" class="box">
 				<input value="海" type="text" id="name" name="name"/>
+				<!--div class="hand"><span id="sator">&#x270a;&#x1f3fb;</span><span id="satos">&#x270c;&#x1f3fb;</span><span id="satop">&#x1f590;&#x1f3fb;</span></div-->
 				<div id="satolose"></div>
 			</div>
 			<button type="button" id="btn">じゃんけん</button>
 			<script>
+				
+				// 参考：https://qiita.com/EasyCoder/items/c92abf14ff0651294869
 				function changeColor(name, visibility){
 					var elem = document.getElementById(name);
 					//elem.style.backgroundColor = bg;
 					elem.style.visibility = visibility;
 				}
-				function butotnClick1(){
-					changeColor("kitalose", "hidden");
-					changeColor("satolose", "hidden");
-					const choices = [`rock`, `scissors`, `paper`];
-					// コンピュータの選択をランダムに決定
-					const kitaChoice = choices[Math.floor(Math.random() * 3)];
-					const satoChoice = choices[Math.floor(Math.random() * 3)];
-
+				function whichWin(kitaChoice, satoChoice){					
 					let result = ``;
 					if (kitaChoice === satoChoice) {
 						result = `あいこ`;
 					} else if (
-						(kitaChoice === `rock` && satoChoice === `scissors`) ||
-						(kitaChoice === `scissors` && satoChoice === `paper`) ||
-						(kitaChoice === `paper` && satoChoice === `rock`)
+						(kitaChoice === "r" && satoChoice === "s") ||
+						(kitaChoice === "s" && satoChoice === "p") ||
+						(kitaChoice === "p" && satoChoice === "r")
 					) {
 						result = `kitaの勝ち！`;
 						changeColor("satolose", "visible");
@@ -67,6 +64,35 @@
 					}
 					// alert()で、アラートを出力
 					alert(result);
+				}
+				function butotnClick1(){
+					changeColor("kitalose", "hidden");
+					changeColor("satolose", "hidden");
+					const choices = ["r", "s", "p"];
+					// コンピュータの選択をランダムに決定
+					const kitaChoice = choices[Math.floor(Math.random() * 3)];
+					const satoChoice = choices[Math.floor(Math.random() * 3)];
+					/*
+					var elemkr = document.getElementById("kitar");
+					var elemks = document.getElementById("kitas");
+					var elemkp = document.getElementById("kitap");
+					var elemsr = document.getElementById("sator");
+					var elemss = document.getElementById("satos");
+					var elemsp = document.getElementById("satop");
+					
+					elemkr.style.visibility = hidden;
+					elemks.style.visibility = hidden;
+					elemkp.style.visibility = hidden;
+					elemsr.style.visibility = hidden;
+					elemss.style.visibility = hidden;
+					elemsp.style.visibility = hidden;
+					
+					var elemk = document.getElementById("kita");
+					var elems = document.getElementById("sato"+satoChoice);
+					elemk.style.visibility = visible;
+					elems.style.visibility = visible;
+					*/
+					whichWin(kitaChoice,satoChoice);
 				}
 
 				// document.getElementById()でHTMLの中でid属性がbtnの要素を取得し、変数buttonに代入する
@@ -114,7 +140,7 @@
 			color: white;
 			background-color: rgba(0, 0, 0, 0);
 			border: none;
-			margin: min(5vw,5vh);
+			margin: min(2vw,2vh);
 		}
 		#kita input{
 			text-align: left;
@@ -130,7 +156,7 @@
 			visibility: hidden;
 		}
 		button {
-			width: min(60vw,60vh);
+			width: min(65vw,65vh);
 			height: min(20vw,20vh);
 			color: black;
 			font-size: min(10vw,10vh);
