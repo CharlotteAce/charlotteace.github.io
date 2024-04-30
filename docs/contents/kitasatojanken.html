@@ -44,13 +44,16 @@
 			padding: 0;
 		}
 		.wapper {
+			overflow: hidden;
 			width: 100dvw;
 			padding: 0;
 			margin: 0;
+			background-color: black;
 		}
 		.box {
-			width: 50dvw;
-			height: 100dvh;
+			float: left;
+			width: 100dvw;
+			height: 50dvh;
 		}
 		#kita {
 			background-color: red;
@@ -58,8 +61,8 @@
 		#sato {background-color: green;}
 		@media screen and (min-aspect-ratio: 1){
 			.box {
-			width: 100dvw;
-			height: 50dvh;
+			width: 50dvw;
+			height: 100dvh;
 			}
 		}
 	</style>
