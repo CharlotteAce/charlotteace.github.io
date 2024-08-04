@@ -2,7 +2,7 @@
 param:
     layout: ../../layouts/MarkdownRedirectLayout.astro
     title: 'ほしいものリスト「芋」'
-    pubDate: ""
+    pubDate: "20234-04-30"
     updateDate: "2024-08-05"
     description: ''
     pageUrl: '/blog/hoshimo'
