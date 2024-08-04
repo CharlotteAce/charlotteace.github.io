@@ -22,10 +22,16 @@ import "the-new-css-reset";
 	</body>
 </html>
 <style is:global>
-
+    @font-face {
+      font-family: 'Noto Sans JP';
+      src: url('../fonts/noto-sans-jp-0-500-normal') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 /* webページ全体に適用 */
 body {
-    font-family: 'Noto Sans JP Variable', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     background-color: #ffffff;
