@@ -16,23 +16,6 @@ const updateDate = "2024-08-04";
         カードをクリックすると記事のページへジャンプします。
     </p>
     <div class="card-group">
-        <div class="card">
-            <div class="card-h4b card-h3b card-h2d">
-                <div class="note">
-                    <div class="text">
-                        <h3 class="content-1">五月祭<wbr>コミアカ<wbr>衣装<wbr>制作記<wbr>「同人は<wbr>そんなに<wbr>甘く<wbr>ないよ…」</h3>
-                        <p class="content-2">2024-05-21</p>
-                        <p class="content-3">
-                            前回『コミアカ新歓衣装制作記「何事もトライしなくちゃ分からないよ！」』で作成した、小美亜佳子さんのお友達の衣装を納品したお話です。制作したのは、東京大学内の同人誌即売会運営サークル「コミックアカデミー実行委員会（コミアカ）」公式キャラクター、轍夜明さんの衣装です。……
-                        </p>
-                    </div>
-                    <a href="https://note.com/units_si/n/nf48bdd553880"target="_blank" rel="noopener noreferrer"></a>
-                    <img src="../images/logo/note.png" width="80" height="30" alt="note.com"></a>
-                </div>
-                <div class="thumbnail" style="background-image:url('https://assets.st-note.com/production/uploads/images/141337685/rectangle_large_type_2_28533c84fb4c6c73ca774aaf9e9fe6a1.jpeg')"></div>
-            </div>
-        </div>
-
     
         <!-- 逆たまコンピの上でいったん改行位置 -->
         {allPosts.map((post) => <BlogPost param={post.frontmatter.param}/>)}
