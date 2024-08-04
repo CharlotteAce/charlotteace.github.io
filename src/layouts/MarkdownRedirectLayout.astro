@@ -2,7 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title} pageUrl={frontmatter.pageUrl} releaseDate={frontmatter.releaseDate} updateDate={frontmatter.updateDate}>
+<BaseLayout pageTitle={frontmatter.param.title} pageUrl={frontmatter.param.pageUrl} releaseDate={frontmatter.param.releaseDate} updateDate={frontmatter.param.updateDate}>
     {frontmatter.description}
-    閲覧リンクはこちら：<a href={frontmatter.contentsUrl}>{frontmatter.contentsUrl}</a>
+    閲覧リンクはこちら：<a href={frontmatter.param.contentsUrl}>{frontmatter.param.contentsUrl}</a>
 </BaseLayout>

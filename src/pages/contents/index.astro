@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
+const allPosts = await Astro.glob('../blogs/*.md');
 const pageTitle = "制作物・記事一覧";
 const pageUrl = "/contents";
 const releaseDate = "2023-12-20";
@@ -333,5 +335,6 @@ const updateDate = "2024-08-04";
                 </div>
             </div>
         </div>
+        {allPosts.map((post) => <BlogPost param={post.frontmatter.param}/>)}
     </div>
 </BaseLayout>
