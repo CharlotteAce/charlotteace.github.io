@@ -1,29 +1,6 @@
----
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
-import "the-new-css-reset";
----
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
-<style is:global>
-	@charset "utf-8";
+@charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* webページ全体に適用 */
 body {
@@ -50,26 +27,6 @@ p {
     text-indent: 1em;
 }
 
-.blog{
-    line-height: 2rem;
-}
-figure{
-    width: 90%;
-    max-width: 540px;
-    margin: 0 auto 10px;
-}
-figure img{
-    width: 100%;
-}
-figcaption {
-    width: fit-content;
-    margin-right: auto; /* 右から左に寄せる */
-    margin-left: auto; /* 左から右に寄せる */
-}
-.twitter-tweet{
-    margin: 0 auto;
-}
-
 #release, #update {
     text-align:right;
     padding: 0;
@@ -79,7 +36,7 @@ figcaption {
 
 .quote {
     color: #545454;
-    border-left: 5px solid #a9a9a9;;
+    border-left: 5px solid #a9a9a9;
     max-width: 800px;
     margin: auto;
     padding-left: 2em;
@@ -292,5 +249,3 @@ header a:hover {
   transition: 0.3s; /* カスタマイズしてください */
   width: 20px; /* カスタマイズしてください */
 }
-
-</style>
