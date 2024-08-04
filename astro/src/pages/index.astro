@@ -1,115 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import "the-new-css-reset";
-import '../styles/style.css';
-import '../styles/home.css';
-import '../styles/contents.css';
-import Card from '../components/Card.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "トップページ";
-const releaseDay = "2023-12-20"
-const updateDay = "2024-05-01"
+const pageUrl = "";
+const releaseDay = "2023-12-20";
+const updateDay = "2024-05-01";
 ---
-
-<Layout title="Welcome to Astro.">
-	<main>
-		<p id="release">公開: {releaseDay}</p>
-			<p id="update">最終更新:{updateDay}</p>
-			<h1 id="info">{pageTitle}</h1>
-			<div class="quote">
-				<p class="quote-body">まだ何も書かれていない予定表 なんでも書ける これから書ける</p>
-				<p class="reference">『会うまでの時間 自選歌集』、俵万智、2005</p>
-			</div>
-			<p class="info_item">私(国際単位系/シャーロットエース)の個人サイトです。ついにモバイル端末での表示に対応しました！徐々に掲載コンテンツを増やしていくつもりです。このページも大幅に改修予定。ヘッダー画像も募集中。</p>
-			<div class="hcard-group">
-				<div class="hcard">
-					<div class="hcard-home">
-						<div class="hace">
-							<div class="htext">
-								<h2 class="hcontent-1">
-									制作物・記事一覧
-								</h2>
-								<p class="hcontent-2">
-									各所に投稿した記事や関与した制作物についてまとめています。事実上のポータルサイト。結構気合を入れて作ったページです。
-								</p>
-							</div>
-							<a href="https://charlotteace.github.io/contents/"></a>
-						</div>
+<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} releaseDay={releaseDay} updateDay={updateDay}>
+	<div class="quote">
+		<p class="quote-body">まだ何も書かれていない予定表 なんでも書ける これから書ける</p>
+		<p class="reference">『会うまでの時間 自選歌集』、俵万智、2005</p>
+	</div>
+	<p class="info_item">私(国際単位系/シャーロットエース)の個人サイトです。ついにモバイル端末での表示に対応しました！徐々に掲載コンテンツを増やしていくつもりです。このページも大幅に改修予定。ヘッダー画像も募集中。</p>
+	<div class="hcard-group">
+		<div class="hcard">
+			<div class="hcard-home">
+				<div class="hace">
+					<div class="htext">
+						<h2 class="hcontent-1">
+							制作物・記事一覧
+						</h2>
+						<p class="hcontent-2">
+							各所に投稿した記事や関与した制作物についてまとめています。事実上のポータルサイト。結構気合を入れて作ったページです。
+						</p>
 					</div>
-				</div>
-				<div class="hcard">
-					<div class="hcard-home">
-						<div class="hace">
-							<div class="htext">
-								<h2 class="hcontent-1">
-									プロフィール
-								</h2>
-								<p class="hcontent-2">
-									私(国際単位系/シャーロットエース)について書きました。あったほうがいいので作ったページですが、そんなに新しい情報があるかはわかりません。今日のひとことも更新中（不定期更新）。
-								</p>
-							</div>
-							<a href="https://charlotteace.github.io/profile/"></a>
-						</div>
-					</div>
+					<a href="https://charlotteace.github.io/contents/"></a>
 				</div>
 			</div>
-	</main>
-</Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+		</div>
+		<div class="hcard">
+			<div class="hcard-home">
+				<div class="hace">
+					<div class="htext">
+						<h2 class="hcontent-1">
+							プロフィール
+						</h2>
+						<p class="hcontent-2">
+							私(国際単位系/シャーロットエース)について書きました。あったほうがいいので作ったページですが、そんなに新しい情報があるかはわかりません。今日のひとことも更新中（不定期更新）。
+						</p>
+					</div>
+					<a href="https://charlotteace.github.io/profile/"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
