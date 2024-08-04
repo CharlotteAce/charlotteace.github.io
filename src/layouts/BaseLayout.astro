@@ -1,8 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/style.css';
-import '../styles/home.css';
-import '../styles/contents.css';
 import Card from '../components/Card.astro';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
@@ -10,7 +7,7 @@ const { releaseDay } = Astro.props;
 const { updateDay } = Astro.props;
 ---
 
-<Layout title={pageTitle}>
+<Layout title={pageTitle+" - シャーロットエースの部屋"}>
 	<main>
         <div id="header">
 			<header class="c-header c-hamburger-menu">
