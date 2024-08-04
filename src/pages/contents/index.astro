@@ -3,16 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 const allPosts = await Astro.glob('../blogs/*.md');
 allPosts.sort((a, b) => {
-  const aDate = new Date(a.frontmatter.param.releaseDate);
-  const bDate = new Date(b.frontmatter.param.releaseDate);
+  const aDate = new Date(a.frontmatter.param.pubDate);
+  const bDate = new Date(b.frontmatter.param.pubDate);
   return bDate.getTime() - aDate.getTime();
 });
 const pageTitle = "制作物・記事一覧";
 const pageUrl = "/contents";
-const releaseDate = "2023-12-20";
+const pubDate = "2023-12-20";
 const updateDate = "2024-08-04";
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} releaseDate={releaseDate} updateDate={updateDate}>
+<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
 	<p class="info_item">
         このページでは私(国際単位系/シャーロットエース)の投稿した記事や関与したコンテンツの一覧を掲載しています。
         カードをクリックすると記事のページへジャンプします。

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
-const { releaseDate } = Astro.props;
+const { pubDate } = Astro.props;
 const { updateDate } = Astro.props;
 import '../styles/style.css';
 import '../styles/home.css';
@@ -36,7 +36,7 @@ import '../styles/mobilecontents.css';*/
 			</header>
 		</div>
         <div class="wrapper">
-            <p id="release">公開：{releaseDate}</p>
+            <p id="release">公開：{pubDate}</p>
 			<p id="update">最終更新：{updateDate}</p>
 			<h1 id="info">{pageTitle}</h1>
             <slot />

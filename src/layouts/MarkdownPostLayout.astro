@@ -2,6 +2,6 @@
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title} pageUrl={frontmatter.pageUrl} releaseDate={frontmatter.releaseDate} updateDate={frontmatter.updateDate} medium={frontmatter.medium} width={frontmatter.width}>
+<BaseLayout pageTitle={frontmatter.title} pageUrl={frontmatter.pageUrl} pubDate={frontmatter.pubDate} updateDate={frontmatter.updateDate} medium={frontmatter.medium} width={frontmatter.width}>
     <slot />
 </BaseLayout>
