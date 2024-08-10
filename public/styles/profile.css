@@ -89,6 +89,22 @@
     display: none;
 }
 
+/*bookページの仮対応*/
+.hcard-home2 {
+    background-color: #acacac;
+}
+.hcontent-22 {
+    text-shadow: none;
+}
+.hcard3{
+    max-width: none;
+    width: calc(100%);	
+    max-width: 1000px;
+    min-width: 480px;
+    padding: 0;
+}
+.hcard3 a{border-top: 10px solid #fc4d50;}
+
 @media (max-width: 864px){
     .pcard-group, .pcard-contents{
         justify-content: center;
