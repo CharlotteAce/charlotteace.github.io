@@ -50,3 +50,13 @@
 #link_exchange_mobile {
     display: initial;
 }
+
+
+/*bookの仮対応*/
+.hcard-home2 {
+    background-color: #acacac;
+}
+.hcontent-22 {
+    text-shadow: none;
+}
+.hcard3 a{border-left: 10px solid #fc4d50;}
