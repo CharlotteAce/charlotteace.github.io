@@ -21,7 +21,7 @@
 }
 
 
-.card {display: none;}
+#link_exchange .card {display: none;}
 .banner {
     margin: 5px;
     display: initial;

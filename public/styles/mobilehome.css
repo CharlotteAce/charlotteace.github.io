@@ -43,15 +43,6 @@
     background-size: cover;
 }
 
-#link_exchange {
-    display: none;
-}
-
-#link_exchange_mobile {
-    display: initial;
-}
-
-
 /*bookの仮対応*/
 .hcard-home2 {
     background-color: #acacac;
