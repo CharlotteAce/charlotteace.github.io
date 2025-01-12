@@ -12,7 +12,8 @@ const { param } = Astro.props;
                     {param.description}
                 </p>
             </div>
-            <img src={"../images/logo/"+param.medium+".png"} width="29" height="30" alt={param.medium+".com"}>
+            <img class={"logo_"} src={"/images/logos/"+param.medium+".png"} height="30" alt={param.medium+".com"}>
+            </style>
             <a href={param.contentsUrl} target="_blank" rel="noopener noreferrer"></a>
         </div>
         <div class="thumbnail" style={"background-image:url("+param.image.url+")"}></div>
