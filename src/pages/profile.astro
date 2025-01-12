@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
-const updateDate = "2024-08-04";
+const updateDate = "2025-01-12";
 import { Image } from 'astro:assets';
 import aceFace from '../images/charlotteace001.png';
 // import '../styles/profile.css';
@@ -76,7 +76,8 @@ import aceFace from '../images/charlotteace001.png';
 						今日のひとこと
 					</h3>
 					<p class="pcontent-2">
-						え？コミケ当日？？助けて！！！（2024-08-11更新）
+						卒論がまずいおかげでロット部屋の修復に成功しています（2025-01-12更新）
+						<!-- え？コミケ当日？？助けて！！！（2024-08-11更新）-->
 						<!--アドホックな犬、アホドッグ（2024-01-20更新）-->
 						<!--私の2023年がようやく終わりました（2024-01-07更新）-->
 						<!--コミケ来てくれた方々ありがとうございました（2023-12-31更新）-->
@@ -89,7 +90,7 @@ import aceFace from '../images/charlotteace001.png';
 	</div>
 	<h2>相互リンク</h2>
 	<p>現在はこちらからお声かけした方のウェブサイトを掲載しています。準備ができ次第、申請フォームを公開します。</p>
-	<!-- div class="card-group" id="link_exchange">
+	<div class="card-group" id="link_exchange">
 		<div class="card">
 			<div class="card-h4d card-h3d card-h2d">
 				<div class="uda">
@@ -101,7 +102,7 @@ import aceFace from '../images/charlotteace001.png';
 					</div>
 					<a href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer"></a>
 				</div>
-				<div class="thumbnail" style="background-image:url('../images/link_exchange/tuda.png')"></div>
+				<div class="thumbnail" style="background-image:url(/images/link_exchange/tuda.png)"></div>
 			</div>
 		</div>
 		<div class="banner">
@@ -120,7 +121,7 @@ import aceFace from '../images/charlotteace001.png';
 					<img src="../images/link_exchange/lsue.png" width="30" height="30" alt="sueakiyama.github.io">
 					<a href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer"></a>
 				</div>
-				<div class="thumbnail" style="background-image:url('../images/link_exchange/tsue.png')"></div>
+				<div class="thumbnail" style="background-image:url('/images/link_exchange/tsue.png')"></div>
 			</div>
 		</div>
 		<div class="banner">
@@ -144,7 +145,25 @@ import aceFace from '../images/charlotteace001.png';
 			<style>.banner .haxibami{border-bottom: 2px solid #5C64F2;}</style>
 			<p class="haxibami"><big><a href="https://haxibami.net">mythfinder</a></big> - haxibami</p>
 		</div>
-	</div-->
+		<div class="card">
+			<div class="card-h4e card-h3e card-h2e">
+				<div class="inaniwa">
+					<style>.card .inaniwa a{border-left: 10px solid #FA981C;}</style>
+					<div class="text">
+						<h3 class="content-1">いなにわうどん.みんな</h3>
+						<p class="content-2">いなにわうどん</p>
+						<p class="content-3"></p>
+					</div>
+					<!--img src="../images/link_exchange/lhaxibami.ico" width="30" height="30" alt="haxibami.net"-->
+					<a href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer"></a>
+				</div>
+			</div>
+		</div>
+		<div class="banner">
+			<style>.banner .inaniwa{border-bottom: 2px solid #FA981C;}</style>
+			<p class="inaniwa"><big><a href="https://haxibami.net">いなにわうどん.みんな</a></big> - いなにわうどん</p>
+		</div>
+	</div>
 	<div id="footnote">
 		<p>
 			<a id="footnote-1" href="#ref-1">*1</a>：最初のアカウントは高校3年の8月に作成した。Twitterをやめていた友人たちのうち何人かはこれを機に戻ってきてしまった。大戦犯である。
