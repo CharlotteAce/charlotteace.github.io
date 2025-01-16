@@ -136,7 +136,7 @@ a:active {
 
 /* id: #nav に適用 */
 header {
-    margin: 0.8rem;
+    margin: 0.8rem 0;
     background-color: var(--charlotteace-color);
     position: sticky;
     top: 0;
