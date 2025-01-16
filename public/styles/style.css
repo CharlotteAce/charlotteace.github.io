@@ -2,12 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
 
 /* webページ全体に適用 */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background-color: #ffffff;
+:root {
+    --charlotteace-color: #1C4D8C;
 }
+html {font-size: 10px;}
+body {font-family: 'Noto Sans JP', sans-serif;}
 .wrapper {
     margin: 0 auto 0 auto;
     width: 93%;
@@ -15,17 +14,37 @@ body {
 }
 
 h1 {
-    color: #000000;
-    font-size: 26px;
-    border-bottom: 1px solid #393948;
-    margin: 20px 0px 30px 0px;
-    padding: 10px 10px 10px 20px;
+    font-size: 2.8rem;
+    font-weight: 600;
+    border-bottom: 0.1rem solid #393948;
+    margin: 1.6rem 0 1.6rem 0;
+    padding: 1.2rem;
+}
+h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4.8rem 0 -1.6rem 0;
+}
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3.2rem 0 -1.6rem 0;
 }
 
 p {
+    font-size: 1.6rem;
+    line-height: 2em;
+    margin: 3.2rem 0;
     text-indent: 1em;
 }
 
+small {
+    color: #545454;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/*
 .blog{
     line-height: 2rem;
 }
@@ -39,19 +58,12 @@ figure img{
 }
 figcaption {
     width: fit-content;
-    margin-right: auto; /* 右から左に寄せる */
-    margin-left: auto; /* 左から右に寄せる */
+    margin-right: auto; /* 右から左に寄せる *//*
+    margin-left: auto; /* 左から右に寄せる *//*
 }
 .twitter-tweet{
     margin: 0 auto;
 }
-
-#release, #update {
-    text-align:right;
-    padding: 0;
-}
-#release {margin: 1em 0 -2em;}
-#update {margin: 2em 0 -4em;}
 
 .quote {
     color: #545454;
@@ -104,7 +116,7 @@ code {
     content: counter(line-number);
     color: #aaa;
 }
-  
+*/
 
 a:link {
     color: #3e2dff;
@@ -124,9 +136,8 @@ a:active {
 
 /* id: #nav に適用 */
 header {
-    margin: 0;
-    padding: 10px;
-    background-color: #1C4C8C;
+    margin: 0.8rem;
+    background-color: var(--charlotteace-color);
     position: sticky;
     top: 0;
     display: flex;
@@ -135,28 +146,13 @@ header {
 }
 
 #header {
-    background-color: #1C4C8C;
+    background-color: var(--charlotteace-color);
     position: sticky;
     top: 0;
     display: flex;
     justify-content: center;
     z-index: 1;
 }
-
-
-#title {
-
-    margin:  calc(50vw - min(46.5%,640px)) auto;
-    font-size: 30px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-
 
 #mainlogo {
     font-size: min(30px, 4.8vw);
@@ -167,9 +163,9 @@ header {
 }
 /* id: footer に適用 */
 #footnote {
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 50px;
+    border-top: 0.1rem solid #393948;
+    margin-top: 3.2rem;
+    padding: 2rem 4.8rem;
     color: #393948;
 }
 #footnote p{
@@ -180,8 +176,8 @@ header {
 #footer {
     text-align: center;
     border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 0 20px 0;
+    margin-top: 3.2rem;
+    padding: 2rem 4.8rem 4.8rem;
     color: #393948;
 }
 

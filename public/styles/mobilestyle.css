@@ -17,17 +17,15 @@
 
     }
 
-    #release {
-        margin: initial;
-        padding-top: 3.2em;
-        line-height: 1.5em
+    #release, #update {
+        display: none;
     }
     #update {
         margin: initial;;
     }
     #info {
-        margin-top: -4.2em;
-        margin-bottom: 2.2em;
+        margin-top: 0;
+        margin-bottom: initial;
     }
 
     h1,h2,h3,h4,h5,h6{font-weight: 500;}
