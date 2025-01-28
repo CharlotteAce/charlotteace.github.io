@@ -61,7 +61,7 @@
 
 #photo small {
     position: absolute;
-    bottom: 20px;
+    top: 310px;
     right: 20px;
     text-indent: 0;
     flex-grow: 1;
