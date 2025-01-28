@@ -3,8 +3,9 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.param.title} pageUrl={frontmatter.param.pageUrl} pubDate={frontmatter.param.pubDate} updateDate={frontmatter.param.updateDate}>
-    <p>閲覧リンクはこちら：<a href={frontmatter.param.contentsUrl}>{frontmatter.param.contentsUrl}</a></p>
-    <p>3秒後に自動リダイレクトします。</p>
-    
+    <p>
+        閲覧リンクはこちら：<a href={frontmatter.param.contentsUrl}>{frontmatter.param.contentsUrl}</a><br>
+        3秒後に自動リダイレクトします。
+    </p>
     <meta http-equiv="refresh" content={"3;URL='"+frontmatter.param.contentsUrl+"'"}>
 </BaseLayout>
