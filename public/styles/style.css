@@ -119,18 +119,18 @@ code {
 */
 
 a:link {
-    color: #3e2dff;
+    color: #136eab;
     text-decoration: none;
 }
 a:visited {
-    color: #2c0fa1;
+    color: #182f60;
 }
 a:hover {
-    color: #3e2dff;
+    color: #136eab;
     text-decoration: underline;
 }
 a:active {
-    color: #3e2dff;
+    color: #136eab;
 }
 
 
