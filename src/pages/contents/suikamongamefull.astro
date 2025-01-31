@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+/*import Card from '../components/Card.astro';*/
+/*import '../styles/style.css';
+import '../styles/home.css';
+import '../styles/contents.css';
+import '../styles/mobilestyle.css';
+import '../styles/mobilehome.css';
+import '../styles/mobilecontents.css';*/
+---
+
+<Layout title={"すいかもんゲーム(full)"}>
+	<main>
+        <style type="text/css">
+			body {
+				background-color:black;
+				margin: 0;
+			}
+
+			.iframe-wrapper {
+			aspect-ratio: 16/9;
+			/* height: min(540px,54vw);*/
+			width: min(178vh,100%);
+			width: min(178dvh,100%);
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+			}
+
+			.iframe-wrapper iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 1080px;
+			width: 1920px;
+			margin: 0;
+			}
+		</style>
+        <body>
+            <div class="iframe-wrapper">
+                <iframe id="suikamongame" src="../../games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </body>
+        <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script is:inline src="../../games/suikamongame/default.js"></script>
+	</main>
+</Layout>
+
