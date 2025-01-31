@@ -1,13 +1,61 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import '../../styles/style.css';
-import '../../styles/home.css';
-import '../../styles/contents.css';
 const pageTitle = "すいかもんゲーム(β)";
 const pageUrl = "/contents/suikamongame";
 const pubDate = "2023-12-20";
 const updateDate = "2024-08-04";
 ---
 <BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	現在ページ改修工事中。復旧までしばらくお待ちください。
+	<style type="text/css">
+		.iframe-wrapper {
+		aspect-ratio: 16/9;
+		/* height: min(540px,54vw);*/
+		width: min(960px,100%);
+		position: relative;
+		margin: auto;
+		overflow: hidden;
+		}
+
+		.iframe-wrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1080px;
+		width: 1920px;
+		}
+	</style>
+	<p>現在ページ改修工事中。復旧までしばらくお待ちください。</p>
+	<p class="info_item">
+		すいかもんゲームの試作(β)版です。
+	</p>
+	<h2>現在の開発状況</h2>
+	<p>
+		サウンドを実装しました！BGMはまだですが、落下時と合体時に音が流れます。
+	</p>
+	<h2>現在発見されているバグ</h2>
+	<!--p>
+		①最初のくだもんと、生成から投下まで時間を置いたくだもんの落下速度が速くなりすぎる。場合によって壁も貫通する。（修正すべきか検討中）
+	</p>
+	<p>
+		②投下前のくだもんが山盛りの同種くだもんに触れると続行不能になる。（ゲームオーバーの導入で解消予定）
+	</p>
+	<p>
+		③ウィンドウサイズ等によって表示が見切れる。（そのうちなんとかします）
+	</p>
+	<p>
+		④ぱいんもんの触角がない。（描きなおします）
+	</p-->
+	<p>
+		①すいかもんの顔が微妙。（描きなおします）
+	</p>
+	<p>
+		②耳の当たり判定がない。→仕様です。真球の当たり判定なので本家同様結構転がります。
+	</p>
+	<p>
+		記載されていないバグを発見された方は<a href="https://x.com/Units_SI"target="_blank" rel="noopener noreferrer">国際単位系のTwitter</a>または<a href="https://forms.gle/MqcLqNZi4CXQt2898"target="_blank" rel="noopener noreferrer">バグ報告フォーム</a>までご連絡ください。
+	</p>
+	<h2><a href="https://charlotteace.github.io/contents/suikamongamefull"target="_blank" rel="noopener noreferrer">フルスクリーン版はこちら</a><br><small>（スマホの方はこちらを推奨）</small></h2>
+	<div class="iframe-wrapper">
+		<iframe id="suikamongame" src="https://charlotteace.github.io/contents/games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
+	</div>
 </BaseLayout>
