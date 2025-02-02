@@ -21,11 +21,10 @@
         display: none;
     }
     #update {
-        margin: initial;;
+        margin: initial;
     }
     #info {
         margin-top: 0;
-        margin-bottom: initial;
     }
 
     h1,h2,h3,h4,h5,h6{font-weight: 500;}
@@ -49,22 +48,7 @@
     .reference {
         margin-right: 0;
         text-align:right;
-    }
-
-    a:link {
-        color: #3e2dff;
-        text-decoration: none;
-    }
-    a:visited {
-        color: #2c0fa1;
-    }
-    a:hover {
-        color: #3e2dff;
-        text-decoration: underline;
-    }
-    a:active {
-        color: #3e2dff;
-    }
+    }z4
 
 
     /* id: #nav に適用 */
