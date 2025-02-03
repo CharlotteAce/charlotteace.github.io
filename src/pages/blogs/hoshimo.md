@@ -10,7 +10,7 @@ param:
     contentsNum: 202409010001
     medium: 'amazon'
     image:
-        url: ''
+        url: '/images/thumbnails/blank.jpg'
         alt: ''
     width:
         four: 'e'

@@ -38,15 +38,6 @@
         height:100%;
     }
 
-    .logo {
-        position: absolute;
-        background-size: cover;
-        width: 80px;
-        height: 30px;
-        margin-left: 10px;
-        margin-top: -20px;
-    }
-
     .note .logo {
         background-image: url(https://charlotteace.github.io/contents/images/note.png);
     }
@@ -130,8 +121,8 @@
         width: calc(40vw - 6px);
         height: 163px;
         right: -1px;
-        top: -1px;
-        background-size: cover
+        top: 45px;
+        object-fit: cover;
     }
 
     @media (max-width: 589px){

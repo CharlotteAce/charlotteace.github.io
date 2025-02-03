@@ -120,8 +120,8 @@
     width: 238px;
     height: 133px;
     right: -2px;
-    top: -2px;
-    background-size: cover
+    top: 24px;
+    object-fit: cover;
 }
 
 .card-h4a {width: 760px;}
