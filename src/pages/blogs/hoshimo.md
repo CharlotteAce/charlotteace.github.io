@@ -11,7 +11,7 @@ param:
     medium: 'amazon'
     image:
         url: '/images/thumbnails/blank.jpg'
-        alt: ''
+        alt: ' '
     width:
         four: 'e'
         three: 'e'
