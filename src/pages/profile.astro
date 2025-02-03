@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@src/layouts/BaseLayout.astro';
+import '@src/styles/contents.css';
+import '@src/styles/profile.css';
+import '@src/styles/mobilecontents.css';
+import '@src/styles/mobileprofile.css';
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
@@ -9,10 +13,6 @@ import aceFace from '@src/images/charlotteace001.png';
 // import '../styles/profile.css';
 ---
 <BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	<link rel="stylesheet" type="text/css" href="/styles/contents.css">
-	<link rel="stylesheet" type="text/css" href="/styles/profile.css">
-	<link rel="stylesheet" type="text/css" href="/styles/mobilecontents.css" media="screen and (max-width:589px)">
-	<link rel="stylesheet" type="text/css" href="/styles/mobileprofile.css" media="screen and (max-width:589px)">
 	<p class="info_item">
 		このページでは私の自己紹介を掲載しています。これといって重要な情報はありませんが……『非公開』とされているものを何らかの手段で知ってしまったみなさんは、どうぞ心の内側にとどめておいてください。なにとぞ。今日のひとことは不定期更新です。
 	</p>

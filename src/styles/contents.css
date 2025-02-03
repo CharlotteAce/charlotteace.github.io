@@ -58,6 +58,7 @@
 .card .twitter a{border-left: 10px solid #1da1f2;}
 .card .melonbooks a{border-left: 10px solid #18bd67;}
 .card .ace a{border-left: 10px solid #1C4C8C;}
+.card .booth a{border-left: 10px solid #FC4D50;}
 
 
 .card img{
@@ -89,10 +90,11 @@
 }
 
 .content-3 {
-    margin: 0;
-    margin-top: -50px;
-    padding: 10px 0 10px 120px;
-    width: 360px;
+    line-height: 2rem;
+    margin: 0 0 0 0;
+    margin-top: -14px;
+    padding: 0 0 10px 120px;
+    width: 480px;
     height: 62px;
     display: -webkit-box;
     overflow: hidden;

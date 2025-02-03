@@ -1,44 +1,47 @@
 @charset "utf-8";
 
-/* webページ全体に適用 */
 
-.split {
-    display: block;
-}
-.split_bullet{
-    padding-left: 2.5em;
-    text-indent: -1.5em;
-}
+@media screen and (max-width: 589px){
+    /* webページ全体に適用 */
 
-
-#photo img{
-    border: 2px solid #000000;
-}
-
-.pcard p {
-    word-break: break-all;
-    overflow-wrap: initial;
-}
+    .split {
+        display: block;
+    }
+    .split_bullet{
+        padding-left: 2.5em;
+        text-indent: -1.5em;
+    }
 
 
-.card {display: none;}
-.banner {
-    margin: 5px;
-    display: initial;
-    min-width: 200px;
-    height: 40px;
-    position:relative;
-    white-space: nowrap;
+    #photo img{
+        border: 2px solid #000000;
+    }
+
+    .pcard p {
+        word-break: break-all;
+        overflow-wrap: initial;
+    }
+
+
+    #link_exchange .card {display: none;}
+    .banner {
+        margin: 5px;
+        display: initial;
+        min-width: 200px;
+        height: 40px;
+        position:relative;
+        white-space: nowrap;
+    }
+    .card-group {max-width:400px}
+    .banner p {
+        margin: 0;
+        padding: 0;
+        text-align:center;
+        text-indent: initial;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    .banner a {color: #3e2dff;}
 }
-.card-group {max-width:400px}
-.banner p {
-    margin: 0;
-    padding: 0;
-    text-align:center;
-    text-indent: initial;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-.banner a {color: #3e2dff;}

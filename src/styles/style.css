@@ -1,13 +1,19 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap');*/
 
 /* webページ全体に適用 */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background-color: #ffffff;
+:root {
+    --charlotteace-dark: #182f60;
+    --charlotteace-theme: #1C4D8C;
+    --charlotteace-blue: #136eab;
+    --charlotteace-water: #2990d0;
+    --charlotteace-sky: #5bb2e1;
+    --dark-gray: #353542;
+    --middle-gray: #515155;
+    --light-gray: #a4a8ab;
 }
+html {font-size: 10px;}
+body {font-family: 'Noto Sans JP', sans-serif;}
 .wrapper {
     margin: 0 auto 0 auto;
     width: 93%;
@@ -15,17 +21,37 @@ body {
 }
 
 h1 {
-    color: #000000;
-    font-size: 26px;
-    border-bottom: 1px solid #393948;
-    margin: 20px 0px 30px 0px;
-    padding: 10px 10px 10px 20px;
+    font-size: 2.8rem;
+    font-weight: 600;
+    border-bottom: 0.1rem solid var(--middle-gray);
+    margin: 1.6rem 0 1.6rem 0;
+    padding: 1.2rem;
+}
+h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 4.8rem 0 -1.6rem 0;
+}
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3.2rem 0 -1.6rem 0;
 }
 
 p {
+    font-size: 1.6rem;
+    line-height: 2em;
+    margin: 3.2rem 0;
     text-indent: 1em;
 }
 
+small {
+    color: var(--middle-gray);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/*
 .blog{
     line-height: 2rem;
 }
@@ -39,35 +65,28 @@ figure img{
 }
 figcaption {
     width: fit-content;
-    margin-right: auto; /* 右から左に寄せる */
-    margin-left: auto; /* 左から右に寄せる */
+    margin-right: auto; /* 右から左に寄せる *//*
+    margin-left: auto; /* 左から右に寄せる *//*
 }
 .twitter-tweet{
     margin: 0 auto;
 }
-
-#release, #update {
-    text-align:right;
-    padding: 0;
-}
-#release {margin: 1em 0 -2em;}
-#update {margin: 2em 0 -4em;}
-
-.quote {
-    color: #545454;
-    border-left: 5px solid #a9a9a9;;
+*/
+blockquote {
+    color: var(--light-gray);
+    border-left: 0.4rem solid var(--light-gray);
+    margin: 1.6rem auto;
     max-width: 800px;
-    margin: auto;
     padding-left: 2em;
-    font-style: italic;
 }
-.quote-body {
-    text-indent: 0px;
-}
-
-.reference {
+blockquote p{text-indent: 0;}
+blockquote .reference {
+    font-size: 1.6rem;
     margin-right: 0;
     text-align:right;
+}
+/*
+.reference {
 }
 
 .code {
@@ -104,29 +123,28 @@ code {
     content: counter(line-number);
     color: #aaa;
 }
-  
+*/
 
 a:link {
-    color: #3e2dff;
+    color: var(--charlotteace-blue);
     text-decoration: none;
 }
 a:visited {
-    color: #2c0fa1;
+    color: var(--charlotteace-dark);
 }
 a:hover {
-    color: #3e2dff;
+    color: var(--charlotteace-blue);
     text-decoration: underline;
 }
 a:active {
-    color: #3e2dff;
+    color: var(--charlotteace-blue);
 }
 
 
 /* id: #nav に適用 */
 header {
-    margin: 0;
-    padding: 10px;
-    background-color: #1C4C8C;
+    margin: 0.8rem 0;
+    background-color: var(--charlotteace-theme);
     position: sticky;
     top: 0;
     display: flex;
@@ -135,28 +153,13 @@ header {
 }
 
 #header {
-    background-color: #1C4C8C;
+    background-color: var(--charlotteace-theme);
     position: sticky;
     top: 0;
     display: flex;
     justify-content: center;
     z-index: 1;
 }
-
-
-#title {
-
-    margin:  calc(50vw - min(46.5%,640px)) auto;
-    font-size: 30px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-
 
 #mainlogo {
     font-size: min(30px, 4.8vw);
@@ -167,10 +170,10 @@ header {
 }
 /* id: footer に適用 */
 #footnote {
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 50px;
-    color: #393948;
+    border-top: 0.1rem solid var(--dark-gray);
+    margin-top: 3.2rem;
+    padding: 2rem 4.8rem;
+    color: var(--dark-gray);
 }
 #footnote p{
     padding-left: 4em;
@@ -179,15 +182,15 @@ header {
 
 #footer {
     text-align: center;
-    border-top: 1px solid #393948;
-    margin-top: 30px;
-    padding: 20px 0 20px 0;
-    color: #393948;
+    border-top: 1px solid var(--dark-gray);
+    margin-top: 3.2rem;
+    padding: 2rem 4.8rem 4.8rem;
+    color: var(--dark-gray);
 }
 
 /*ハンバーガーアイコン*/.c-header {
   align-items: center;
-  background-color: #1C4C8C; /* カスタマイズしてください */
+  background-color: var(--charlotteace-theme);
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

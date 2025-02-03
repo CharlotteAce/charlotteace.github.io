@@ -1,16 +1,12 @@
 ---
 import Layout from '@src/layouts/Layout.astro';
+import '@src/styles/style.css';
+import '@src/styles/mobilestyle.css';
 /*import Card from '../components/Card.astro';*/
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
 const { pubDate } = Astro.props;
 const { updateDate } = Astro.props;
-/*import '../styles/style.css';
-import '../styles/home.css';
-import '../styles/contents.css';
-import '../styles/mobilestyle.css';
-import '../styles/mobilehome.css';
-import '../styles/mobilecontents.css';*/
 ---
 
 <Layout title={pageTitle}>
