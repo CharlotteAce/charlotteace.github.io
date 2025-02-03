@@ -38,9 +38,6 @@
         height:100%;
     }
 
-    .note .logo {
-        background-image: url(https://charlotteace.github.io/contents/images/note.png);
-    }
     .card .note a{border-left: none; border-top: 10px solid #2eceb4;}
     .card .amazon a{border-left: none; border-top: 10px solid #ff9900;}
     .card .qiita a{border-left: none; border-top: 10px solid #55c500;}
