@@ -1,5 +1,11 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 const { param } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('@src/images/logos/*.{jpeg,jpg,png,gif}')
+const logo_url = "/src/images/logos/"
+if (!images[logo_url+param.medium+".png"]) throw new Error(`"${logo_url+param.medium+".png"}" does not exist in glob: "images/logos/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <div class="card">
@@ -12,7 +18,8 @@ const { param } = Astro.props;
                     {param.description}
                 </p>
             </div>
-            <img class={"logo_"} src={"/images/logos/"+param.medium+".png"} height="30" alt={param.medium+".com"}>
+            <Image class="logo" src={images[logo_url+param.medium+".png"]()} alt={param.medium+".com"} height="60"/>
+            <!--img class={"logo_"} src={"/images/logos/"+param.medium+".png"} height="30" alt={param.medium+".com"}-->
             </style>
             <a href={param.contentsUrl} target="_blank" rel="noopener noreferrer"></a>
         </div>
