@@ -10,20 +10,12 @@ const thumbnail_images = import.meta.glob<{ default: ImageMetadata }>('/src/imag
 if (!thumbnail_images["/src"+param.image.url]) throw new Error(`"${"/src"+param.image.url}" does not exist in glob: "images/thumbnails/*.{jpeg,jpg,png,gif,webp}"`);
 ---
 
-<div class="card">
-    <div class={"card-h4"+param.width.four+" card-h3"+param.width.three+" card-h2"+param.width.two}>
-        <div class={param.medium}>
-            <div class="text">
-                <h3 class="content-1">{param.title}</h3>
-                <p class="content-2">{param.pubDate}</p>
-                <p class="content-3">
-                    {param.description}
-                </p>
-            </div>
-            <Image class="logo" src={logo_images[logo_url+param.medium+".png"]()} alt={param.medium+".com"} height="60"/>
-            </style>
-            <a href={param.contentsUrl} target="_blank" rel="noopener noreferrer"></a>
-        </div>
+<div class={"card card-h4"+param.width.four+" card-h3"+param.width.three+" card-h2"+param.width.two+" "+param.medium}>
+    <a class="color" href={param.contentsUrl} target="_blank" rel="noopener noreferrer">
+        <p class="title">{param.title}</p>
+        <p class="supplement-1">{param.pubDate}</p>
+        <p class="supplement-2">{param.description}</p>
+        <Image class="logo" src={logo_images[logo_url+param.medium+".png"]()} alt={param.medium+".com"} height="60"/>
         <Image class="thumbnail" src={thumbnail_images["/src"+param.image.url]()} alt={param.image.alt}/>
-    </div>
+    </a>
 </div>

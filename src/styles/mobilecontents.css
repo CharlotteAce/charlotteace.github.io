@@ -38,68 +38,44 @@
         height:100%;
     }
 
-    .card .note a{border-left: none; border-top: 10px solid #2eceb4;}
-    .card .amazon a{border-left: none; border-top: 10px solid #ff9900;}
-    .card .qiita a{border-left: none; border-top: 10px solid #55c500;}
-    .card .niconico a{
-        border-left: none; border-top: 10px solid #55c500;
-        border-image: linear-gradient(to right, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
+    .card .title{
+        font-weight: 500;
+        top: 1rem;
+        left: 1rem;
+        word-break: break-all;
     }
-    .card .twitter a{border-left: none; border-top: 10px solid #1da1f2;}
-    .card .melonbooks a{border-left: none; border-top: 10px solid #18bd67;}
-    .card .ace a{border-left: none; border-top: 10px solid #1C4C8C;}
-    .card .booth a{border-left: none; border-top: 10px solid #FC4D50;}
+    .card .supplement-1{
+        top: 6.2rem;
+        left: 1rem;
+    }
+    .card .supplement-2{
+        top: 6.2rem;
+        left: 11.5rem;
+        -webkit-line-clamp: 4;
+        
+    }
 
-
-    .card img{
+    .logo {
         position: absolute;
-        margin-left: -2px;
-        margin-top: -45px;
-    }
-
-    .card .text {
-        margin-top: 4px;
-        margin-left: -12px;
-        margin-right: -4px;
-        height: 155px;
-    }
-
-    .content-1 {
-        font-size: medium;
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        word-break: initial;
-        overflow-wrap: initial;
-    }
-
-    .card-h2c .content-1 {
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-    }
-
-    .content-2 {
-        margin: 2px 0 0 0;
-        padding: 10px 0 10px 10px;
+        bottom: 1rem;
+        left: 1rem;
+        background-size: cover;
+        width: auto;
         height: 30px;
     }
 
-    .content-3 {
-        margin-left: -10px;
-        padding: 10px 0 10px 120px;
-        width: calc(84vw - 140px);
-        height: initial;
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        height: 4em;
+    .note .color{border-left: none; border-top: 10px solid #2eceb4;}
+    .amazon .color{border-left: none; border-top: 10px solid #ff9900;}
+    .qiita .color{border-left: none; border-top: 10px solid #55c500;}
+    .niconico .color{
+        border-left: none; border-top: 10px solid #55c500;
+        border-image: linear-gradient(to right, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
     }
+    .twitter .color{border-left: none; border-top: 10px solid #1da1f2;}
+    .melonbooks .color{border-left: none; border-top: 10px solid #18bd67;}
+    .ace .color{border-left: none; border-top: 10px solid #1C4C8C;}
+    .booth .color{border-left: none; border-top: 10px solid #FC4D50;}
+
     .card-h4a, .card-h4b, .card-h4c, .card-h4d, .card-h4e {
         position:relative;
         box-sizing: border-box;
@@ -116,9 +92,9 @@
         position: absolute;
         z-index: -1;
         width: calc(40vw - 6px);
-        height: 163px;
+        height: 153px;
         right: -1px;
-        top: 45px;
+        top: 0;
         object-fit: cover;
     }
 

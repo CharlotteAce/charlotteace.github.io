@@ -9,18 +9,29 @@
     justify-content: center;
 }
 
-.card h3{
-    margin: 0 0 -10px;
-    text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
-    -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
-    2px 0 2px #ffffff, -2px    0 2px #ffffff,
-    0 2px 2px #ffffff,    0 -2px 2px #ffffff;
-    text-overflow: ellipsis;
+.color{
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
-
+.card {
+    position:relative;
+    box-sizing: border-box;
+    height: 135px;
+    margin: 10px 10px;
+    padding: 0;
+    color: #000000;
+    border: medium solid #000000;
+    /*border-radius: 3px;*/
+    transition: 0.3s;
+    background-size: cover
+}
 .card p{
-    text-indent: 0;
-    flex-grow: 1;
+    margin: 0;
+    padding: 0.15rem;
+    line-height: 1.2em;
+    text-indent: 0; /*インデントは一斉消去*/
+    
     margin-bottom: -10px;
     text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
     -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
@@ -34,82 +45,69 @@
     left:0;
     width:100%;
     height:100%;
+    color: #000000;
 }
 
-.logo {
+.card .title{
+    font-size: 2rem;
+    font-weight: 600;
     position: absolute;
-    background-size: cover;
-    width: auto;
-    height: 30px;
-    margin-left: 10px;
-    margin-top: -20px;
-}
-
-.card .note a{border-left: 10px solid #2eceb4;}
-.card .amazon a{border-left: 10px solid #ff9900;}
-.card .qiita a{border-left: 10px solid #55c500;}
-.card .niconico a{
-    border-left: 10px solid #55c500;
-    border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
-}
-.card .twitter a{border-left: 10px solid #1da1f2;}
-.card .melonbooks a{border-left: 10px solid #18bd67;}
-.card .ace a{border-left: 10px solid #1C4C8C;}
-.card .booth a{border-left: 10px solid #FC4D50;}
-
-
-.card img{
-    position: absolute;
-    margin-left: 10px;
-    margin-top: -25px;
-}
-
-.card .text {
-    margin-top: -4px;
-    height: 110px;
-}
-
-.content-1 {
-    margin: 0;
-    padding: 0 0 0 10px;
+    top: 0.7rem;
+    left: 1.5rem;
+    right: 1.5rem;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: keep-all;
     overflow-wrap: break-word;
+    
+    text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
+    -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
+    2px 0 2px #ffffff, -2px    0 2px #ffffff,
+    0 2px 2px #ffffff,    0 -2px 2px #ffffff;
+    text-overflow: ellipsis;
 }
 
-.content-2 {
-    margin: 2px 0 0 0;
-    padding: 10px 0 10px 10px;
-    height: 30px;
+.card .supplement-1{
+    position:absolute;
+    top: 6.2rem;
+    left: 1.5rem;
 }
 
-.content-3 {
-    line-height: 2rem;
-    margin: 0 0 0 0;
-    margin-top: -14px;
-    padding: 0 0 10px 120px;
-    width: 480px;
-    height: 62px;
+.card .supplement-2{
+    position:absolute;
+    top: 6.2rem;
+    left: 12rem;
+    right:1 .5rem;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
-.card-h4a, .card-h4b, .card-h4c, .card-h4d, .card-h4e {
-    position:relative;
-    box-sizing: border-box;
-    height: 135px;
-    padding: 10px 10px;
-    margin: 10px 10px;
-    color: #000000;
-    border: medium solid #000000;
-    /*border-radius: 3px;*/
-    transition: 0.3s;
-    background-size: cover
+
+.logo {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 1.5rem;
+    background-size: cover;
+    width: auto;
+    height: 30px;
 }
+
+.note .color{border-left: 10px solid #2eceb4;}
+.amazon .color{border-left: 10px solid #ff9900;}
+.qiita .color{border-left: 10px solid #55c500;}
+.niconico .color{
+    border-left: 10px solid #55c500;
+    border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
+}
+.twitter .color{border-left: 10px solid #1da1f2;}
+.melonbooks .color{border-left: 10px solid #18bd67;}
+.ace .color{border-left: 10px solid #1C4C8C;}
+.booth .color{border-left: 10px solid #FC4D50;}
 
 .thumbnail {
     position: absolute;
@@ -117,7 +115,7 @@
     width: 238px;
     height: 133px;
     right: -2px;
-    top: 24px;
+    top: -2px;
     object-fit: cover;
 }
 
@@ -125,43 +123,50 @@
 .card-h4b, .card-h4c {width: 500px;}
 .card-h4d, .card-h4e {width: 240px;}
 
-.card-h4b .content-3,
-.card-h4d .content-3,
-.card-h4e .content-3 {display:none;}
+.card-h4a .title,
+.card-h4a .supplement-2,
+.card-h4b .title,
+.card-h4b .supplement-2{right: calc(240px + 1.5rem);}
+
+.card-h4b .supplement-2,
+.card-h4d .supplement-2,
+.card-h4e .supplement-2 {display:none;}
 
 .card-h4c .thumbnail,
 .card-h4e .thumbnail {display: none;}
-
-.card-h4b .text {
-    width: 220px;
-}
 
 @media (max-width: 1151px){
     .card-group{
         margin: auto;
         max-width: 800px;
     }
-    .card-h4b .content-3,
-    .card-h4d .content-3,
-    .card-h4e .content-3 {display: -webkit-box;}
+    .card-h4a .title,
+    .card-h4a .supplement-2,
+    .card-h4b .title,
+    .card-h4b .supplement-2{right: 1.5rem;}
+
+    .card-h4b .supplement-2,
+    .card-h4d .supplement-2,
+    .card-h4e .supplement-2 {display: -webkit-box;}
 
     .card-h4c .thumbnail,
     .card-h4e .thumbnail {display: initial;}
-
-    .card-h4b .text{width: initial;}
 
     .card-h3a {width: 760px;}
     .card-h3b, .card-h3c {width: 500px;}
     .card-h3d, .card-h3e {width: 240px;}
 
-    .card-h3b .content-3,
-    .card-h3d .content-3,
-    .card-h3e .content-3 {display:none;}
+    .card-h3a .title,
+    .card-h3a .supplement-2,
+    .card-h3b .title,
+    .card-h3b .supplement-2{right: calc(240px + 1.5rem);}
+
+    .card-h3b .supplement-2,
+    .card-h3d .supplement-2,
+    .card-h3e .supplement-2 {display:none;}
 
     .card-h3c .thumbnail,
     .card-h3e .thumbnail {display: none;}
-
-    .card-h3b .text {width: 220px;}
 }
 
 @media (max-width: 863px){
@@ -169,24 +174,29 @@
         margin: auto;
         max-width: 600px;
     }
-    .card-h3b .content-3,
-    .card-h3d .content-3,
-    .card-h3e .content-3 {display: -webkit-box;}
+    
+    .card-h3a .title,
+    .card-h3a .supplement-2,
+    .card-h3b .title,
+    .card-h3b .supplement-2{right: 1.5rem;}
+
+    .card-h3b .supplement-2,
+    .card-h3d .supplement-2,
+    .card-h3e .supplement-2 {display: -webkit-box;}
 
     .card-h3c .thumbnail,
     .card-h3e .thumbnail {display: initial;}
 
-    .card-h3b .text{width: initial;}
-
     .card-h2b, .card-h2c {width: 500px;}
     .card-h2d, .card-h2e {width: 240px;}
 
-    .card-h2b .content-3,
-    .card-h2d .content-3,
-    .card-h2e .content-3 {display:none;}
+    .card-h2b .title,
+    .card-h2b .supplement-2{right: calc(240px + 1.5rem);}
+
+    .card-h2b .supplement-2,
+    .card-h2d .supplement-2,
+    .card-h2e .supplement-2 {display:none;}
 
     .card-h2c .thumbnail,
     .card-h2e .thumbnail {display: none;}
-
-    .card-h2b .text {width: 220px;}
 }
