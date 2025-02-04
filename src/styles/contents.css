@@ -55,6 +55,7 @@
     top: 0.7rem;
     left: 1.5rem;
     right: 1.5rem;
+    color: #000000;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 2;
@@ -73,6 +74,7 @@
     position:absolute;
     top: 6.2rem;
     left: 1.5rem;
+    color: #000000;
 }
 
 .card .supplement-2{
@@ -80,6 +82,7 @@
     top: 6.2rem;
     left: 12rem;
     right:1 .5rem;
+    color: #000000;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
