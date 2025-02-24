@@ -5,7 +5,7 @@ import '@src/styles/contents.css';
 import '@src/styles/mobilecontents.css';
 const allPosts = await Astro.glob('@src/pages/blogs/*.md');
 allPosts.sort((a, b) => {
-  return b.frontmatter.param.contentsNum - a.frontmatter.param.contentsNum;
+    return b.frontmatter.param.contentsNum - a.frontmatter.param.contentsNum;
 });
 const pageTitle = "制作物・記事一覧";
 const pageUrl = "/contents";
@@ -13,12 +13,11 @@ const pubDate = "2023-12-20";
 const updateDate = "2025-01-30";
 ---
 <BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-  <p class="info_item">
+    <p>
         &emsp;このページでは私(国際単位系/しのはら恵/シャーロットエース)の投稿した記事や関与したコンテンツの一覧を掲載しています。
         カードをクリックすると記事のページへジャンプします。
     </p>
     <div class="card-group">
-    
         <!-- 逆たまコンピの上でいったん改行位置 -->
         <!-- カゲフミ！１の上でいったん改行位置 -->
         {allPosts.map((post) => <BlogPost param={post.frontmatter.param}/>)}
