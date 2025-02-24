@@ -42,7 +42,6 @@ p{
     font-size: 1.6rem;
     line-height: 2em;
     margin: 3.2rem 0;
-    text-indent: 1em;
 }
 
 small {
@@ -54,7 +53,6 @@ small {
 details, summary{
     font-size: 1.6rem;
     line-height: 2em;
-    text-indent: 1em;
 }
 
 /*
