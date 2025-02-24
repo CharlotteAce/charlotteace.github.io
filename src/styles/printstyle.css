@@ -25,7 +25,11 @@
     abbr[title]:after {
         content: "（" attr(title) "）";
     }
-    /*
+    
+    /* いずれ段組みに対応
+    .wrapper{
+        column-count: 2;
+    }
     #ref-2[href]:after {
         content: none;
     }
