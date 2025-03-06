@@ -1,15 +1,19 @@
 @media print {
+    header, #header, .c-header {
+        background-color: initial;
+        position: initial;
+    }
     #header a{
         display: none;
     }
     #header #mainlogo{
         display: initial;
         width: 100%;
-        color: var(--charlotteace-blue);
+        color: var(--charlotteace-theme);
         font-size: 3.6rem;
         font-weight: 600;
         padding: 1rem;
-        border-bottom: 0.2rem solid var(--charlotteace-blue);
+        border-bottom: 0.2rem solid var(--charlotteace-theme);
     }
     #header #mainlogo[href]:after {
         content: none;
