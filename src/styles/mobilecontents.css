@@ -120,5 +120,8 @@
         .card-h2e .thumbnail {display: none;}
 
         .card-h2b .text {width: calc(40vw);}
+        
+        .card-h2b .title,
+        .card-h2b .supplement-2{right: calc(40vw + 1rem);}
     }
 }
