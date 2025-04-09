@@ -172,6 +172,10 @@ header {
     color: #ffffff;
     text-decoration: none;
 }
+#qrcode{
+    display: none;
+}
+
 /* id: footer に適用 */
 #footnote {
     border-top: 0.1rem solid var(--dark-gray);

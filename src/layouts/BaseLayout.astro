@@ -3,6 +3,7 @@ import Layout from '@src/layouts/Layout.astro';
 import '@src/styles/style.css';
 import '@src/styles/mobilestyle.css';
 import '@src/styles/printstyle.css';
+import QRCode from '@src/components/QR-code.astro';
 /*import Card from '../components/Card.astro';*/
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
@@ -30,6 +31,10 @@ const { updateDate } = Astro.props;
 					<span class="c-hamburger-menu__button-mark"></span>
 					<span class="c-hamburger-menu__button-mark"></span>
 				</label>
+				<div id="qrcode">
+					<div><QRCode url={"https://charlotteace.github.io"+pageUrl }/></div>
+					<div>アクセスはこちら</div>	
+				</div>
 			</header>
 		</div>
         <div class="wrapper">

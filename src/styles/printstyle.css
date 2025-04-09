@@ -18,11 +18,25 @@
     #header #mainlogo[href]:after {
         content: none;
     }
+    #qrcode{
+        display: initial;
+        padding: 0.4rem;
+        border: 0.2rem solid var(--charlotteace-theme);
+        top: 20px;
+        right: 20px;
+        background-color: white;
+    }
+    #qrcode div{
+        margin: 0.1rem;
+    }
 
     h1, h2, h3, h4, h5, h6, img{
         break-after: avoid;
     }
-
+    a:link, a:visited {
+        color: var(--charlotteace-theme);
+        text-decoration: underline;
+    }
     a[href]:after {
         content: " （" attr(href) "）";
     }
