@@ -1,13 +1,13 @@
 ---
 // src/components/QrCode.astro
-import QRCode from 'qrcode';
+import QRCodeLib from 'qrcode';
 
 interface Props {
   url: string;
 }
 
 const { url } = Astro.props;
-const qrDataUrl = await QRCode.toDataURL(url);
+const qrDataUrl = await QRCodeLib.toDataURL(url);
 ---
 
 <img class="qrcode" src={qrDataUrl} alt={`QR code for ${url}`} style="width: 80px; height: 80px;" />
