@@ -7,7 +7,7 @@ param:
     description: ''
     pageUrl: '/blog/hoshimo'
     contentsUrl: 'https://www.amazon.co.jp/hz/wishlist/ls/18W7NK9PVEXGW'
-    contentsNum: 202503010001
+    contentsNum: 202504010001
     medium: 'amazon'
     image:
         url: '/images/thumbnails/blank.jpg'
