@@ -19,3 +19,226 @@ if (!thumbnail_images["/src"+param.image.url]) throw new Error(`"${"/src"+param.
         <Image class="thumbnail" src={thumbnail_images["/src"+param.image.url]()} alt={param.image.alt}/>
     </a>
 </div>
+<!--div class={"banner banner-h4"+param.width.four+" banner-h3"+param.width.three+" banner-h2"+param.width.two+" "+param.medium}>
+    <a class="color" href={param.contentsUrl} target="_blank" rel="noopener noreferrer">
+        <p class="title">{param.title}</p>
+        <p class="supplement-1">{param.pubDate}</p>
+        <p class="supplement-2">{param.description}</p>
+        <Image class="logo" src={logo_images[logo_url+param.medium+".png"]()} alt={param.medium+".com"} height="60"/>
+        <Image class="thumbnail" src={thumbnail_images["/src"+param.image.url]()} alt={param.image.alt}/>
+    </a>
+</div>
+<style>
+    .banner {
+        position:relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 135px;
+        margin: 10px 10px;
+        padding: 0;
+        color: #000000;
+        border: medium solid #000000;
+        /*border-radius: 3px;*/
+        transition: 0.3s;
+        background-size: cover
+        
+    }
+    .banner p{
+        margin: 0;
+        padding: 0.15rem;
+        line-height: 1.2em;
+        text-indent: 0; /*インデントは一斉消去*/
+        
+        margin-bottom: -10px;
+        text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
+        -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
+        1px 0 1px #ffffff, -1px 0 1px #ffffff,
+        0 1px 1px #ffffff,    0 -1px 1px #ffffff;
+    }
+
+    .banner a{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        color: #000000;
+    }
+
+    .banner .title{
+        font-size: 2rem;
+        font-weight: 600;
+        position: absolute;
+        top: 0.7rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        color: #000000;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        
+        text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
+        -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
+        2px 0 2px #ffffff, -2px    0 2px #ffffff,
+        0 2px 2px #ffffff,    0 -2px 2px #ffffff;
+        text-overflow: ellipsis;
+    }
+
+    .banner .supplement-1{
+        position:absolute;
+        top: 6.2rem;
+        left: 1.5rem;
+        color: #000000;
+    }
+
+    .banner .supplement-2{
+        position:absolute;
+        top: 6.2rem;
+        left: 12rem;
+        right:1 .5rem;
+        color: #000000;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .logo {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 1.5rem;
+        background-size: cover;
+        width: auto;
+        height: 30px;
+    }
+
+    .note .color{border-left: 10px solid #2eceb4;}
+    .amazon .color{border-left: 10px solid #ff9900;}
+    .qiita .color{border-left: 10px solid #55c500;}
+    .niconico .color{
+        border-left: 10px solid #55c500;
+        border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
+    }
+    .twitter .color{border-left: 10px solid #1da1f2;}
+    .melonbooks .color{border-left: 10px solid #18bd67;}
+    .ace .color{border-left: 10px solid #1C4C8C;}
+    .booth .color{border-left: 10px solid #FC4D50;}
+
+    .thumbnail {
+        position: absolute;
+        z-index: -1;
+        width: 238px;
+        height: 133px;
+        right: -2px;
+        top: -2px;
+        object-fit: cover;
+    }
+        
+    /*アドホックなやつ：banner用パラメタをそのうち設置する*/
+    .banner-h4a .title,
+    .banner-h4a .supplement-2,
+    .banner-h4b .title,
+    .banner-h4b .supplement-2,
+    .banner-h4d .title,
+    .banner-h4d .supplement-2,
+    .banner-h3a .title,
+    .banner-h3a .supplement-2,
+    .banner-h3b .title,
+    .banner-h3b .supplement-2,
+    .banner-h3d .title,
+    .banner-h3d .supplement-2,
+    .banner-h2b .title,
+    .banner-h2b .supplement-2,
+    .banner-h2d .title,
+    .banner-h2d .supplement-2{right: calc(240px + 1.5rem);}
+    @media screen and (max-width: 589px){
+        .banner- h3{
+            margin: 0 0 -10px;
+            text-shadow: 2px 2px 2px #ffffff, -2px -2px 2px #ffffff,
+            -2px 2px 2px #ffffff,    2px -2px 2px #ffffff,
+            2px 0 2px #ffffff, -2px    0 2px #ffffff,
+            0 2px 2px #ffffff,    0 -2px 2px #ffffff;
+            text-overflow: ellipsis;
+        }
+
+        .banner- p{
+            text-indent: 0;
+            flex-grow: 1;
+            margin-bottom: -10px;
+            text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #ffffff,
+            -1px 1px 1px #ffffff,    1px -1px 1px #ffffff,
+            1px 0 1px #ffffff, -1px 0 1px #ffffff,
+            0 1px 1px #ffffff,    0 -1px 1px #ffffff;
+        }
+
+        .banner- a{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+
+        .banner- .title{
+            font-weight: 500;
+            top: 1rem;
+            left: 1rem;
+            word-break: break-all;
+        }
+        .banner- .supplement-1{
+            top: 6.2rem;
+            left: 1rem;
+        }
+        .banner- .supplement-2{
+            top: 6.2rem;
+            left: 11.5rem;
+            -webkit-line-clamp: 4;
+            
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background-size: cover;
+            width: auto;
+            height: 30px;
+        }        
+        .banner .note .color,
+        .amazon .color,
+        .qiita .color,
+        .niconico .color,
+        .twitter .color,
+        .melonbooks .color,
+        .ace .color,
+        .booth .color,{border-top: none;}
+
+        .banner--h4a, .banner--h4b, .banner--h4c, .banner--h4d, .banner--h4e {
+            position:relative;
+            box-sizing: border-box;
+            height: 165px;
+            padding: 10px 10px;
+            margin: 5px 5px;
+            border: 2px solid #000000;
+            /*border-radius: 3px;*/
+            transition: 0.3s;
+            background-size: cover
+        }
+
+        .thumbnail {
+            position: absolute;
+            z-index: -1;
+            width: calc(40vw - 6px);
+            height: 153px;
+            right: -1px;
+            top: 0;
+            object-fit: cover;
+        }
+
+    }
+</style-->
