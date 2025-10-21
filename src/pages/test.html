@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="../styles/destyle.css">
+        <!-- 先に読み込むデータ -->
+        <link rel="icon" href="/favicon.png">
+        <meta name="generator" content="Astro v5.6.1">
+        <!-- テストページにつき検索不可 -->
+        <meta name=”robots” content=”noindex,nofollow”>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <title>トップページ - シャーロットエースの部屋</title>
+    </head> 
+
+    <body>
+        <header>
+            <div id="header">
+                <a id="site_name" href="https://charlotteace.github.io">シャーロットエースの部屋</a>
+                <div id="site_icons">
+                    <a class="site_icon" href="https://charlotteace.github.io">トップ</a>
+                    <a class="site_icon" href="https://charlotteace.github.io/contents">記事</a>
+                </div>
+            </div>
+        </header>
+        <div id="wrapper">
+            <div id="title">
+                <h1>【記事テスト】</h1>
+                <p id="overview">私が初めてのコスプレ衣装制作を受注した話について書きました。</p>
+                <p id="pubdate">公開：2025-10-21　更新：2025-10-21</p>
+                <div id="tags">
+                    <a class="tag" href="https://charlotteace.github.io/contents">tag1</a>
+                    <a class="tag" href="https://charlotteace.github.io/contents">tag2</a>
+                    <a class="tag" href="https://charlotteace.github.io/contents">tag3</a>
+            </div>
+
+            <div id="main">
+                <p>　ご無沙汰しております、国際単位系/シャーロットエースです。無事に配属研究室が決まり環境にも慣れてきたこのごろ、みなさんいかがお過ごしでしょうか。私は声出しと球拾い以外もできるようになる日を楽しみにしているところです。</p>
+                <p>　さて、今回はそんな出会いの春の、ある新歓イベントに衣装を納品したお話です。</p>
+                <h2>作ったもの</h2>
+                <p>　作成したのは、東京大学内の同人誌即売会運営サークル「コミックアカデミー実行委員会（コミアカ）」公式キャラクター、<a href="https://comiaca.com/c3project/" target="_blank" rel="noopener noreferrer">小美亜佳子さん</a>の衣装です。コミアカが主催する学内で同人活動を行うサークルの合同新歓で、担当者が着用する衣装とのことでした。今回の依頼は、同人サークル「逆たまごかけごはん」のサークル主でおなじみ、<a href="https://x.com/MTDTR_tk" target="_blank" rel="noopener noreferrer">秋山翠花（すいかもん）氏</a>の頼みによるものです。お察しのとおり、先述の「担当者」というのも、すいかもん自身を指すのですが……</p>
+            </div>
+            <!--div class="bottom">
+                <div class="other_article"><h2>記事タイトル</h2></div>
+                <div class="other_article"><h2>記事タイトル</h2></div>
+            </div-->
+        </div>
+        <div id="footer">
+            <small>©Copyright 国際単位系/シャーロットエース. All rights reserved.</small>
+        </div>
+
+    
+    </body>
+    <style>
+        :root{
+            --charlotteace-deep: #000420; /*C100M50Y30K90*/
+            --charlotteace-dark: #182f60;
+            --charlotteace-theme: #1C4D8C;
+            --charlotteace-blue: #136eab;
+            --charlotteace-water: #2990d0;
+            --charlotteace-sky: #5bb2e1;
+            --dark-gray: #353542;
+            --middle-gray: #515155;
+            --light-gray: #a4a8ab;
+
+            /*ライトモード時*/
+            --main-font-color: black;
+            --main-bg-color: white;
+            --header-bg-color: var(--charlotteace-theme);
+            --link-font-color: var(--charlotteace-theme);
+            --link-visited-color: var(--dark-gray);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root{
+                --main-font-color: white;
+                --main-bg-color: var(--charlotteace-deep);
+                --header-bg-color: var(--charlotteace-dark);
+                --link-font-color: var(--charlotteace-sky);
+                --link-visited-color: var(--light-gray);
+            }
+        }
+        
+        *{font-family:Noto Sans JP,sans-serif;margin:0;padding:0;outline:none;}
+        html{font-size: 10px;}
+        body{color:var(--main-font-color);background-color:var(--main-bg-color)}
+        header{padding: 1.6rem;color:white;background-color:var(--header-bg-color);}
+        h1,h2,h3,h4,h5,h6{padding:0.6rem 0; font-weight: 600; margin: 4rem 0 0; }
+        h1{font-size: 3.2rem;}
+        h2{font-size: 2.4rem;}
+        h3{font-size: 2.0rem;}
+        p{
+            font-size: 1.6rem;
+            line-height: 2.8rem;
+            margin: 4rem 0 0;
+            padding: 0.6rem 0;
+        }
+        a{
+            color: var(--link-font-color);
+            text-decoration:underline;
+        }
+        a:visited{color:var(--link-visited-color)}
+        a:hover,a:focus{
+            color: var(--main-bg-color);
+            background-color: var(--link-font-color);
+            text-decoration: none;
+        }
+        div{font-size: 1.6rem;}
+        
+        h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
+
+        #header,#wrapper,.botom{
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.6rem;
+        }        
+        #header{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end
+        }
+        #site_name,#site_name:hover{
+            font-size: 3.2rem;
+            color: white;
+            text-decoration: none;
+            background: transparent;
+        }
+        #site_name:focus{color:var(--charlotteace-theme);background:white;}
+        .site_icon,.site_icon:visited{
+            margin-left: 1.6rem;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+        }
+        .site_icon:hover{
+            color: white;
+            text-decoration: underline;
+            background: transparent;
+        }
+        .site_icon:focus{color: var(--charlotteace-theme); text-decoration: none; background: white;}
+
+        #title{
+            margin: 0;
+            padding: 0;
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+        }
+        #title h1{
+            text-align: center;
+        }
+        #pubdate{font-size: 1.4rem;}
+    
+        #main{
+            margin: 0 0 4rem;
+        }
+        .bottom{
+            border-top: 0.2rem solid var(--main-font-color);
+        }
+        .other_article{border-bottom: 0.2rem solid var(--main-font-color);}
+        #footer{
+            margin: 1.2rem 0 4rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /*tag関連、ブログ関連*/
+        .tag{
+            --tag-bg-color: var(--light-gray);
+        }
+        @media (prefers-color-scheme: dark) {
+            .tag{
+                --tag-bg-color: var(--charlotteace-theme);
+            }
+        }
+        .tag{
+            font-size: 1.4rem;
+            margin-right: 0.4rem;
+            padding: 0.4rem;
+            float: left;
+            color: var(--main-font-color);
+            text-decoration: none;
+            background-color: var(--tag-bg-color);
+            
+        }
+        .tag:visited{color: var(--main-font-color);}
+        .tag:hover,.tag:focus{
+            color: var(--main-bg-color);
+            background-color: var(--link-font-color);
+        }
+    </style>
+</html>
