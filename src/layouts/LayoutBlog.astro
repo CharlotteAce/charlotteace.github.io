@@ -1,0 +1,31 @@
+---
+import LayoutHeaderFooter from '@src/layouts/LayoutHeaderFooter.astro';
+import '@src/styles/style_v2.css';
+/*import Card from '../components/Card.astro';*/
+const { pageTitle } = Astro.props;
+const { pageUrl } = Astro.props;
+const { pubDate } = Astro.props;
+const { updateDate } = Astro.props;
+const { description } = Astro.props;
+const { tags } = Astro.props;
+---
+
+<LayoutHeaderFooter pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
+	<div id="wrapper">
+		<div id="title">
+			<h1>{pageTitle}</h1>
+			<p id="description">{description}</p>
+			<p id="pubdate">公開：{pubDate}&emsp;更新：{updateDate}</p>
+			<div id="tags">
+                {tags.map((tag:string[]) => (<a class="tag" href={`https://charlotteace.github.io/contents/tags/${tag}`}>{tag}</a></p>))}
+		</div>
+
+		<div id="main">
+            <slot/>
+		</div>
+		<!--div class="bottom">
+			<div class="other_article"><h2>記事タイトル</h2></div>
+			<div class="other_article"><h2>記事タイトル</h2></div>
+		</div-->
+	</div>
+</LayoutHeaderFooter>

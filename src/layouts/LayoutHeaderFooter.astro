@@ -1,0 +1,30 @@
+---
+import LayoutMetadata from '@src/layouts/LayoutMetadata.astro';
+import '@src/styles/style_v2.css';
+/*import Card from '../components/Card.astro';*/
+const { pageTitle } = Astro.props;
+const { pageUrl } = Astro.props;
+const { pubDate } = Astro.props;
+const { updateDate } = Astro.props;
+---
+
+<LayoutMetadata title={pageTitle}>
+	<main>
+		<header>
+            <div id="header">
+                <a id="site_name" href="https://charlotteace.github.io">シャーロットエースの部屋</a>
+                <div id="site_icons">
+                    <input type="checkbox" id="site_icon_button">
+                    <label class="site_icon_button" for="site_icon_button">
+                    </label>
+                    <a class="site_icon" href="https://charlotteace.github.io">トップ</a>
+                    <a class="site_icon" href="https://charlotteace.github.io/contents">記事</a>
+                </div>
+            </div>
+        </header>
+		<slot />
+		<div id="footer">
+            <small>&copy;Copyright 国際単位系/シャーロットエース. All rights reserved.</small>
+        </div>
+</LayoutMetadata>
+

@@ -1,0 +1,28 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+/*import "the-new-css-reset";*/
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<!--meta name="description" content="Astro description" /-->
+		<meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- 先に読み込むデータ -->
+		<link rel="icon" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title+" - シャーロットエースの部屋"}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

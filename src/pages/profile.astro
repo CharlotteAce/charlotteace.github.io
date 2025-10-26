@@ -1,94 +1,103 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
-import '@src/styles/contents.css';
-import '@src/styles/profile.css';
-import '@src/styles/mobilecontents.css';
-import '@src/styles/mobileprofile.css';
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
-const updateDate = "2025-10-17";
+const updateDate = "2025-10-26";
+const description = "しのはら恵の自己紹介。";
+const tags :string[] = [];
 import { Image } from 'astro:assets';
 import aceFace from '@src/images/charlotteace001.png';
 // import '../styles/profile.css';
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	<p>
-		&emsp;このページでは私の自己紹介を掲載しています。これといって重要な情報はありませんが……『非公開』とされているものを何らかの手段で知ってしまったみなさんは、どうぞ心の内側にとどめておいてください。なにとぞ。今日のひとことは不定期更新です。
-	</p>
-	<div class="pcard-group">
-		<div class="pcard">
-			<div id="photo">
-				<Image src={aceFace} alt="charlotteace's face" />
-				<small>photo by 春瀬(宇田まなと)</small>
-			</div>
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+	<p>&emsp;このページでは私の自己紹介を掲載しています。これといって重要な情報はありませんが……『非公開』とされているものを何らかの手段で知ってしまったみなさんは、どうか心の内側にとどめていただきますよう。今日のひとことは不定期更新です。</p>
+	<h2>シャーロットエース/<wbr>しのはら恵/<wbr>国際単位系</h2>
+	<style>
+		#profile_container{
+			display: flex;
+            justify-content: start;
+            align-items: start;
+		}
+		#ace_face{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 300px;
+			margin: 4rem 4rem 0 0;
+			padding-top: 0.6rem;
+			
+		}
+		#ace_face img{
+			width: 100%;
+			height: auto;
+			border: 0.2rem solid var(--charlotteace-deep);
+		}
+		@media screen and (max-width: 863px){
+			#profile_container{display: block;}
+			#ace_face{
+				width: 100%;
+				max-width: 300px;
+				margin: 4rem auto 0;
+			}
+		}
+	</style>
+	<div id="profile_container">
+		<div id="ace_face">
+			<Image src={aceFace} alt="charlotteace's face" />
+			<small class="alt">Illustration by 春瀬(宇田まなと)</small>
 		</div>
-		<div class="pcard">
-			<div id="introduction">
-				<h1 id="name">
-					国際単位系/<wbr>しのはら恵/<wbr>シャーロットエース
-				</h1>
-				<h3 class="pcontent-1">
-					基本データ
-				</h3>
-				<p class="pcontent-2 bullet">
-					生年月日　：非公開
-				</p>
-				<p class="pcontent-2 bullet">
-					身分　　　：理工系学科 修士一年<br>
-					同人ライター(<a href="https://charlotteace.github.io/contents/kagefumi" target="_blank" rel="noopener noreferrer">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</a>他)<br>
-					同人編集者兼売り子<br>
-					<a href="https://comitech-official.github.io" target="_blank" rel="noopener noreferrer">工大祭即売会「こみてっく！」(仮称)準備会</a> 副代表<br>
-					<a href="https://x.com/nyan_rank" target="_blank" rel="noopener noreferrer">にゃーんRanker</a>運営者<br>
-					おたく
-				</p>
-				<h3 class="pcontent-1">
-					アカウント
-				</h3>
-				<p class="pcontent-2">
-					<a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">@Units_SI - twitter.com</a>
-					
-				<p class="pcontent-2">
-					<a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">@_shinoharaK - twitter.com</a>
-				</p>
-				<p class="pcontent-2">
-					<a href="https://note.com/units_si" target="_blank" rel="noopener noreferrer">@units_si - note</a>
-				</p>
-				<p class="pcontent-2">
-					<a href="https://github.com/CharlotteAce/" target="_blank" rel="noopener noreferrer">CharlotteAce - github</a>
-				</p>
-			</div>
+		<div>
+			<h3>基本データ</h3>
+			<ul>
+				<li>
+					生年月日
+					<ul>
+						<li>非公開</li>
+					</ul>
+				</li>
+				<li>
+					身分
+					<ul>		
+						<li>理工系学科 修士一年</li>
+						<li>同人ライター（<a href="https://charlotteace.github.io/contents/kagefumi" target="_blank" rel="noopener noreferrer">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</a>他）</li>
+						<li>同人編集者兼売り子</li>
+						<li>おたく</li>
+					</ul>
+				</li>
+				<li>
+					所属と活動
+					<ul>		
+						<li><a href="https://portal.circle.ms/Circle/Index/10458074" target="_blank" rel="noopener noreferrer">サークル『天然ウナギ専門店』</a>　ライター、編集者、売り子</li>
+						<li><a href="https://portal.circle.ms/Circle/Index/10456708" target="_blank" rel="noopener noreferrer">サークル『逆たまごかけごはん』</a>　発注担当、売り子</li>
+						<li>個人サークル『どんぶりめし』代表</li>
+						<li><a href="https://comitech-official.github.io" target="_blank" rel="noopener noreferrer">工大祭即売会『こみてっく！』(仮称)準備会</a>　副代表</li>
+						<li><a href="https://x.com/nyan_rank" target="_blank" rel="noopener noreferrer">にゃーんRanker</a>　運営者</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-		<div class="pcard">
-			<div id="others">
-				<div class="ptext">
-					<h3 class="pcontent-1">
-						私について
-					</h3>
-					<p class="pcontent-2 split_bullet">
-						趣味　　　：<br class="split">美術館・博物館めぐり、<wbr>旅行、<wbr>鉄道、<wbr>
-						パソカタ、<wbr>料理（つくるほう）、<wbr>食事（たべるほう）、<wbr>
-						野球、<wbr>ピアノ　など
-					</p>
-					<p class="pcontent-2 split_bullet" >
-						名前の由来：<br class="split">『国際単位系』は、<wbr>最初の<wbr>Twitter（当時）<wbr>アカウント開設時<a class="ref" id="ref-1" href="#footnote-1">*1</a>、<wbr>
-						2進接頭辞と<wbr>10進接頭辞の<wbr>混同を<wbr>心苦しく<wbr>思って<wbr>いた<wbr>ことによる。<br>
-						『シャーロットエース』は、<wbr>ウマ娘<a class="ref" id="ref-2" href="#footnote-2">*2</a>らしい<wbr>ニックネームを<wbr>つけるべく<wbr>命名された。<wbr>
-						「SI<a class="ref" id="ref-3" href="#footnote-3">*3</a>」から<wbr>採った<wbr>「シ」を<wbr>頭文字に、<wbr>私が数年間<a class="ref" id="ref-4" href="#footnote-4">*4</a><wbr>打ち込んでいた<wbr>野球に<wbr>由来する<wbr>
-						「エース<a class="ref" id="ref-5" href="#footnote-5">*5</a> 」を<wbr>組み合わせた。<wbr>「シャーロット」には<wbr>別の由来も<wbr>あるのだが、<wbr>これを<wbr>お話するのは<wbr>またの<wbr>機会に。<br>
-						『しのはら恵』は、<wbr><a class="color" href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer">『カゲフミ！　vol. 1』</a>の<wbr>刊行にあたり、<wbr>本名らしい<wbr>ペンネームが<wbr>欲しくなり<wbr>付けた<wbr>名前。<wbr>「し（＝SI）」から<wbr>始まる<wbr>名字に、<wbr>「系」と同音の<wbr>「恵」とした。
-					</p>
-					<h3 class="pcontent-1">
-						ファンアートタグ
-					</h3>
-					<p class="pcontent-2">
-						<a href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#シャーロット絵ース</a><wbr>（シャーロットエース）、<wbr><a class="color" href="https://x.com/search?q=%23%E3%81%AB%E3%82%83%E3%82%89%E3%82%93%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#にゃらんかあーと</a><wbr>（にゃーんRanker）
-					</p>
-					<h3 class="pcontent-1">
-						今日のひとこと
-					</h3>
-					<p class="pcontent-2">
-						うどんとCSSは手打ちに限る（2023-12-20更新、2025-10-17再掲）
+	</div>
+	
+	<h3>アカウント集</h3>
+	<ul>		
+		<li><a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">@Units_SI - twitter.com</a></li>
+		<li><a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">@_shinoharaK - twitter.com</a></li>
+		<li><a href="https://note.com/units_si" target="_blank" rel="noopener noreferrer">@units_si - note</a></li>
+		<li><a href="https://github.com/CharlotteAce/" target="_blank" rel="noopener noreferrer">CharlotteAce - github</a></li>
+	</ul>
+    <h3>趣味</h3>
+    <p>美術館・博物館めぐり、<wbr>旅行、<wbr>鉄道、<wbr>パソカタ、<wbr>料理（つくるほう）、<wbr>食事（たべるほう）、<wbr>野球、<wbr>ピアノ　など</p>
+    <h3>名前の由来</h3>
+    <p>&emsp;最初のハンドルネーム『国際単位系』は、最初のTwitter（当時）アカウント開設時<a class="ref" id="ref-1" href="#footnote-1">*1</a>に、脳内ランダムワード生成で出力された単語。当時2進接頭辞と10進接頭辞の混同問題について考えていたため、適当な単語を考えた時にこれが出てきてしまった。</p>
+    <p>&emsp;ニックネーム『シャーロットエース』は、ウマ娘<a class="ref" id="ref-2" href="#footnote-2">*2</a>らしいニックネームをつけるべく命名された。「SI<a class="ref" id="ref-3" href="#footnote-3">*3</a>」から採った「シ」を頭文字に、私が数年間<a class="ref" id="ref-4" href="#footnote-4">*4</a>打ち込んでいた野球に由来する「エース<a class="ref" id="ref-5" href="#footnote-5">*5</a> 」を組み合わせた。「シャーロット」には別の由来もあるのだが、これをお話するのはまたの機会に。</p>
+    <p>&emsp;ペンネーム『しのはら恵』は、<a class="color" href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer">『カゲフミ！　vol. 1』</a>の刊行にあたり、本名らしいペンネームが欲しくなり付けた名前。「し（＝SI）」から始まる名字に、「系」と同音で読める「恵」とした。漢字の読み方は指定していない。</p>
+    <h3>ファンアートタグ</h3>
+    <p><a href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#シャーロット絵ース</a>（シャーロットエース）、<a class="color" href="https://x.com/search?q=%23%E3%81%AB%E3%82%83%E3%82%89%E3%82%93%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#にゃらんかあーと</a>（にゃーんRanker）</p>
+    <h2>今日のひとこと</h2>
+					<p>
+						リファクタリングが、足りん！w（2025-10-26更新）
+						<!-- うどんとCSSは手打ちに限る（2023-12-20更新、2025-10-17再掲）-->
 						<!-- 過労の彦摩呂「労働のわんこそばや～～～！」←いまこれ（2025-08-19更新）-->
 						<!-- お金は労働で稼ぐとして、時間ってどう稼げばいいんですか？？（2025-07-14更新）-->
 						<!-- 卒論がまずいおかげでロット部屋の修復に成功しています（2025-01-12更新）-->
@@ -99,12 +108,8 @@ import aceFace from '@src/images/charlotteace001.png';
 						<!--コミケ来週なのさすがに早すぎる（2023-12-23更新）-->
 						<!--うどんとCSSは手打ちに限る（2023-12-20更新）-->
 					</p>
-				</div>
-			</div>
-		</div>
-	</div>
 	<h2>相互リンク</h2>
-	<p>&emsp;現在はこちらからお声掛けした方のみ掲載をしております。申請フォーム公開までしばらくお待ちください。<!--相互リンク掲出ご希望の方はSNSなどで個別にお声掛けください。--><br>
+	<p>&emsp;サイト更新中のため一時的に非表示となっています。ご容赦ください。<!--現在はこちらからお声掛けした方のみ掲載をしております。申請フォーム公開までしばらくお待ちください。相互リンク掲出ご希望の方はSNSなどで個別にお声掛けください。<br>
 		<details>
 			<summary>ご自身のサイトに、弊サイトのリンクを掲載したい方へ</summary>
 			&emsp;掲出はご自由にどうぞ。リンク先は<a href="https://charlotteace.github.io" target="_blank" rel="noopener noreferrer">トップページ</a>へお願いします。バナーが必要な場合は、<a href="https://charlotteace.github.io/parts/banner/" target="_blank" rel="noopener noreferrer">https://<wbr>charlotteace.<wbr>github.<wbr>io/<wbr>parts/<wbr>banner/</a> を<code>&lt;iframe&gt;</code>属性にてそのまま埋め込んでいただくか、チャプチャのうえでお使いください。バナーサイズについての規程はありません（ご設定のサイズに応じて最適化されます）。ページ全体に<code>&lt;a&gt;</code>属性が設定されているため、埋め込みの場合には、その他の設定はご不要です。
@@ -192,8 +197,8 @@ import aceFace from '@src/images/charlotteace001.png';
 		<div class="banner">
 			<a href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/bmycel.png" alt="Mycelythil's banner" width="200" height="40"></a>
 		</div>
-	</div>
-	<div id="footnote">
+	</div-->
+	<h2>注釈</h2>
 		<p>
 			<a class="ref" id="footnote-1" href="#ref-1">*1</a>：最初のアカウントは高校3年の8月に作成した。Twitterをやめていた友人たちのうち何人かはこれを機に戻ってきてしまった。大戦犯である。
 		</p>
@@ -209,5 +214,4 @@ import aceFace from '@src/images/charlotteace001.png';
 		<p>
 			<a class="ref" id="footnote-5" href="#ref-5">*5</a>：小学校の頃に所属していた学童野球チームには、私の同級生はもう一人しかいなかった。彼はキャプテンナンバー#10を背負ってキャッチャーを、私はエースナンバー#1を背負ってピッチャーを務めていた。これでも一応いちチームのエースだったのだ、他に誰もいないから当然であるが。
 		</p>
-	</div>
-</BaseLayout>
+</LayoutBlog>
