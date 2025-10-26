@@ -1,21 +1,19 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
-import '@src/styles/contents.css';
-import '@src/styles/profile.css';
-import '@src/styles/mobilecontents.css';
-import '@src/styles/mobileprofile.css';
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 const pageTitle = "カゲフミ！シリーズ";
-const pageUrl = "/profile";
+const pageUrl = "/contents/kagefumi";
 const pubDate = "2025-08-24";
-const updateDate = "2025-08-24";
+const updateDate = "2025-10-26";
+const description = "しのはら恵によるウマ娘聖地巡礼情報誌。";
+const tags :string[] = [];
 import { Image } from 'astro:assets';
 import v1 from '@src/images/books/202408110001.png';
 import v2 from '@src/images/books/202503300001.png';
 import v3 from '@src/images/books/202508160001.png';
 import boothLogo from '@src/images/logos/booth.png';
-// import '../styles/profile.css';
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+
 	<p>
 		&emsp;アニメ・ゲーム『ウマ娘 プリティーダービー』の聖地巡礼に最適な情報誌、『カゲフミ！』シリーズについてのご紹介。多数の現地写真を元にウマ娘に登場したモデル地、いわゆる「聖地」をまとめて掲載。地図ページも充実しており、本書を持っての現地探訪も容易だ。<br>
 		<small>（注：本書は著者しのはら恵による二次創作・自費出版・個人出版（同人誌）であり、出版に際しては『ウマ娘 プリティーダービー』及びCygames Inc.と一切の関係がありません。本書については<a href="https://charlotteace.github.io/profile">しのはら恵</a>にお問い合わせいただき、Cygames Inc.や誌面掲載施設に対するご連絡はおやめください。）</small>
@@ -27,7 +25,7 @@ import boothLogo from '@src/images/logos/booth.png';
 			margin-top: -10rem;
 			padding-top: 10rem;
 		}
-		h2 {
+		.offset h2 {
 			padding: 0.25rem;
 		}
 		.v3 {
@@ -42,74 +40,100 @@ import boothLogo from '@src/images/logos/booth.png';
 			color: #fff;
 			background-color: #0081cc;
 		}
-		.book_info{
+		.contents_container{
 			display: flex;
+            justify-content: start;
+            align-items: start;
+		}
+		.cover{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 250px;
+			min-width: 250px;
+			margin: 4rem 4rem 0 0;
+			padding-top: 0.6rem;
+			
 		}
 		.cover img{
-			max-width: 200px;
+			width: 100%;
 			height: auto;
+			border: 0.2rem solid var(--charlotteace-deep);
 		}
-		.market img{
+		.booth_logo{
+			height: 3rem;
+			padding-top:0;
+			margin-bottom:-0.4rem;
 			width: auto;
-			height: 2em;
 		}
-		.market p{
-			margin: 0;
+		@media screen and (max-width: 768px){
+			.contents_container{display: block;}
+			.cover{
+				min-width: none;
+				width: 100%;
+				max-width: 250px;
+				margin: 4rem auto 0;
+			}
+			.buy{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
 		}
-
-		
-
 	</style>
-	<div class="offset"  id="v3">
+	<div class="offset" id="v3">
 		<h2 class="v3">vol.3　2025年8月号</h2>
 	</div>
-	<div class="book_info">
+	<div class="contents_container">
+		<div class="cover">
+			<Image src={v3} alt="『カゲフミ！　vol. 3』の表紙。" />
+		</div>
 		<div>
 			<h3>特集・怪物の足跡</h3>
 			<p>&emsp;笠松競馬場を中心とした笠松町・岐阜県・中京地域のウマ娘聖地を特集。金華山、ショッピングモールの他、アニメ1期等に登場した中京競馬場まで余すところなく紹介。</p>
 			<h3>他連載</h3>
-			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は著者しのはら恵による金華山登頂記を掲載。②地理考察「土地論考」は消滅聖地特集。普段の連載よりページ数を拡大し、ウマ娘に登場した「聖地」のうち、消滅したものやその危機にあるものを紹介する。A4判・フルカラー・20p。</p>
-		</div>
-		<div>
-			<div class="cover"><Image src={v3} alt="charlotteace's face" /></div>
-			<div class="market"><p><a href="https://charlotteace.booth.pm/items/7265858" target="_blank" rel="noopener noreferrer"><Image src={boothLogo} alt="boothlogo"/>で購入</a></p></div>
+			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は著者しのはら恵による金華山登頂記を掲載。②地理考察「土地論考」は消滅聖地特集。普段の連載よりページ数を拡大し、ウマ娘に登場した「聖地」のうち、消滅したものやその危機にあるものを紹介する。</p>
+			<p>&emsp;A4判・フルカラー・20p。</p>
+			<h3 class="buy"><a href="https://charlotteace.booth.pm/items/7265858" target="_blank" rel="noopener noreferrer"><Image class="booth_logo" src={boothLogo} alt="booth"/>で購入</a></h3>
 		</div>
 	</div>
-	
-	<div class="offset"  id="v2">
-		<h2 class="v2">vol.2　2025年3月号　</h2>
+
+	<div class="offset" id="v2">
+		<h2 class="v2">vol.2　2025年3月号</h2>
 	</div>
-	<div class="book_info">
+	<div class="contents_container">
+		<div class="cover">
+			<Image src={v2} alt="『カゲフミ！　vol. 2』の表紙。" />
+		</div>
 		<div>
 			<h3>特集・パリに花咲け</h3>
-			<p>&emsp;凱旋門賞に登場するフランス・パリの街と競馬場の姿を、多数の現地写真と共に紹介。パリロンシャン競馬場の他、エルコンドルパサー号がG1を勝利したサンクルー競馬場についても掲載。フランス式馬券の買い方や語彙集なども充実し、この1冊があれば凱旋門賞観戦も簡単に！
-			</p>
+			<p>&emsp;凱旋門賞に登場するフランス・パリの街と競馬場の姿を、多数の現地写真と共に紹介。パリロンシャン競馬場の他、エルコンドルパサー号がG1を勝利したサンクルー競馬場についても掲載。フランス式馬券の買い方や語彙集なども充実し、この1冊があれば凱旋門賞観戦も簡単に！</p>
 			<h3>特集・概念小物と暮らそう！</h3>
 			<p>&emsp;知っている人だけに伝わる、キャラクターモチーフグッズ「概念小物」。決してキャラクターの顔の入ったグッズを持つだけではない、新しい推し活を提案し、グッズ自作のヒントを提供する。</p>
 			<h3>他連載</h3>
-			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は武蔵野線沿線に集中する関東の競馬場と見どころを一挙紹介。②地理考察「土地論考」は育成シナリオ「L'Arc」編でのトレーニング場所について考察。A4判・フルカラー・24p。</p>
-		</div>
-		<div>
-			<div class="cover"><Image src={v2} alt="charlotteace's face" /></div>
-			<div class="market"><p><a href="https://charlotteace.booth.pm/items/6754931" target="_blank" rel="noopener noreferrer"><Image src={boothLogo} alt="boothlogo"/>で購入</a></p></div>
+			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は武蔵野線沿線に集中する関東の競馬場と見どころを一挙紹介。②地理考察「土地論考」は育成シナリオ「L'Arc」編でのトレーニング場所について考察。</p>
+			<p>&emsp;A4判・フルカラー・24p。</p>
+			<h3 class="buy"><a href="https://charlotteace.booth.pm/items/6754931" target="_blank" rel="noopener noreferrer"><Image class="booth_logo" src={boothLogo} alt="booth"/>で購入</a></h3>
 		</div>
 	</div>
 	
-	<div class="offset"  id="v1">
+	<div class="offset" id="v1">
 		<h2 class="v1">vol.1　2024年8月号</h2>
 	</div>
-	<div class="book_info">
+	<div class="contents_container">
+		<div class="cover">
+			<Image src={v1} alt="『カゲフミ！　vol. 1』の表紙。" />
+		</div>
 		<div>
 			<h3>特集・府中に生きる。</h3>
 			<p>&emsp;ウマ娘の各コンテンツで登場した東京競馬場や府中の街を紹介。映画『新時代の扉』再現のウォークラリーコースも付属。あの名場面と同じカットも多数掲載。</p>
 			<h3>特集・ウマ娘の食卓</h3>
 			<p>&emsp;アニメやゲームなど、ウマ娘たちは大好きなニンジン料理をおいしそうに頬張る。そんなニンジン料理を再現すべく、レシピコーナーを掲載。GIプレートやニンジンオッチャホイもあなたの家のキッチンで。</p>
 			<h3>他連載</h3>
-			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は著者しのはら恵による『Season 3』9話房総旅行再現記を掲載。②地理考察「土地論考」は、はっきりとは描かれないトレセン学園の場所について、作中の鳥観図や現地の風景などから考察。A4判・フルカラー・24p。</p>
-		</div>
-		<div>
-			<div class="cover"><Image src={v1} alt="charlotteace's face" /></div>
-			<div class="market"><p><a href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer"><Image src={boothLogo} alt="boothlogo"/>で購入</a></p></div>
+			<p>&emsp;①聖地探訪記「シャーロットエースが征く」は著者しのはら恵による『Season 3』9話房総旅行再現記を掲載。②地理考察「土地論考」は、はっきりとは描かれないトレセン学園の場所について、作中の鳥観図や現地の風景などから考察。</p>
+			<p>&emsp;A4判・フルカラー・24p。</p>
+			<h3 class="buy"><a href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer"><Image class="booth_logo" src={boothLogo} alt="booth"/>で購入</a></h3>
 		</div>
 	</div>
 </BaseLayout>
