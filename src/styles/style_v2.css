@@ -74,8 +74,8 @@
             justify-content: space-between;
             align-items: flex-end
         }
-        #site_name,#site_name:hover{
-            font-size: 3.2rem;
+        #site_name,#site_name:visited,#site_name:hover{
+            font-size: min(3.2rem,6vw);
             color: white;
             text-decoration: none;
             background: transparent;
@@ -125,9 +125,6 @@
         @media screen and (max-width: 588px) {  
             #header{
                 align-items: center;
-            }
-            #site_name{
-                font-size: min(2.4rem,6vw);
             }
             .site_icon{
                 display: none;
