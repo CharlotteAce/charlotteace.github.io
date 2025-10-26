@@ -1,14 +1,20 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
-const pageTitle = "404 Not Found";
-const pageUrl = "";
-const pubDate = "2023-12-20";
-const updateDate = "2024-08-04";
+import LayoutHeaderFooter from '@src/layouts/LayoutHeaderFooter.astro';
+/*import Card from '../components/Card.astro';*/
+const { pageTitle } = Astro.props;
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	<p class="info_item">
-		現在ページ改修中のため、リンクが存在しない場合がございます。8月中旬までお待ちください。
-		<!-- このページは存在しません。<a href="https://charlotteace.github.io">トップページ</a>をご覧ください。-->
-	</p>
-	<!-- メイン終了 -->
-</BaseLayout>
+
+<LayoutHeaderFooter pageTitle={pageTitle}>
+	<div id="wrapper">
+		<div id="title">
+			<h1>404 not found</h1>
+		</div>
+
+		<div id="main">
+			<h2>部屋からのお知らせ</h2>
+			<p>&emsp;このページは存在しません。<a href="https://charlotteace.github.io">トップページ</a>をご覧ください。</p>
+            <p>&emsp;現在ページ改修中のため、正しいurlを入力していてもリンクが存在しない場合がございます。更新の反映までしばらくお待ちください。</p>
+		
+		</div>
+	</div>
+</LayoutHeaderFooter>
