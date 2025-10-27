@@ -1,182 +1,182 @@
 :root{
-            --charlotteace-deep: #000420; /*C100M50Y30K90*/
-            --charlotteace-dark: #182f60;
-            --charlotteace-theme: #1C4D8C;
-            --charlotteace-blue: #136eab;
-            --charlotteace-water: #2990d0;
-            --charlotteace-sky: #5bb2e1;
-            --dark-gray: #353542;
-            --middle-gray: #515155;
-            --light-gray: #a4a8ab;
+    --charlotteace-deep: #000420; /*C100M50Y30K90*/
+    --charlotteace-dark: #182f60;
+    --charlotteace-theme: #1C4D8C;
+    --charlotteace-blue: #136eab;
+    --charlotteace-water: #2990d0;
+    --charlotteace-sky: #5bb2e1;
+    --dark-gray: #353542;
+    --middle-gray: #515155;
+    --light-gray: #a4a8ab;
 
-            /*ライトモード時*/
-            --main-font-color: black;
-            --main-bg-color: white;
-            --header-bg-color: var(--charlotteace-theme);
-            --link-font-color: var(--charlotteace-blue);
-            --link-visited-color: var(--dark-gray);
-        }
-        @media (prefers-color-scheme: dark) {
-            :root{
-                --main-font-color: white;
-                --main-bg-color: var(--charlotteace-deep);
-                --header-bg-color: var(--charlotteace-dark);
-                --link-font-color: var(--charlotteace-sky);
-                --link-visited-color: var(--light-gray);
-            }
-        }
-        
-        *{font-family:Noto Sans JP,sans-serif;margin:0;padding:0;outline:none;}
-        html{font-size: 10px;}
-        body{color:var(--main-font-color);background-color:var(--main-bg-color)}
-        header{padding: 1.6rem 0;color:white;background-color:var(--header-bg-color);}
-        h1{padding:0.6rem 0; font-weight: 600; margin: 5.6rem 0 0; }
-        h2{padding:0.6rem 0; font-weight: 600; margin: 4.8rem 0 0; }
-        h3,h4,h5,h6{padding:0.6rem 0; font-weight: 600; margin: 4rem 0 0; }
-        h1{font-size: 3.2rem;}
-        h2{font-size: 2.4rem;}
-        h3{font-size: 2.0rem;}
-        p,li,details{
-            font-size: 1.6rem;
-            line-height: 2.8rem;
-            margin: 4rem 0 0;
-            padding: 0.6rem 0;
-        }
-        li{
-            margin: 0 0 0 2rem;
-            padding:0;
-            list-style-type: disc;
-        }    
-        details{
-            margin: 0;
-            padding: 0.6rem 0;
-        }    
-        details summary{
-            width : max-content;
-            max-width: 100%;
-            margin: 0 0 1.2rem 0;
-            padding: 0 0.6rem 0 2.2rem;
-            text-indent: -1.6rem;            
-        }
-        details summary:hover,details summary:active{
-            color: var(--main-bg-color);
-            background-color: var(--link-font-color);
-        }
-        
+    /*ライトモード時*/
+    --main-font-color: black;
+    --main-bg-color: white;
+    --header-bg-color: var(--charlotteace-theme);
+    --link-font-color: var(--charlotteace-blue);
+    --link-visited-color: var(--dark-gray);
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+        --main-font-color: white;
+        --main-bg-color: var(--charlotteace-deep);
+        --header-bg-color: var(--charlotteace-dark);
+        --link-font-color: var(--charlotteace-sky);
+        --link-visited-color: var(--light-gray);
+    }
+}
 
-        li li{list-style-type: circle;}    
-        h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
+*{font-family:Noto Sans JP,sans-serif;margin:0;padding:0;outline:none;transition: all 0.3s;}
+html{font-size: 10px;}
+body{color:var(--main-font-color);background-color:var(--main-bg-color)}
+header{padding: 1.6rem 0;color:white;background-color:var(--header-bg-color);}
+h1{padding:0.6rem 0; font-weight: 600; margin: 5.6rem 0 0; }
+h2{padding:0.6rem 0; font-weight: 600; margin: 4.8rem 0 0; }
+h3,h4,h5,h6{padding:0.6rem 0; font-weight: 600; margin: 4rem 0 0; }
+h1{font-size: 3.2rem;}
+h2{font-size: 2.4rem;}
+h3{font-size: 2.0rem;}
+p,li,details{
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    margin: 4rem 0 0;
+    padding: 0.6rem 0;
+}
+li{
+    margin: 0 0 0 2rem;
+    padding:0;
+    list-style-type: disc;
+}    
+details{
+    margin: 0;
+    padding: 0.6rem 0;
+}    
+details summary{
+    width : max-content;
+    max-width: 100%;
+    margin: 0 0 1.2rem 0;
+    padding: 0 0.6rem 0 2.2rem;
+    text-indent: -1.6rem;            
+}
+details summary:hover,details summary:focus{
+    color: var(--main-bg-color);
+    background-color: var(--link-font-color);
+}
 
-        a{
-            color: var(--link-font-color);
-            text-decoration:underline;
-        }
-        a:visited{color:var(--link-visited-color)}
-        a:hover,a:focus{
-            color: var(--main-bg-color);
-            background-color: var(--link-font-color);
-            text-decoration: none;
-        }
-        div{font-size: 1.6rem;}
 
-        #header,#wrapper,.botom,#footer{
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 1.6rem;
-        }        
-        #header{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end
-        }
-        #site_name,#site_name:visited,#site_name:hover{
-            font-size: min(3.2rem,6vw);
-            color: white;
-            text-decoration: none;
-            background: transparent;
-        }
-        #site_name:focus{color:var(--charlotteace-theme);background:white;}
-        .site_icon,.site_icon:visited{
-            margin-left: 1.6rem;
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-        }
-        .site_icon:hover{
-            color: white;
-            text-decoration: underline;
-            background: transparent;
-        }
-        .site_icon:focus{color: var(--charlotteace-theme); text-decoration: none; background: white;}
-        #site_icon_button,.site_icon_button{display: none;}
-        #menu_group{display:none;}
-        #title{
-            margin: 0;
-            padding: 0;
-            display: flex;  
-            flex-direction: column;
-            align-items: center;
-        }
-        #title ~ h1{
-            text-align: center;
-        }
-        #pubdate{font-size: 1.4rem;}
+li li{list-style-type: circle;}    
+h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
+
+a{
+    color: var(--link-font-color);
+    text-decoration:underline;
+}
+a:visited{color:var(--link-visited-color)}
+a:hover,a:focus{
+    color: var(--main-bg-color);
+    background-color: var(--link-font-color);
+    text-decoration: none;
+}
+div{font-size: 1.6rem;}
+
+#header,#wrapper,.botom,#footer{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}        
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end
+}
+#site_name,#site_name:visited,#site_name:hover{
+    font-size: min(3.2rem,6vw);
+    color: white;
+    text-decoration: none;
+    background: transparent;
+}
+#site_name:focus{color:var(--charlotteace-theme);background:white;}
+.site_icon,.site_icon:visited{
+    margin-left: 1.6rem;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+.site_icon:hover{
+    color: white;
+    text-decoration: underline;
+    background: transparent;
+}
+.site_icon:focus{color: var(--charlotteace-theme); text-decoration: none; background: white;}
+#site_icon_button,.site_icon_button{display: none;}
+#menu_group{display:none;}
+#title{
+    margin: 0;
+    padding: 0;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+#title ~ h1{
+    text-align: center;
+}
+#pubdate{font-size: 1.4rem;}
+
+#main{
+    margin: 0 0 4rem;
+}
+.bottom{
+    border-top: 0.2rem solid var(--main-font-color);
+}
+.other_article{border-bottom: 0.2rem solid var(--main-font-color);}
+#footer{
+    margin-top: 1.2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width: 588px) {  
+    #header{
+        align-items: center;
+    }
+    .site_icon{
+        display: none;
+    }
+    /*!--メニューボタン周りの実装--*/    
+    .site_icon_button{
+        display: none;/*メニューボタン実装後に「block;」へ変更*/
+    }
+    #site_icon_button + .site_icon_button::after {
+        content: "▼";
+    }
+    #site_icon_button:checked + .site_icon_button::after {
+        content: "▲";
+    }            
+}
+
+/*tag関連、ブログ関連*/
+.tag{
+    --tag-bg-color: var(--light-gray);
+}
+@media (prefers-color-scheme: dark) {
+    .tag{
+        --tag-bg-color: var(--charlotteace-theme);
+    }
+}
+.tag{
+    font-size: 1.4rem;
+    margin-right: 0.4rem;
+    padding: 0.4rem;
+    float: left;
+    color: var(--main-font-color);
+    text-decoration: none;
+    background-color: var(--tag-bg-color);
     
-        #main{
-            margin: 0 0 4rem;
-        }
-        .bottom{
-            border-top: 0.2rem solid var(--main-font-color);
-        }
-        .other_article{border-bottom: 0.2rem solid var(--main-font-color);}
-        #footer{
-            margin-top: 1.2rem;
-            margin-bottom: 4rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        @media screen and (max-width: 588px) {  
-            #header{
-                align-items: center;
-            }
-            .site_icon{
-                display: none;
-            }
-            /*!--メニューボタン周りの実装--*/    
-            .site_icon_button{
-                display: none;/*メニューボタン実装後に「block;」へ変更*/
-            }
-            #site_icon_button + .site_icon_button::after {
-                content: "▼";
-            }
-            #site_icon_button:checked + .site_icon_button::after {
-                content: "▲";
-            }            
-        }
-        
-        /*tag関連、ブログ関連*/
-        .tag{
-            --tag-bg-color: var(--light-gray);
-        }
-        @media (prefers-color-scheme: dark) {
-            .tag{
-                --tag-bg-color: var(--charlotteace-theme);
-            }
-        }
-        .tag{
-            font-size: 1.4rem;
-            margin-right: 0.4rem;
-            padding: 0.4rem;
-            float: left;
-            color: var(--main-font-color);
-            text-decoration: none;
-            background-color: var(--tag-bg-color);
-            
-        }
-        .tag:visited{color: var(--main-font-color);}
-        .tag:hover,.tag:focus{
-            color: var(--main-bg-color);
-            background-color: var(--link-font-color);
-        }
+}
+.tag:visited{color: var(--main-font-color);}
+.tag:hover,.tag:focus{
+    color: var(--main-bg-color);
+    background-color: var(--link-font-color);
+}

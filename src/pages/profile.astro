@@ -131,23 +131,33 @@ import aceFace from '@src/images/charlotteace001.png';
 		}
 		.uda{
 			--link-sub-color:white;
-			--link-theme-color:#993c69;}
+			--link-theme-color:#993c69;
+			--text-display-boolean:0;
+		}
 		.sue{
 			--link-sub-color:white;
-			--link-theme-color:#E74727;}
+			--link-theme-color:#E74727;
+			--text-display-boolean:0;
+		}
 		.haxibami{
 			--link-sub-color:white;
-			--link-theme-color:oklch(62.73% .209 12.37);}
+			--link-theme-color:oklch(62.73% .209 12.37);
+			--text-display-boolean:1;
+		}
 		.inaniwa{
 			--link-sub-color:var(--linkcard-font-dark);
-			--link-theme-color:#FA981C;}
+			--link-theme-color:#FA981C;
+			--text-display-boolean:1;
+		}
 		.fabon{
 			--link-sub-color:var(--linkcard-font-dark);
-			--link-theme-color:#91ACD1;
+			--link-theme-color:#91ACD1;			
+			--text-display-boolean:1;
 		}
 		.mycel{
 			--link-sub-color:var(--linkcard-font-dark);
 			--link-theme-color:#00F314;
+			--text-display-boolean:0;
 		}
 		.linkcard{
 			--linkcard-font-dark: black;
@@ -166,7 +176,6 @@ import aceFace from '@src/images/charlotteace001.png';
 			width: 24rem;
 			height: 13.5rem;
 			border: 0.2rem solid var(--linkcard-border);
-			/*transition: all 0.5s;*/
 		}
 		.linkcard .border_left{
 			width: 100%;
@@ -184,16 +193,16 @@ import aceFace from '@src/images/charlotteace001.png';
 			position: absolute;
 			color: var(--main-font-color);
 			padding:0.8rem 1.6rem;
+			opacity: var(--text-display-boolean);
 		}
 		.linkcard:hover,.linkcard:active,.linkcard:focus {
 			border: 0.2rem solid var(--linkcard-border-active);
 			background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
 		}
 		.linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
-			z-index: 1;
+			opacity: 1;
 			color: var(--link-sub-color);
 		}
-
 		.linkcard .card_data h2{
 			margin: 0;
 			padding: 0;
@@ -249,22 +258,22 @@ import aceFace from '@src/images/charlotteace001.png';
 	<div class="linkcard_box">
 		<a class="linkcard uda" href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">
 			<div class="border_left">
+				<img class="thumbnail" src="/images/link_exchange/tuda.png" alt="『や-さがされ』のバナー">
 				<div class="card_data">
 					<h2>や-さがされ</h2>
 					<p>宇田まなと/春瀬</p>
 				</div>
-				<img class="thumbnail" src="/images/link_exchange/tuda.png" alt="『や-さがされ』のバナー">
 			</div>
 		</a>
 		<div class="linktext uda"><big><a href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">や-さがされ</a></big> - 宇田まなと/春瀬</div>
 
 		<a class="linkcard sue" href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer">
 			<div class="border_left">
+				<img class="thumbnail" src="/images/link_exchange/tsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー">
 				<div class="card_data">
 					<h2>Le Site Web de Suika AKIYAMA</h2>
 					<p>Suika AKIYAMA</p>
 				</div>
-				<img class="thumbnail" src="/images/link_exchange/tsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー">
 				<img class="logo" src="/images/link_exchange/lsue.png" alt="『Le Site Web de Suika AKIYAMA』のfavicon">
 			</div>
 		</a>
@@ -304,11 +313,11 @@ import aceFace from '@src/images/charlotteace001.png';
 
 		<a class="linkcard mycel" href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer">
 			<div class="border_left">
+				<img class="thumbnail" src="/images/link_exchange/tmycel.png" alt="『mycelithyl-hyphae』のバナー">
 				<div class="card_data">
 					<h2>mycelithyl-hyphae</h2>
 					<p>Mycelithyl</p>
 				</div>
-				<img class="thumbnail" src="/images/link_exchange/tmycel.png" alt="『mycelithyl-hyphae』のバナー">
 				<img class="logo" src="/images/link_exchange/lmycel.png" alt="『mycelithyl-hyphae』のfavicon">
 			</div>
 		</a>
