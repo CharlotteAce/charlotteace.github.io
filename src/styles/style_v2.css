@@ -36,19 +36,34 @@
         h1{font-size: 3.2rem;}
         h2{font-size: 2.4rem;}
         h3{font-size: 2.0rem;}
-        p,li{
+        p,li,details{
             font-size: 1.6rem;
             line-height: 2.8rem;
             margin: 4rem 0 0;
             padding: 0.6rem 0;
         }
         li{
-            font-size: 1.6rem;
-            line-height: 2.8rem;
             margin: 0 0 0 2rem;
             padding:0;
             list-style-type: disc;
         }    
+        details{
+            margin: 0;
+            padding: 0.6rem 0;
+        }    
+        details summary{
+            width : max-content;
+            max-width: 100%;
+            margin: 0 0 1.2rem 0;
+            padding: 0 0.6rem 0 2.2rem;
+            text-indent: -1.6rem;            
+        }
+        details summary:hover,details summary:active{
+            color: var(--main-bg-color);
+            background-color: var(--link-font-color);
+        }
+        
+
         li li{list-style-type: circle;}    
         h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
 
