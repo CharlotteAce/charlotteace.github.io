@@ -12,6 +12,7 @@
     /*ライトモード時*/
     --main-font-color: black;
     --main-bg-color: white;
+    --main-deep-color: black;
     --header-bg-color: var(--charlotteace-theme);
     --link-font-color: var(--charlotteace-blue);
     --link-visited-color: var(--dark-gray);
@@ -20,6 +21,7 @@
     :root{
         --main-font-color: white;
         --main-bg-color: var(--charlotteace-deep);
+        --main-deep-color: var(--charlotteace-deep);
         --header-bg-color: var(--charlotteace-dark);
         --link-font-color: var(--charlotteace-sky);
         --link-visited-color: var(--light-gray);
