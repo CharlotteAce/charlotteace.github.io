@@ -10,7 +10,7 @@ param:
     contentsNum: 202504010001
     medium: 'amazon'
     image:
-        url: '/images/thumbnails/blank.jpg'
+        url: '/images/thumbnails/blank.png'
         alt: ' '
     width:
         four: 'e'
