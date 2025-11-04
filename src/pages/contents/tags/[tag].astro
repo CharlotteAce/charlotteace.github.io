@@ -1,0 +1,61 @@
+---
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+import LinkCard from '@src/components/LinkCard.astro';
+
+interface BlogPost {
+  frontmatter: {
+    contentsNum: number;
+    [key: string]: any; // 他の項目があってもOK
+  };
+}
+
+
+export async function getStaticPaths() {
+    const allPosts = Object.values(import.meta.glob<BlogPost>('@src/pages/blogs/*.md', { eager: true }));
+    const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+    return uniqueTags.map((tag) => {
+            const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+            return {
+            params: { tag },
+            props: { posts: filteredPosts },
+        };
+    });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props as { posts: BlogPost[] };;
+
+const pageTitle = 'タグ：'+ tag;
+const pageUrl = "/contents";
+const pubDate = "2023-12-20";
+const updateDate = "2025-11-04";
+const description = tag +'タグのついたコンテンツの一覧。';
+const tags :string[] = [tag];
+
+posts.sort((a, b) => {
+    return b.frontmatter.contentsNum - a.frontmatter.contentsNum;
+});
+
+
+
+---
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+    <p>
+        &emsp;{tag}タグのついた制作物・記事の一覧を表示しています。すべての制作物・記事は<a href="https://charlotteace.github.io/contents">こちら</a>から。
+    </p>
+	<style>
+		.linkcard_box{
+			margin: 2rem 0 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1.6rem;
+		}
+	</style>
+    <div class="linkcard_box">
+        <!-- 逆たまコンピの上でいったん改行位置 -->
+        <!-- カゲフミ！１の上でいったん改行位置 -->
+        {posts.map((post) => <LinkCard frontmatter={post.frontmatter}/>)}
+    </div>
+</LayoutBlog>
