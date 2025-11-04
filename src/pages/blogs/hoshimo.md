@@ -15,4 +15,5 @@ width:
     four: 'e'
     three: 'e'
     two: 'e'
+tags: ["おしらせ"]
 ---
