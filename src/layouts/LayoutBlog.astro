@@ -1,5 +1,6 @@
 ---
 import LayoutHeaderFooter from '@src/layouts/LayoutHeaderFooter.astro';
+import Tags from '@src/components/Tags.astro';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
 const { pubDate } = Astro.props;
@@ -15,7 +16,7 @@ const { tags } = Astro.props;
 			<p id="description">{description}</p>
 			<p id="pubdate">公開：{pubDate}&emsp;更新：{updateDate}</p>
 			<div id="tags">
-                {tags.map((tag:string[]) => (<a class="tag" href={`https://charlotteace.github.io/contents/tags/${tag}`}>{tag}</a>))}
+                <Tags tags={tags}/>
             </div>
 		</div>
 
