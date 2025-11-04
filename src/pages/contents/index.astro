@@ -4,16 +4,13 @@ import LinkCard from '@src/components/LinkCard.astro';
 const pageTitle = "制作物・記事一覧";
 const pageUrl = "/contents";
 const pubDate = "2023-12-20";
-const updateDate = "2025-10-17";
+const updateDate = "2025-11-04";
 const description = "しのはら恵の制作物紹介。";
 const tags :string[] = [];
 const allPosts = await Astro.glob('@src/pages/blogs/*.md');
 allPosts.sort((a, b) => {
     return b.frontmatter.contentsNum - a.frontmatter.contentsNum;
 });
-import { getCollection } from 'astro:content';
-
-const posts = await getCollection('blog');
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
     <p>
