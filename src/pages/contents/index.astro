@@ -9,8 +9,11 @@ const description = "しのはら恵の制作物紹介。";
 const tags :string[] = [];
 const allPosts = await Astro.glob('@src/pages/blogs/*.md');
 allPosts.sort((a, b) => {
-    return b.frontmatter.param.contentsNum - a.frontmatter.param.contentsNum;
+    return b.frontmatter.contentsNum - a.frontmatter.contentsNum;
 });
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
     <p>
@@ -29,6 +32,6 @@ allPosts.sort((a, b) => {
     <div class="linkcard_box">
         <!-- 逆たまコンピの上でいったん改行位置 -->
         <!-- カゲフミ！１の上でいったん改行位置 -->
-        {allPosts.map((post) => <LinkCard param={post.frontmatter.param}/>)}
+        {allPosts.map((post) => <LinkCard frontmatter={post.frontmatter}/>)}
     </div>
 </LayoutBlog>
