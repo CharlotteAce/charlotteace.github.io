@@ -38,7 +38,7 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
 <style>
     .linkcard{
         --link-sub-color:white;
-        --link-theme-color: var(--charlotteace-theme);
+        --link-theme-color: var(--header-bg-color);
         --text-display-boolean:1;
     }
     .note{
@@ -57,7 +57,12 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
         --link-theme-color: #252525;
     }
     .niconico .border_left{
-        border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 1;
+        border-image: linear-gradient(to bottom, #ffc2d8, #a9c1ff, #95ff8c, #fcff6d) 1;
+    }
+    @media (prefers-color-scheme: dark) {
+        .niconico .border_left{
+            border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 0.7;
+        }
     }
     .twitter{
         --link-sub-color: var(--charlotteace-deep);
@@ -89,6 +94,11 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
         --link-sub-color:white;
         --link-theme-color:oklch(62.73% .209 12.37);
         --text-display-boolean:1;
+    }
+    @media (prefers-color-scheme: dark) {
+        .haxibami{
+            --link-theme-color:oklch(70.94% .136 258.06);
+        }
     }
     .inaniwa{
         --link-sub-color:var(--main-deep-color);
