@@ -165,11 +165,7 @@ div{font-size: 1.6rem;}
 #footer a{
     color: white;
 }
-#footer a:hover{
-    background-color: transparent;
-    text-decoration: underline;
-}
-#footer a:focus{
+#footer a:hover,#footer a:focus{
     color: var(--header-bg-color);
     background-color: white;
     text-decoration: none;
