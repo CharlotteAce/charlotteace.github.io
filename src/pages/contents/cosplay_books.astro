@@ -1,0 +1,99 @@
+---
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+const pageTitle = "コスプレ・衣装制作関連書籍";
+const pageUrl = "/contents/cosplay_books";
+const pubDate = "2025-12-31";
+const updateDate = "2026-01-05";
+const description = "しのはら恵によるコスプレ関連書籍。";
+const tags = ["制作物","同人活動","コスプレ","衣装制作"];
+import { Image } from 'astro:assets';
+import v1 from '@src/images/books/202512310001.png';
+import boothLogo from '@src/images/logos/booth.png';
+---
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+
+	<!--p>2冊目執筆時に総合的な説明文を入力
+		&emsp;</small>
+	</p-->
+	<style>
+		.offset {
+			margin: 0;
+			padding: 0;
+			margin-top: -10rem;
+			padding-top: 10rem;
+		}
+		.offset h2 {
+			padding: 0.25rem;
+		}
+		.v1 {
+			color: #fff;
+			background-color: #e8382f; /* C0M90Y80K0 */
+		}
+		.contents_container{
+			display: flex;
+            justify-content: start;
+            align-items: start;
+		}
+		.cover{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 250px;
+			min-width: 250px;
+			margin: 4rem 4rem 0 0;
+			padding-top: 0.6rem;
+			
+		}
+		.cover img{
+			width: 100%;
+			height: auto;
+			border: 0.2rem solid var(--charlotteace-deep);
+		}
+		.booth_logo{
+			height: 3rem;
+			padding-top:0;
+			margin-bottom:-0.4rem;
+			width: auto;
+		}
+		.buy + .buy{
+			margin: 0;
+		}
+		@media screen and (max-width: 768px){
+			.contents_container{display: block;}
+			.cover{
+				min-width: none;
+				width: 100%;
+				max-width: 250px;
+				margin: 4rem auto 0;
+			}
+			.buy{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+		}
+	</style>
+	<div class="offset" id="v1">
+		<h2 class="v1">しのはら恵のコスプレ衣装制作レポート</h2>
+	</div>
+	<div class="contents_container">
+		<div class="cover">
+			<Image src={v1} alt="『しのはら恵のコスプレ衣装制作レポート』の表紙。" />
+		</div>
+		<div>
+			<p>&emsp;今までにweb上で公開した即売会参加記・コスプレ衣装制作記事を再編したレポート本です。</p>
+			<h3>掲載内容</h3>
+			<ul>
+				<li>マンハッタンカフェ（黄色のブラウスとウィンドウペンのスカート）</li>
+				<li>小美亜佳子（黄色のブラウスと赤いミニスカート）</li>
+				<li>轍夜明（デニムのビスチェワンピース）</li>
+				<li>マンハッタンカフェ（緑のエプロン）</li>
+				<li>足立レイ（オレンジアクセント入りパーカー）</li>
+			</ul>
+			<p>&emsp;B5判・フルカラー・28p。</p>
+			<h3 class="buy"><a href="https://charlotteace.booth.pm/items/7837297" target="_blank" rel="noopener noreferrer"><Image class="booth_logo" src={boothLogo} alt="booth"/>で購入</a></h3>
+			<!--h3 class="buy"><a href="https://ndlsearch.ndl.go.jp/books/R100000002-I033666073" target="_blank" rel="noopener noreferrer">国立国会図書館で閲覧</a></h3-->
+		</div>
+	</div>
+</BaseLayout>
