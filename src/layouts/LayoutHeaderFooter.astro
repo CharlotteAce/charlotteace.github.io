@@ -3,9 +3,10 @@ import LayoutMetadata from '@src/layouts/LayoutMetadata.astro';
 import '@src/styles/style_v2.css';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
+const { description } = Astro.props;
 ---
 
-<LayoutMetadata title={pageTitle}>
+<LayoutMetadata pageTitle={pageTitle}, description={ description }>
 	<main>
 		<header>
             <div id="header">

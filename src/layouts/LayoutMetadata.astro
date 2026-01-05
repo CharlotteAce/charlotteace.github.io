@@ -1,9 +1,11 @@
 ---
 interface Props {
-	title: string;
+	pageTitle: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
+const { description } = Astro.props;
 /*import "the-new-css-reset";*/
 ---
 
@@ -17,10 +19,22 @@ const { title } = Astro.props;
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+		<!-- ogp設定用 -->
+        <meta property="og:title" content={pageTitle+" - シャーロットエースの部屋"}>
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        <meta property="og:image" content="/favicon.png">
+        <meta property="og:site_name" content="シャーロットエースの部屋">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:image" content=/favicon.png>
+        <meta property="og:description" content={description}>
+        <meta property="og:locale" content="jp">
+		
         <!-- 先に読み込むデータ -->
 		<link rel="icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title+" - シャーロットエースの部屋"}</title>
+		<title>{pageTitle+" - シャーロットエースの部屋"}</title>
 	</head>
 	<body>
 		<slot />
