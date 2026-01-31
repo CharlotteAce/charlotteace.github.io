@@ -3,7 +3,7 @@ import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
-const updateDate = "2026-01-05";
+const updateDate = "2026-01-31";
 const description = "しのはら恵の自己紹介。";
 const tags :string[] = [];
 import { Image } from 'astro:assets';
@@ -318,6 +318,11 @@ import aceFace from '@src/images/charlotteace001.png';
 			--link-theme-color:oklch(54.6% 0.245 262.881);
 			--text-display-boolean:1;
 		}
+		.licjar{
+			--link-sub-color:var(--main-deep-color);
+			--link-theme-color:#f8c067;
+			--text-display-boolean:1;
+		}
 		.linkcard{
 			--linkcard-border: var(--charlotteace-deep);
 			--linkcard-border-active: var(--charlotteace-deep);		
@@ -455,7 +460,7 @@ import aceFace from '@src/images/charlotteace001.png';
 				</div>
 			</div>
 		</a>
-		<div class="linktext inaniwa"><big><a href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer">いなにわうどん.みんな</a></big> - いなにわうどん</div>
+		<a class="banner inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/binaniwa.png" alt="『いなにわうどん.みんな』のバナー" width="200" height="40"></a>
 
 		<a class="linkcard fabon" href="https://www.fabon.info/" target="_blank" rel="noopener noreferrer">
 			<div class="border_left">
@@ -490,6 +495,16 @@ import aceFace from '@src/images/charlotteace001.png';
 		</a>
 		<div class="linktext suyalog"><big><a href="https://suyasuyaty.github.io/" target="_blank" rel="noopener noreferrer">すやすやログ</a></big> - suyasuyaTY</div>
 
+		<a class="linkcard licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer">
+			<div class="border_left">
+				<div class="card_data">
+					<h2>LICJAR.XYZ</h2>
+					<p>りちゃ</p>
+				</div>
+			</div>
+		</a>
+		<a class="banner licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/blicjar.svg" alt="『LICJAR.XYZ』のバナー" width="200" height="40"></a>
+		
 	</div>
 	<h2>注釈</h2>
 	<p><a class="ref" id="footnote-1" href="#ref-1">*1</a>：最初のアカウントは高校3年の8月に作成した。Twitterをやめていた友人たちのうち何人かはこれを機に戻ってきてしまった。大戦犯である。</p>
