@@ -7,6 +7,9 @@ interface Props {
 const { pageTitle } = Astro.props;
 const { description } = Astro.props;
 /*import "the-new-css-reset";*/
+const favicon = import.meta.env.DEV
+  ? "/favicon-dev.png"
+  : "/favicon.png";
 ---
 
 <!doctype html>
@@ -32,7 +35,7 @@ const { description } = Astro.props;
         <meta property="og:locale" content="jp">
 		
         <!-- 先に読み込むデータ -->
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle+" - シャーロットエースの部屋"}</title>
 	</head>
