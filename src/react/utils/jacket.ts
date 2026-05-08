@@ -16,7 +16,7 @@ const extPriority = ["webp", "svg", "png", "heic", "jpg", "bmp"];
 
 const getBaseName = (name: string) =>
   name
-    .replace(/[.-][a-zA-Z0-9_-]+(?=\.[^.]+$)/, "")
+    .replace(/[.-][a-zA-Z0-9_-]{8}(?=\.[^.]+$)/, "")
     .replace(/\.[^.]+$/, "")
     .toLowerCase();
 
