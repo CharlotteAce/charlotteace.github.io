@@ -11,9 +11,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^5.0.4",
     "astro": "^5.14.5",
+    "normalize.css": "^8.0.1",
     "qrcode": "^1.5.4",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.0",
     "the-new-css-reset": "^1.11.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
   }
 }
