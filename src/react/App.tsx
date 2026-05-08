@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { App as TopPage } from "./pages/TopPage";
 import { Player } from "./components/Player";
@@ -10,7 +10,7 @@ import "./index.css";
 
 export default function App() {
   return (
-    <HashRouter basename="">
+    <BrowserRouter basename="">
       <Routes>
         <Route path="/" element={<TopPage />} />
         <Route path="/:category/:albumName" element={<AlbumPage />} />
@@ -36,6 +36,6 @@ export default function App() {
       </div>
 
       <Player />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
