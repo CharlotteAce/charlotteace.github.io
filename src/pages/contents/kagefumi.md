@@ -1,16 +1,22 @@
 ---
-import LayoutBlog from '@src/layouts/LayoutBlog.astro';
-const pageTitle = "カゲフミ！シリーズ";
-const pageUrl = "/contents/kagefumi";
-const pubDate = "2025-08-24";
-const updateDate = "2025-10-27";
-const description = "しのはら恵によるウマ娘聖地巡礼情報誌。";
-const tags = ["制作物","同人活動","ウマ娘"];
-import { Image } from 'astro:assets';
-import v1 from '@src/images/books/202408110001.png';
-import v2 from '@src/images/books/202503300001.png';
-import v3 from '@src/images/books/202508160001.png';
-import boothLogo from '@src/images/logos/booth.png';
+layout: ../../layouts/Md2Blog.astro
+title: 'カゲフミ！シリーズ'
+pubDate: "2025-08-24"
+updateDate: "2025-10-27"
+description: 'β版(試作版)です。'
+pageUrl: '/contents/suikamongam'
+contentsUrl: 'https://note.com/units_si/n/ndcf8b8aa4c2f'
+contentsNum: 202401060001
+medium: 'note'
+image:
+    url: ''
+    alt: ''
+width:
+    four: 'c'
+    three: 'e'
+    two: 'c'
+tags: ['制作物','プログラミング']
+
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
 

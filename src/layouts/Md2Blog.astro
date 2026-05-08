@@ -1,0 +1,7 @@
+---
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+const { frontmatter } = Astro.props;
+---
+<LayoutBlog pageTitle={frontmatter.title} pageUrl={frontmatter.pageUrl} pubDate={frontmatter.pubDate} updateDate={frontmatter.updateDate} description={frontmatter.description} tags={frontmatter.tags}>
+    <slot />
+</LayoutBlog>
