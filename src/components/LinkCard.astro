@@ -11,211 +11,216 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
 ---
 
 <!--div class={"card card-h4"+frontmatter.width.four+" card-h3"+frontmatter.width.three+" card-h2"+frontmatter.width.two+" "+frontmatter.medium}>
-    <a class="color" href={frontmatter.contentsUrl} target="_blank" rel="noopener noreferrer">
-        <p class="title">{frontmatter.title}</p>
-        <p class="supplement-1">{frontmatter.pubDate}</p>
-        <p class="supplement-2">{frontmatter.description}</p>
-        <Image class="logo" src={logo_images[logo_url+frontmatter.medium+".png"]()} alt={frontmatter.medium+".com"} height="60"/>
-        <Image class="thumbnail" src={thumbnail_images["/src"+frontmatter.image.url]()} alt={frontmatter.image.alt}/>
-    </a>
+  <a class="color" href={frontmatter.contentsUrl} target="_blank" rel="noopener noreferrer">
+    <p class="title">{frontmatter.title}</p>
+    <p class="supplement-1">{frontmatter.pubDate}</p>
+    <p class="supplement-2">{frontmatter.description}</p>
+    <Image class="logo" src={logo_images[logo_url+frontmatter.medium+".png"]()} alt={frontmatter.medium+".com"} height="60"/>
+    <Image class="thumbnail" src={thumbnail_images["/src"+frontmatter.image.url]()} alt={frontmatter.image.alt}/>
+  </a>
 </div-->
 
 
 <a class={"linkcard "+frontmatter.medium} href={frontmatter.contentsUrl} target="_blank" rel="noopener noreferrer">
-    <div class="border_left">
-        <Image class="thumbnail" src={thumbnail_images["/src"+frontmatter.image.url]()} alt={frontmatter.image.alt}/>
-        <div class="card_data">
-            <h3>{frontmatter.title}</h3>
-            <div class="card_metadata">
-                <p class="pub_date">{frontmatter.pubDate}</p>
-                <p class="description">{frontmatter.description}</p>
-            </div>
-        </div>
-        <Image class="logo" src={logo_images[logo_url+frontmatter.medium+".png"]()} alt={frontmatter.medium+".com"} />
+  <div class="border_left">
+    <Image class="thumbnail" src={thumbnail_images["/src"+frontmatter.image.url]()} alt={frontmatter.image.alt}/>
+    <div class="card_data">
+      <h3>{frontmatter.title}</h3>
+      <div class="card_metadata">
+        <p class="pub_date">{frontmatter.pubDate}</p>
+        <p class="description">{frontmatter.description}</p>
+      </div>
     </div>
+    <Image class="logo" src={logo_images[logo_url+frontmatter.medium+".png"]()} alt={frontmatter.medium+".com"} />
+  </div>
 </a>
 
 <style>
-    .linkcard{
-        --link-sub-color:white;
-        --link-theme-color: var(--header-bg-color);
-        --text-display-boolean:1;
-    }
-    .note{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #2eceb4;
-    }
-    .amazon{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #ff9900;
-    }
-    .qiita{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #55c500;
-    }
-    .niconico{
-        --link-theme-color: #252525;
-    }
+  .linkcard{
+    --link-sub-color:white;
+    --link-theme-color: var(--header-bg-color);
+    --text-display-boolean:1;
+  }
+  .note{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #2eceb4;
+  }
+  .amazon{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #ff9900;
+  }
+  .qiita{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #55c500;
+  }
+  .niconico{
+    --link-theme-color: #252525;
+  }
+  .niconico .border_left{
+    border-image: linear-gradient(to bottom, #ffc2d8, #a9c1ff, #95ff8c, #fcff6d) 1;
+  }
+  @media (prefers-color-scheme: dark) {
     .niconico .border_left{
-        border-image: linear-gradient(to bottom, #ffc2d8, #a9c1ff, #95ff8c, #fcff6d) 1;
+      border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 0.7;
     }
-    @media (prefers-color-scheme: dark) {
-        .niconico .border_left{
-            border-image: linear-gradient(to bottom, #ff9abe, #86a8ff, #6eff62, #fcff55) 0.7;
-        }
-    }
-    .twitter{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #1da1f2;
-    }
-    .melonbooks{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #18bd67;
-    }
-    .booth{
-        --link-sub-color: white;
-        --link-theme-color: #FC4D50;
-    }
-    .comitech{
-        --link-sub-color: var(--charlotteace-deep);
-        --link-theme-color: #50a4ff;;
-    }
-    .uda{
-        --link-sub-color:white;
-        --link-theme-color:#993c69;
-        --text-display-boolean:0;
-    }
-    .sue{
-        --link-sub-color:white;
-        --link-theme-color:#E74727;
-        --text-display-boolean:0;
-    }
+  }
+  .twitter{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #1da1f2;
+  }
+  .melonbooks{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #18bd67;
+  }
+  .booth{
+    --link-sub-color: white;
+    --link-theme-color: #FC4D50;
+  }
+  .comitech{
+    --link-sub-color: var(--charlotteace-deep);
+    --link-theme-color: #50a4ff;;
+  }
+  .uda{
+    --link-sub-color:white;
+    --link-theme-color:#993c69;
+    --text-display-boolean:0;
+  }
+  .sue{
+    --link-sub-color:white;
+    --link-theme-color:#E74727;
+    --text-display-boolean:0;
+  }
+  .haxibami{
+    --link-sub-color:white;
+    --link-theme-color:oklch(62.73% .209 12.37);
+    --text-display-boolean:1;
+  }
+  @media (prefers-color-scheme: dark) {
     .haxibami{
-        --link-sub-color:white;
-        --link-theme-color:oklch(62.73% .209 12.37);
-        --text-display-boolean:1;
+      --link-theme-color:oklch(70.94% .136 258.06);
     }
-    @media (prefers-color-scheme: dark) {
-        .haxibami{
-            --link-theme-color:oklch(70.94% .136 258.06);
-        }
-    }
-    .inaniwa{
-        --link-sub-color:var(--main-deep-color);
-        --link-theme-color:#FA981C;
-        --text-display-boolean:1;
-    }
-    .fabon{
-        --link-sub-color:var(--main-deep-color);
-        --link-theme-color:#91ACD1;			
-        --text-display-boolean:1;
-    }
-    .mycel{
-        --link-sub-color:var(--main-deep-color);
-        --link-theme-color:#00F314;
-        --text-display-boolean:0;
-    }
+  }
+  .inaniwa{
+    --link-sub-color:var(--main-deep-color);
+    --link-theme-color:#FA981C;
+    --text-display-boolean:1;
+  }
+  .fabon{
+    --link-sub-color:var(--main-deep-color);
+    --link-theme-color:#91ACD1;			
+    --text-display-boolean:1;
+  }
+  .mycel{
+    --link-sub-color:var(--main-deep-color);
+    --link-theme-color:#00F314;
+    --text-display-boolean:0;
+  }
+  .linkcard{
+    --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
+    --linkcard-border: var(--charlotteace-water);
+    --linkcard-border-active: var(--charlotteace-deep);		
+  }
+  @media (prefers-color-scheme: dark) {
     .linkcard{
-        --linkcard-border: var(--charlotteace-deep);
-        --linkcard-border-active: var(--charlotteace-deep);		
+      --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+      --linkcard-border: var(--charlotteace-theme);
+      --linkcard-border-active: var(--link-theme-color);		
     }
-    @media (prefers-color-scheme: dark) {
-        .linkcard{
-            --linkcard-border: var(--light-gray);
-            --linkcard-border-active: var(--link-theme-color);		
-        }
-    }
+  }
+  .linkcard{
+    display:inline-block;
+    width: min(24rem, calc(calc(100% - 3.2rem) / 3));
+    height: 13.5rem;
+    border: 1px solid var(--linkcard-border);
+    border-radius: 0.8rem;
+    background-color: var(--linkcard-bg-color);
+    overflow: hidden;
+  }
+  .linkcard .border_left{
+    width: 100%;
+    height: 100%;
+    border-left: 0.8rem solid var(--link-theme-color);
+    position: relative;
+  }
+  .linkcard .thumbnail{
+    position: absolute;
+  }
+  .linkcard:hover .thumbnail,.linkcard:active .thumbnail,.linkcard:focus .thumbnail{
+    opacity: 0.2;
+  }
+  .linkcard .card_data{
+    position: absolute;
+    color: var(--main-font-color);
+    padding:0.8rem 1.6rem;
+    opacity: var(--text-display-boolean);
+    --text-shadow-color: var(--main-bg-color);
+    text-shadow:
+      0.1rem 0.1rem 0.1rem var(--text-shadow-color), -0.1rem -0.1rem 0.1rem var(--text-shadow-color),
+      -0.1rem 0.1rem 0.1rem var(--text-shadow-color),  0.1rem -0.1rem 0.1rem var(--text-shadow-color),
+      0.1rem 0 0.1rem var(--text-shadow-color), -0.1rem  0 0.1rem var(--text-shadow-color),
+      0 0.1rem 0.1rem var(--text-shadow-color),  0 -0.1rem 0.1rem var(--text-shadow-color);
+  }
+  .linkcard:hover,.linkcard:active,.linkcard:focus {
+    border: 1px solid var(--linkcard-border-active);
+    background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
+  }
+  .linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
+    opacity: 1;
+    color: var(--link-sub-color);
+    --text-shadow-color: var(--link-theme-color)
+  }
+  .linkcard .card_data h3{
+    margin: -0.2rem;
+    padding: 0.2rem;
+    display: -webkit-box; /* 必須 */
+    -webkit-box-orient: vertical; /* 必須 */
+    -webkit-line-clamp: 2; /* 行数を制限 */
+    overflow: hidden; /* はみ出た部分を非表示 */
+  }
+  .linkcard .card_data p{
+    margin: 0 -0.2rem 0;
+    padding: 0.2rem;
+    line-height: 2.2rem;
+  }
+  .linkcard .card_metadata{
+    display: flex;
+    justify-content: start;
+    gap: 1.6rem;
+  }
+  .linkcard .card_metadata .pub_date{white-space: nowrap;}
+  .linkcard .card_metadata .description{  
+    display: -webkit-box; /* 必須 */
+    -webkit-box-orient: vertical; /* 必須 */
+    -webkit-line-clamp: 3; /* 行数を制限 */
+    overflow: hidden; /* はみ出た部分を非表示 */
+  }
+  .linkcard .logo{
+    background-color: var(--link-theme-color);
+    position: absolute;
+    left: 1.6rem;
+    bottom: 0.8rem;
+    height:2.4rem;
+    width:auto;
+    opacity:1;
+  }
+  .linkcard .thumbnail{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: x y;
+    object-position: 50% 50%; /* 中央表示 */
+  }
+  /*@media screen and (max-width: 768px) { 仮実装 */
     .linkcard{
-        display:inline-block;
-        width: min(24rem, calc(calc(100% - 3.2rem) / 3));
-        height: 13.5rem;
-        border: 0.2rem solid var(--linkcard-border);
-    }
-    .linkcard .border_left{
-        width: 100%;
-        height: 100%;
-        border-left: 1.2rem solid var(--link-theme-color);
-        position: relative;
+      width: 100%;
     }
     .linkcard .thumbnail{
-        position: absolute;
-    }
-    .linkcard:hover .thumbnail,.linkcard:active .thumbnail,.linkcard:focus .thumbnail{
-        opacity: 0.2;
+      width: 30%;
+      max-width: 13.5rem;
+      right: 0;
     }
     .linkcard .card_data{
-        position: absolute;
-        color: var(--main-font-color);
-        padding:0.8rem 1.6rem;
-        opacity: var(--text-display-boolean);
-        --text-shadow-color: var(--main-bg-color);
-        text-shadow:
-            0.1rem 0.1rem 0.1rem var(--text-shadow-color), -0.1rem -0.1rem 0.1rem var(--text-shadow-color),
-            -0.1rem 0.1rem 0.1rem var(--text-shadow-color),    0.1rem -0.1rem 0.1rem var(--text-shadow-color),
-            0.1rem 0 0.1rem var(--text-shadow-color), -0.1rem    0 0.1rem var(--text-shadow-color),
-            0 0.1rem 0.1rem var(--text-shadow-color),    0 -0.1rem 0.1rem var(--text-shadow-color);
+      margin-right: min(30%,13.5rem);
     }
-    .linkcard:hover,.linkcard:active,.linkcard:focus {
-        border: 0.2rem solid var(--linkcard-border-active);
-        background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
-    }
-    .linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
-        opacity: 1;
-        color: var(--link-sub-color);
-        --text-shadow-color: var(--link-theme-color)
-    }
-    .linkcard .card_data h3{
-        margin: -0.2rem;
-        padding: 0.2rem;
-        display: -webkit-box; /* 必須 */
-        -webkit-box-orient: vertical; /* 必須 */
-        -webkit-line-clamp: 2; /* 行数を制限 */
-        overflow: hidden; /* はみ出た部分を非表示 */
-    }
-    .linkcard .card_data p{
-        margin: 0 -0.2rem 0;
-        padding: 0.2rem;
-        line-height: 2.2rem;
-    }
-    .linkcard .card_metadata{
-        display: flex;
-        justify-content: start;
-        gap: 1.6rem;
-    }
-    .linkcard .card_metadata .pub_date{white-space: nowrap;}
-    .linkcard .card_metadata .description{    
-        display: -webkit-box; /* 必須 */
-        -webkit-box-orient: vertical; /* 必須 */
-        -webkit-line-clamp: 3; /* 行数を制限 */
-        overflow: hidden; /* はみ出た部分を非表示 */
-    }
-    .linkcard .logo{
-        background-color: var(--link-theme-color);
-        position: absolute;
-        left: 1.6rem;
-        bottom: 0.8rem;
-        height:2.4rem;
-        width:auto;
-        opacity:1;
-    }
-    .linkcard .thumbnail{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: x y;
-        object-position: 50% 50%; /* 中央表示 */
-    }
-    /*@media screen and (max-width: 768px) { 仮実装 */
-        .linkcard{
-            width: 100%;
-        }
-        .linkcard .thumbnail{
-            width: 30%;
-            max-width: 13.5rem;
-            right: 0;
-        }
-        .linkcard .card_data{
-            margin-right: min(30%,13.5rem);
-        }
-    /*} 仮実装 */
+  /*} 仮実装 */
 </style>
