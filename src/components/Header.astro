@@ -184,12 +184,42 @@
 </div>
 <script>
   const header = document.getElementById("div-header");
-    if (!header) {
-      throw new Error("header not found");
+  const navButton = document.getElementById("nav_button");
+
+  if (!header) {
+    throw new Error("header not found");
+  }
+  if (!(navButton instanceof HTMLInputElement)) {
+    throw new Error("nav_button not found");
+  }
+
+  let lastScrollY = window.scrollY;
+
+    // ヘッダー外クリックでメニューを閉じる
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (!(target instanceof Node)) {
+      return;
+  }
+
+    if (!header.contains(target)) {
+      navButton.checked = false;
     }
+  });
 
-    let lastScrollY = window.scrollY;
+  // Escキーでも閉じる
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      navButton.checked = false;
+      // Escを押したときfocusを解除
+      navButton.blur();
 
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    }
+  });
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
     const stickyThreshold = 96;
