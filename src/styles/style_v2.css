@@ -17,6 +17,8 @@
     --header-font-color: white;
     --header-bg-color: var(--charlotteace-theme);
     --header-border-color: var(--charlotteace-dark);
+    --header-font-focus: var(--charlotteace-dark);
+    --header-bg-focus: var(--charlotteace-sky);
     --link-font-color: var(--charlotteace-blue);
     --link-visited-color: var(--dark-gray);
 }
@@ -160,26 +162,22 @@ div{font-size: 1.6rem;}
 }
 
 /*tag関連、ブログ関連*/
-.tag{
-    --tag-bg-color: var(--light-gray);
+.tag, .tag:visited {
+  font-size: 1.4rem;
+  margin-right: 0.4rem;
+  padding: 0.4rem;
+  float: left;
+  color: var(--header-font-color);
+  border-radius: 0.4rem;
+  border: 1px solid var(--header-border-color);
+  text-decoration: none;
+  background-color: var(--header-bg-color);
 }
-@media (prefers-color-scheme: dark) {
-    .tag{
-        --tag-bg-color: var(--charlotteace-theme);
-    }
+.tag:hover, .tag:active, .tag:focus {
+  color: var(--header-font-color);
+  background-color: var(--header-border-color);
 }
-.tag{
-    font-size: 1.4rem;
-    margin-right: 0.4rem;
-    padding: 0.4rem;
-    float: left;
-    color: var(--main-font-color);
-    text-decoration: none;
-    background-color: var(--tag-bg-color);
-    
-}
-.tag:visited{color: var(--main-font-color);}
-.tag:hover,.tag:focus{
-    color: var(--main-bg-color);
-    background-color: var(--link-font-color);
+.tag:focus-visible {
+  color: var(--header-font-focus);
+  background-color: var(--header-bg-focus);
 }
