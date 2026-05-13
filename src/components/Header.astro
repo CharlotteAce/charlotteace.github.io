@@ -55,19 +55,26 @@
     line-height: 4rem;
     display: block;
   }
-  #nav a:hover, #nav_button:hover+.nav_button {
-    background-color: var(--header-border-color);
+  
+  #nav a:focus, .nav_button:focus {
+    background-color: var(--header-bg-color);
   }
-  @media (hover:none){
-    #nav a:hover, #nav_button:hover+.nav_button {
+  /* :hover,:any-hoverに非対応なブラウザ向けのフォールバック */
+  #nav a:hover, .nav_button:hover {
+    background-color: var(--header-border-color);
+  }  
+  @media (hover:none){ 
+    #nav a:hover, .nav_button:hover {
       background-color: var(--header-bg-color);
     }
-    #nav a:active, #nav_button:active+.nav_button {
+    #nav a:active, .nav_button:active {
       background-color: var(--header-border-color);
     }
   }
-  #nav a:focus, #nav_button:focus+.nav_button {
-    background-color: var(--header-border-color);
+  @media (any-hover:hover){
+    #nav a:hover, .nav_button:hover {
+      background-color: var(--header-border-color);
+    }
   }
   #nav a:focus-visible, #nav_button:focus-visible + .nav_button {
     color: var(--header-font-focus);

@@ -173,12 +173,18 @@ div{font-size: 1.6rem;}
   text-decoration: none;
   background-color: var(--header-bg-color);
 }
-.tag:hover {
+
+.tag:focus {
   color: var(--header-font-color);
-  background-color: var(--header-border-color);
+  background-color: var(--header-bg-color);
 }
-@media (hover:none){
-  .tag:focus {
+/* :hover,:any-hoverに非対応なブラウザ向けのフォールバック */
+.tag:hover {
+    color: var(--header-font-color);
+    background-color: var(--header-border-color);
+}
+@media (hover:none){ 
+  .tag:hover {
     color: var(--header-font-color);
     background-color: var(--header-bg-color);
   }
@@ -187,11 +193,13 @@ div{font-size: 1.6rem;}
     background-color: var(--header-border-color);
   }
 }
-.tag:focus {
-  color: var(--header-font-color);
-  background-color: var(--header-border-color);
+@media (any-hover:hover){
+  .tag:hover {
+    color: var(--header-font-color);
+    background-color: var(--header-border-color);
+  }
 }
 .tag:focus-visible {
   color: var(--header-font-focus);
-  background-color: var(--header-bg-focus);
+  background-color: var(--header-border-focus);
 }
