@@ -1,11 +1,9 @@
 ---
-interface Props {
-  pageTitle: string;
-  description: string;
-}
-
 const { pageTitle } = Astro.props;
+const { pageUrl } = Astro.props;
 const { description } = Astro.props;
+const { canonical = false } = Astro.props;
+const { noindex = false } = Astro.props;
 /*import "the-new-css-reset";*/
 const favicon = import.meta.env.DEV
   ? "/favicon-dev.png"
@@ -13,7 +11,6 @@ const favicon = import.meta.env.DEV
 const siteName = "シャーロットエースの部屋";
 const pageName = pageTitle + " - " + siteName;
 const author = "シャーロットエース";
-const pageUrl = "/" /* 後で実装　*/
 ---
 
 <!DOCTYPE html>
@@ -51,10 +48,10 @@ const pageUrl = "/" /* 後で実装　*/
     <meta name="twitter:image" content="https://charlotteace.github.io/favicon.png">
 
     <!-- canonical -->
-    <!-- <link rel="canonical" href="canonical"> -->
+    {canonical && <link rel="canonical" href={canonical} />}
 
     <!-- noindex -->
-    <!-- <meta name="robots" content="noindex,nofollow"> -->
+    {noindex && <meta name="robots" content="noindex" />}
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">

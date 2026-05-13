@@ -7,7 +7,7 @@ const { pageUrl } = Astro.props;
 const { description } = Astro.props;
 ---
 
-<AceHead pageTitle={pageTitle}, description={ description }>
+<AceHead pageTitle={ pageTitle } pageUrl={ pageUrl } description={ description }>
   <div id="wrapper">
     <Header />
     <slot />
