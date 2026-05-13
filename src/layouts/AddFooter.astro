@@ -1,0 +1,16 @@
+---
+import AceHead from '@src/layouts/AceHead.astro';
+import Footer from '@src/components/Footer.astro';
+import '@src/styles/style_v2.css';
+const { pageTitle } = Astro.props;
+const { pageUrl } = Astro.props;
+const { description } = Astro.props;
+---
+
+<AceHead pageTitle={pageTitle}, description={ description }>
+  <div id="wrapper">
+    <slot />
+  </div>
+  <Footer pageTitle={pageTitle} pageUrl={pageUrl}/>
+</AceHead>
+

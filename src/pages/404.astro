@@ -1,10 +1,10 @@
 ---
-import LayoutHeaderFooter from '@src/layouts/LayoutHeaderFooter.astro';
+import AddHeaderFooter from '@src/layouts/AddHeaderFooter.astro';
 /*import Card from '../components/Card.astro';*/
 const { pageTitle } = Astro.props;
 ---
 
-<LayoutHeaderFooter pageTitle={pageTitle}>
+<AddHeaderFooter pageTitle={pageTitle}>
 	<div id="wrapper">
 		<div id="title">
 			<h1>404 not found</h1>
@@ -17,4 +17,4 @@ const { pageTitle } = Astro.props;
 		
 		</div>
 	</div>
-</LayoutHeaderFooter>
+</AddHeaderFooter>

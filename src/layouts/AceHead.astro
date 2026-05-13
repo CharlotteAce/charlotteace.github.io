@@ -1,0 +1,64 @@
+---
+interface Props {
+  pageTitle: string;
+  description: string;
+}
+
+const { pageTitle } = Astro.props;
+const { description } = Astro.props;
+/*import "the-new-css-reset";*/
+const favicon = import.meta.env.DEV
+  ? "/favicon-dev.png"
+  : "/favicon.png";
+const siteName = "シャーロットエースの部屋";
+const pageName = pageTitle + " - " + siteName;
+const author = "シャーロットエース";
+const pageUrl = "/" /* 後で実装　*/
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+    <!-- Site Data -->
+    <title>{pageName}</title>
+    <meta name="description" content={description}>
+    <meta name="author" content={author}>
+    <link rel="icon" href={favicon} type="image/png">
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1C4D8C">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={siteName}>
+    <meta property="og:title" content={pageName}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={pageUrl}>
+    <meta property="og:image" content="https://charlotteace.github.io/favicon.png">
+    <meta property="og:locale" content="jp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={pageName}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content="https://charlotteace.github.io/favicon.png">
+
+    <!-- canonical -->
+    <!-- <link rel="canonical" href="canonical"> -->
+
+    <!-- noindex -->
+    <!-- <meta name="robots" content="noindex,nofollow"> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+  </head>
+	<body>
+		<slot />
+	</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-import LayoutHeaderFooter from '@src/layouts/LayoutHeaderFooter.astro';
+import AddHeaderFooter from '@src/layouts/AddHeaderFooter.astro';
 import Tags from '@src/components/Tags.astro';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
@@ -9,23 +9,21 @@ const { description } = Astro.props;
 const { tags } = Astro.props;
 ---
 
-<LayoutHeaderFooter pageTitle={pageTitle} pageUrl={pageUrl}>
-	<div id="wrapper">
-		<div id="title">
-			<h1>{pageTitle}</h1>
-			<p id="description">{description}</p>
-			<p id="pubdate">公開：{pubDate}&emsp;更新：{updateDate}</p>
-			<div id="tags">
-                <Tags tags={tags}/>
-            </div>
-		</div>
+<AddHeaderFooter pageTitle={pageTitle} pageUrl={pageUrl}>
+  <div id="title">
+    <h1>{pageTitle}</h1>
+    <p id="description">{description}</p>
+    <p id="pubdate">公開：{pubDate}&emsp;更新：{updateDate}</p>
+    <div id="tags">
+      <Tags tags={tags}/>
+    </div>
+  </div>
 
-		<div id="main">
-            <slot/>
-		</div>
-		<!--div class="bottom">
-			<div class="other_article"><h2>記事タイトル</h2></div>
-			<div class="other_article"><h2>記事タイトル</h2></div>
-		</div-->
-	</div>
-</LayoutHeaderFooter>
+  <div id="main">
+    <slot/>
+  </div>
+  <!--div class="bottom">
+    <div class="other_article"><h2>記事タイトル</h2></div>
+    <div class="other_article"><h2>記事タイトル</h2></div>
+  </div-->
+</AddHeaderFooter>
