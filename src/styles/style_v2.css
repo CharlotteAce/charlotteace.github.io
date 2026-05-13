@@ -1,38 +1,38 @@
 :root{
-    --charlotteace-deep: #0a0b10; /*C100M50Y30K90*/
-    --charlotteace-dark: #182f60;
-    --charlotteace-theme: #1C4D8C;
-    --charlotteace-blue: #136eab;
-    --charlotteace-water: #2990d0;
-    --charlotteace-sky: #5bb2e1;
-    --charlotteace-pale: #b0bfcd; /* C30M15Y10K10 */
-    --dark-gray: #353542;
-    --middle-gray: #515155;
-    --light-gray: #a4a8ab;
+  --charlotteace-deep: #0a0b10; /*C100M50Y30K90*/
+  --charlotteace-dark: #182f60;
+  --charlotteace-theme: #1C4D8C;
+  --charlotteace-blue: #136eab;
+  --charlotteace-water: #2990d0;
+  --charlotteace-sky: #5bb2e1;
+  --charlotteace-pale: #b0bfcd; /* C30M15Y10K10 */
+  --dark-gray: #353542;
+  --middle-gray: #515155;
+  --light-gray: #a4a8ab;
 
-    /*ライトモード時*/
-    --main-font-color: black;
-    --main-bg-color: var(--charlotteace-pale);
-    --main-deep-color: black;
-    --header-font-color: white;
-    --header-bg-color: var(--charlotteace-theme);
-    --header-border-color: var(--charlotteace-dark);
-    --header-font-focus: var(--charlotteace-dark);
-    --header-bg-focus: var(--charlotteace-sky);
-    --link-font-color: var(--charlotteace-blue);
-    --link-visited-color: var(--dark-gray);
+  /*ライトモード時*/
+  --main-font-color: black;
+  --main-bg-color: var(--charlotteace-pale);
+  --main-deep-color: black;
+  --header-font-color: white;
+  --header-bg-color: var(--charlotteace-theme);
+  --header-border-color: var(--charlotteace-dark);
+  --header-font-focus: var(--charlotteace-dark);
+  --header-bg-focus: var(--charlotteace-sky);
+  --link-font-color: var(--charlotteace-blue);
+  --link-visited-color: var(--dark-gray);
 }
 @media (prefers-color-scheme: dark) {
-    :root{
-        --main-font-color: white;
-        --main-bg-color: var(--charlotteace-deep);
-        --main-deep-color: var(--charlotteace-deep);
-        --header-font-color: white;
-        --header-bg-color: var(--charlotteace-dark);
-        --header-border-color: var(--charlotteace-theme);
-        --link-font-color: var(--charlotteace-sky);
-        --link-visited-color: var(--light-gray);
-    }
+  :root{
+    --main-font-color: white;
+    --main-bg-color: var(--charlotteace-deep);
+    --main-deep-color: var(--charlotteace-deep);
+    --header-font-color: white;
+    --header-bg-color: var(--charlotteace-dark);
+    --header-border-color: var(--charlotteace-theme);
+    --link-font-color: var(--charlotteace-sky);
+    --link-visited-color: var(--light-gray);
+  }
 }
 
 *{font-family:Noto Sans JP,sans-serif;margin:0;padding:0;outline:none;}
@@ -47,118 +47,118 @@ h1{font-size: 3.2rem;}
 h2{font-size: 2.4rem;}
 h3{font-size: 2.0rem;}
 p,li,details{
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    margin: 4rem 0 0;
-    padding: 0.6rem 0;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  margin: 4rem 0 0;
+  padding: 0.6rem 0;
 }
 li{
-    margin: 0 0 0 2rem;
-    padding:0;
-    list-style-type: disc;
-}    
+  margin: 0 0 0 2rem;
+  padding:0;
+  list-style-type: disc;
+}  
 details{
-    margin: 0;
-    padding: 0.6rem 0;
-}    
+  margin: 0;
+  padding: 0.6rem 0;
+}  
 details summary{
-    width : max-content;
-    max-width: 100%;
-    margin: 0 0 1.2rem 0;
-    padding: 0 0.6rem 0 2.2rem;
-    text-indent: -1.6rem;            
+  width : max-content;
+  max-width: 100%;
+  margin: 0 0 1.2rem 0;
+  padding: 0 0.6rem 0 2.2rem;
+  text-indent: -1.6rem;      
 }
 details summary:hover,details summary:focus{
-    color: var(--main-bg-color);
-    background-color: var(--link-font-color);
+  color: var(--main-bg-color);
+  background-color: var(--link-font-color);
 }
 
 
-li li{list-style-type: circle;}    
+li li{list-style-type: circle;}  
 h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
 
 a{
-    color: var(--link-font-color);
-    text-decoration:underline;
+  color: var(--link-font-color);
+  text-decoration:underline;
 }
 a:visited{color:var(--link-visited-color)}
 a:hover,a:focus{
-    color: var(--main-bg-color);
-    background-color: var(--link-font-color);
-    text-decoration: none;
+  color: var(--main-bg-color);
+  background-color: var(--link-font-color);
+  text-decoration: none;
 }
 div{font-size: 1.6rem;}
 
 #wrapper,.botom,#footer{
-    max-width: 960px;
-    margin: 0 auto 0;
-    padding: 0 1.6rem;
-}        
+  max-width: 960px;
+  margin: 0 auto 0;
+  padding: 0 1.6rem;
+}    
 #site_name,#site_name:visited,#site_name:hover{
-    font-size: min(3.2rem,6vw);
-    color: white;
-    text-decoration: none;
-    background: transparent;
+  font-size: min(3.2rem,6vw);
+  color: white;
+  text-decoration: none;
+  background: transparent;
 }
 #site_name:focus{color:var(--charlotteace-theme);background:white;}
 .site_icon,.site_icon:visited{
-    margin-left: 1.6rem;
-    font-size: 2rem;
-    color: white;
-    text-decoration: none;
+  margin-left: 1.6rem;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
 }
 .site_icon:hover{
-    color: white;
-    text-decoration: underline;
-    background: transparent;
+  color: white;
+  text-decoration: underline;
+  background: transparent;
 }
 .site_icon:focus{color: var(--charlotteace-theme); text-decoration: none; background: white;}
 #site_icon_button,.site_icon_button{display: none;}
 #menu_group{display:none;}
 #title{
-    margin: 0;
-    padding: 0;
-    display: flex;  
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
 }
 #title ~ h1{
-    text-align: center;
+  text-align: center;
 }
 #pubdate{font-size: 1.4rem;}
 
 #main{
-    margin: 0;
+  margin: 0;
 }
 .bottom{
-    border-top: 0.2rem solid var(--main-font-color);
+  border-top: 0.2rem solid var(--main-font-color);
 }
 .other_article{border-bottom: 0.2rem solid var(--main-font-color);}
 
 
 @media screen and (max-width: 588px) {  
-    .site_icon{
-        display: none;
-    }
-    /*!--メニューボタン周りの実装--*/    
-    .site_icon_button{
-        display: none;/*メニューボタン実装後に「block;」へ変更*/
-    }
-    #site_icon_button + .site_icon_button::after {
-        content: "▼";
-    }
-    #site_icon_button:checked + .site_icon_button::after {
-        content: "▲";
-    }         
-    
-    .footer_contents{
-        margin: 3.2rem 0;
-        display: block;
-        justify-content: left;
-    }   
-    .footer_contents li ul{
-        margin-bottom: 3.2rem;
-    }
+  .site_icon{
+    display: none;
+  }
+  /*!--メニューボタン周りの実装--*/  
+  .site_icon_button{
+    display: none;/*メニューボタン実装後に「block;」へ変更*/
+  }
+  #site_icon_button + .site_icon_button::after {
+    content: "▼";
+  }
+  #site_icon_button:checked + .site_icon_button::after {
+    content: "▲";
+  }     
+  
+  .footer_contents{
+    margin: 3.2rem 0;
+    display: block;
+    justify-content: left;
+  }   
+  .footer_contents li ul{
+    margin-bottom: 3.2rem;
+  }
 }
 
 /*tag関連、ブログ関連*/
@@ -173,7 +173,21 @@ div{font-size: 1.6rem;}
   text-decoration: none;
   background-color: var(--header-bg-color);
 }
-.tag:hover, .tag:active, .tag:focus {
+.tag:hover {
+  color: var(--header-font-color);
+  background-color: var(--header-border-color);
+}
+@media (hover:none){
+  .tag:focus {
+    color: var(--header-font-color);
+    background-color: var(--header-bg-color);
+  }
+  .tag:active {
+    color: var(--header-font-color);
+    background-color: var(--header-border-color);
+  }
+}
+.tag:focus {
   color: var(--header-font-color);
   background-color: var(--header-border-color);
 }

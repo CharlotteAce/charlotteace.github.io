@@ -55,7 +55,18 @@
     line-height: 4rem;
     display: block;
   }
-  #nav a:hover, #nav a:active, #nav a:focus, #nav_button:hover+.nav_button, #nav_button:active+.nav_button, #nav_button:hover+.nav_button {
+  #nav a:hover, #nav_button:hover+.nav_button {
+    background-color: var(--header-border-color);
+  }
+  @media (hover:none){
+    #nav a:hover, #nav_button:hover+.nav_button {
+      background-color: var(--header-bg-color);
+    }
+    #nav a:active, #nav_button:active+.nav_button {
+      background-color: var(--header-border-color);
+    }
+  }
+  #nav a:focus, #nav_button:focus+.nav_button {
     background-color: var(--header-border-color);
   }
   #nav a:focus-visible, #nav_button:focus-visible + .nav_button {
@@ -147,10 +158,10 @@
     transform: translateY(50%) rotate(-45deg);
   }
 </style>
-<div class="header-wrapper">
+<div class="header-wrapper" ontouchstart="">
   <div id="div-header">                
     <input type="checkbox" id="nav_button" />
-    <label class="nav_button" for="nav_button" role="button" aria-haspopup="true">
+    <label class="nav_button" for="nav_button" role="button" aria-haspopup="true" ontouchstart="">
       <span>シャーロットエースの部屋</span>
       <div class="hamburger">
         <span></span>
