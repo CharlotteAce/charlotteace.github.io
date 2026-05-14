@@ -6,9 +6,11 @@ import '@src/styles/style_v2.css';
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
 const { description } = Astro.props;
+const { canonical = false } = Astro.props;
+const { noindex = false } = Astro.props;
 ---
 
-<AceHead pageTitle={ pageTitle } pageUrl={ pageUrl } description={ description }>
+<AceHead pageTitle={ pageTitle } pageUrl={ pageUrl } description={ description } canonical={ canonical } noindex={ noindex }>
   <div id="wrapper">
     <Header />
     <slot />

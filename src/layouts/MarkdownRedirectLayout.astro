@@ -1,11 +1,12 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
+import AddHeaderFooter from '@src/layouts/AddHeaderFooter.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title} pageUrl={frontmatter.pageUrl} pubDate={frontmatter.pubDate} updateDate={frontmatter.updateDate}>
-    <p>
-        閲覧リンクはこちら：<a href={frontmatter.contentsUrl}>{frontmatter.contentsUrl}</a><br>
-        3秒後に自動リダイレクトします。
-    </p>
-    <meta http-equiv="refresh" content={"3;URL='"+frontmatter.contentsUrl+"'"}>
-</BaseLayout>
+
+<AddHeaderFooter pageTitle={ frontmatter.title } pageUrl={ frontmatter.pageUrl } description={ frontmatter.description } canonical={ frontmatter.contentsUrl } noindex=true>
+  <p>
+    閲覧リンクはこちら：<a href={frontmatter.contentsUrl}>{frontmatter.contentsUrl}</a><br>
+    3秒後に自動リダイレクトします。
+  </p>
+  <meta http-equiv="refresh" content={"3;URL='"+frontmatter.contentsUrl+"'"}>
+</AddHeaderFooter>
