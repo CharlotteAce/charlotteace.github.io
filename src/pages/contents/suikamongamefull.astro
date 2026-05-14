@@ -1,7 +1,13 @@
 ---
 import AceHead from '@src/layouts/AceHead.astro';
+const pageTitle = "すいかもんゲーム(full)";
+const pageUrl = "https://charlotteace.github.io/contents/suikamongamefull/"
+const description = "すいかもんゲームの全画面版。";
+const canonical = "https://charlotteace.github.io/contents/suikamongame/";
+const noindex = true;
 ---
-<AceHead pageTitle="すいかもんゲーム(full)" pageUrl="https://charlotteace.github.io/contents/suikamongamefull/" description="すいかもんゲームの全画面版。" canonical="https://charlotteace.github.io/contents/suikamongame/" noindex=true>
+
+<AceHead pageTitle={ pageTitle } pageUrl={ pageUrl } description={ description } canonical={ canonical } noindex={ noindex }>
   <main>
     <style type="text/css">
       body {
