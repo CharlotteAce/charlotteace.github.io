@@ -1,0 +1,44 @@
+---
+import blogs from "@src/data/blogs.yml";
+import MarkdownRedirectLayout from "@src/layouts/MarkdownRedirectLayout.astro";
+type ExternalPost = {
+slug: string;
+  title: string;
+  pubDate: string;
+  updateDate: string;
+  description: string;
+  contentsUrl: string;
+  contentsNum: number;
+  medium: string;
+  image?: {
+    url: string;
+    alt: string;
+  };
+  width?: {
+    four?: string;
+    three?: string;
+    two?: string;
+  };
+  tags: string[];
+};
+export async function getStaticPaths() {
+  return (blogs as ExternalPost[]).map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      frontmatter: {
+        ...post,
+        pageUrl: `/blogs/${post.slug}`,
+      },
+    },
+  }));
+}
+const { frontmatter } = Astro.props as {
+    frontmatter: ExternalPost & {
+    pageUrl: string;
+  };
+};
+---
+
+<MarkdownRedirectLayout frontmatter={frontmatter}/>

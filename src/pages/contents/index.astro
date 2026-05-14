@@ -1,24 +1,64 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 import LinkCard from '@src/components/LinkCard.astro';
+import externalPosts from '@src/data/blogs.yml';
+
+type ExternalPost = {
+  slug: string;
+  title: string;
+  pubDate: string;
+  updateDate: string;
+  description: string;
+  contentsUrl: string;
+  contentsNum: number;
+  medium: string;
+  image?: {
+    url: string;
+    alt: string;
+  };
+  width?: {
+    four?: string;
+    three?: string;
+    two?: string;
+  };
+  tags: string[];
+};
+
 const pageTitle = "制作物・記事一覧";
 const pageUrl = "/contents";
 const pubDate = "2023-12-20";
 const updateDate = "2025-11-04";
 const description = "しのはら恵の制作物紹介。";
 const tags :string[] = [];
-const allPosts = await Astro.glob('@src/pages/blogs/*.md');
+
+const internalPosts = await Astro.glob('@src/pages/blogs/*.md');
+const normalizedInternalPosts = internalPosts.map((post) => ({
+  frontmatter: {
+    ...post.frontmatter,
+  }
+}));
+const normalizedExternalPosts = (externalPosts as ExternalPost[]).map((post) => ({
+  frontmatter: {
+    ...post,
+    pageUrl: `/blogs/${post.slug}`,
+  }
+}));
+const allPosts = [
+  ...normalizedInternalPosts,
+  ...normalizedExternalPosts,
+];
 allPosts.sort((a, b) => {
-    return b.frontmatter.contentsNum - a.frontmatter.contentsNum;
+  return b.frontmatter.contentsNum - a.frontmatter.contentsNum;
 });
 ---
+
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
-    <p>
-        &emsp;このページでは私(国際単位系/しのはら恵/シャーロットエース)の投稿した記事や関与したコンテンツの一覧を掲載しています。
-        カードをクリックすると記事のページへジャンプします。
-    </p>
+  <p>
+    &emsp;このページでは私(国際単位系/しのはら恵/シャーロットエース)の投稿した記事や関与したコンテンツの一覧を掲載しています。
+    カードをクリックすると記事のページへジャンプします。
+  </p>
 	<style>
-		.linkcard_box{
+	  .linkcard_box{
 			margin: 2rem 0 0;
 			display: flex;
 			flex-wrap: wrap;
@@ -26,9 +66,9 @@ allPosts.sort((a, b) => {
 			gap: 1.6rem;
 		}
 	</style>
-    <div class="linkcard_box">
-        <!-- 逆たまコンピの上でいったん改行位置 -->
-        <!-- カゲフミ！１の上でいったん改行位置 -->
-        {allPosts.map((post) => <LinkCard frontmatter={post.frontmatter}/>)}
-    </div>
+  <div class="linkcard_box">
+    <!-- 逆たまコンピの上でいったん改行位置 -->
+    <!-- カゲフミ！１の上でいったん改行位置 -->
+    {allPosts.map((post) => <LinkCard frontmatter={post.frontmatter}/>)}
+  </div>
 </LayoutBlog>
