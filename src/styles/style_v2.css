@@ -201,5 +201,5 @@ div{font-size: 1.6rem;}
 }
 .tag:focus-visible {
   color: var(--header-font-focus);
-  background-color: var(--header-border-focus);
+  background-color: var(--header-bg-focus);
 }
