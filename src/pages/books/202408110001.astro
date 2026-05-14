@@ -1,82 +1,83 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 const pageTitle = "カゲフミ！　vol. 1　追加Webコンテンツ";
 const pageUrl = "";
 const pubDate = "2024-08-11";
 const updateDate = "2024-08-12";
+const description = "既刊「カゲフミ！　vol. 1」購入者向けページ";
+const tags :string[] = ["制作物", "同人活動", "ウマ娘"];
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	<p class="info_item">【お詫びとお知らせ】(08-12配信)『カゲフミ！　vol. 1』22ページの「ニンジンゼリー ムース仕立て」のレシピに一部誤りがありました。修正箇所は次の通りです。</p>
-	<style>.seigohyo{margin: 0 3rem;
-		 text-indent: 0;}</style>
-	<p class="seigohyo">
-		誤：顆粒ゼラチン・・・・<u>5g</u><br>
-		正：顆粒ゼラチン・・・・<u>10g</u><br>
-		<br>
-		誤：2. 顆粒ゼラチン<u>2.5g</u>を加え〜<br>
-		正：2. 顆粒ゼラチン<u>5g</u>を加え〜<br>
-		<br>
-	</p>
-	<p class="info_item">訂正前のレシピで楽しみに作ってくださった方、いらっしゃいましたら申し訳ありません。<br><br></p>
-	<p class="info_item">2024年08月11日にしのはら恵名義で頒布した、『カゲフミ！　vol. 1』追加Webコンテンツ配信ページです。</p>
-	<p class="infp_item">現在、新刊『カゲフミ！　vol. 2』追加コンテンツ公開に向けた作業中のため、一時的にこちらも非公開となっております。ご容赦ください。</p>
-	<!--
-	
-	<p class="info_item">Webページの改修が間に合っておらず、現在追加コンテンツが公開できない状態あります。来週末ごろの復旧を目指しておりますので、今しばらくお待ちください。更新情報は<a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">しのはら恵(@_shinoharaK) - X.com</a>にてお伝えします。</p>
-	<style>
-		.hcontent-22 {
-			text-shadow: none;}
-	</style>
-	<div class="hcard-group">
-		<div class="hcard">
-			<div class="hcard-home hcard-home2">
-				<div class="hace">
-					<div class="htext">
-						<h2 class="hcontent-1">
-							府中市資料写真
-						</h2>
-						<p class="hcontent-2 hcontent-22">
-							9月ごろ公開予定。モデル地訪問や作画のお供に。どなた様もご覧いただけます。
-						</p>
-					</div>
-					<a href=""></a>
-				</div>
-			</div>
-		</div>
-		<div class="hcard">
-			<div class="hcard-home hcard-home2">
-				<div class="hace">
-					<div class="htext">
-						<h2 class="hcontent-1">
-							パンケーキ型
-						</h2>
-						<p class="hcontent-2 hcontent-22">
-							来週末復旧予定。『カゲフミ！　vol. 1』20ページ掲載「ウマミミ&蹄鉄パンケーキ」を作る際に必要となるパンケーキ型の図面です。
-						</p>
-					</div>
-					<a href=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="hcard-group hcard-group3">
-		<div class="hcard hcard3">
-			<div class="hcard-home hcard-home3 hcard-home2">
-				<div class="hace">
-					<div class="htext">
-						<h2 class="hcontent-1">
-							BOOTH
-						</h2>
-						<p class="hcontent-2 hcontent-22">
-							現在外部販売リンクの準備中です。『カゲフミ！　vol. 1』は通信販売でもお買い求めいただけます(予定)。公開まで今しばらくお待ちください。
-						</p>
-					</div>
-					<a href=""></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	 -->
-</BaseLayout>
 
-
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+  <p class="info_item">【お詫びとお知らせ】(08-12配信)『カゲフミ！　vol. 1』22ページの「ニンジンゼリー ムース仕立て」のレシピに一部誤りがありました。修正箇所は次の通りです。</p>
+  <style>.seigohyo{margin: 0 3rem;
+     text-indent: 0;}</style>
+  <p class="seigohyo">
+    誤：顆粒ゼラチン・・・・<u>5g</u><br>
+    正：顆粒ゼラチン・・・・<u>10g</u><br>
+    <br>
+    誤：2. 顆粒ゼラチン<u>2.5g</u>を加え〜<br>
+    正：2. 顆粒ゼラチン<u>5g</u>を加え〜<br>
+    <br>
+  </p>
+  <p class="info_item">訂正前のレシピで楽しみに作ってくださった方、いらっしゃいましたら申し訳ありません。<br><br></p>
+  <p class="info_item">2024年08月11日にしのはら恵名義で頒布した、『カゲフミ！　vol. 1』追加Webコンテンツ配信ページです。</p>
+  <p class="infp_item">現在、新刊『カゲフミ！　vol. 2』追加コンテンツ公開に向けた作業中のため、一時的にこちらも非公開となっております。ご容赦ください。</p>
+  <!--
+  
+  <p class="info_item">Webページの改修が間に合っておらず、現在追加コンテンツが公開できない状態あります。来週末ごろの復旧を目指しておりますので、今しばらくお待ちください。更新情報は<a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">しのはら恵(@_shinoharaK) - X.com</a>にてお伝えします。</p>
+  <style>
+    .hcontent-22 {
+      text-shadow: none;}
+  </style>
+  <div class="hcard-group">
+    <div class="hcard">
+      <div class="hcard-home hcard-home2">
+        <div class="hace">
+          <div class="htext">
+            <h2 class="hcontent-1">
+              府中市資料写真
+            </h2>
+            <p class="hcontent-2 hcontent-22">
+              9月ごろ公開予定。モデル地訪問や作画のお供に。どなた様もご覧いただけます。
+            </p>
+          </div>
+          <a href=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-home hcard-home2">
+        <div class="hace">
+          <div class="htext">
+            <h2 class="hcontent-1">
+              パンケーキ型
+            </h2>
+            <p class="hcontent-2 hcontent-22">
+              来週末復旧予定。『カゲフミ！　vol. 1』20ページ掲載「ウマミミ&蹄鉄パンケーキ」を作る際に必要となるパンケーキ型の図面です。
+            </p>
+          </div>
+          <a href=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hcard-group hcard-group3">
+    <div class="hcard hcard3">
+      <div class="hcard-home hcard-home3 hcard-home2">
+        <div class="hace">
+          <div class="htext">
+            <h2 class="hcontent-1">
+              BOOTH
+            </h2>
+            <p class="hcontent-2 hcontent-22">
+              現在外部販売リンクの準備中です。『カゲフミ！　vol. 1』は通信販売でもお買い求めいただけます(予定)。公開まで今しばらくお待ちください。
+            </p>
+          </div>
+          <a href=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+</LayoutBlog>

@@ -1,13 +1,14 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
+import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 const pageTitle = "カゲフミ！　vol. 2　追加Webコンテンツ";
 const pageUrl = "";
 const pubDate = "2025-03-30";
 const updateDate = "2025-03-30";
+const description = "既刊「カゲフミ！　vol. 2」購入者向けページ";
+const tags :string[] = ["制作物", "同人活動", "ウマ娘"];
 ---
-<BaseLayout pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate}>
-	<p class="info_item">2025年03月30日にしのはら恵名義で頒布した、『カゲフミ！　vol. 2』追加Webコンテンツ配信ページです。</p>
-	<p class="info_item">本ページにて4月ごろ配信開始予定ですので、暫くお待ちください。</p>
-</BaseLayout>
 
-
+<LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
+  <p class="info_item">2025年03月30日にしのはら恵名義で頒布した、『カゲフミ！　vol. 2』追加Webコンテンツ配信ページです。</p>
+  <p class="info_item">本ページにて配信開始予定ですので、暫くお待ちください。</p>
+</LayoutBlog>

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/Md2Redirect.astro
 title: 'ほしいものリスト「芋」'
 pubDate: ""
 updateDate: "2025-01-12"
