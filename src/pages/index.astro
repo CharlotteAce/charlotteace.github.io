@@ -9,10 +9,10 @@ const tags :string[] = [];
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
 	<blockquote>
-		<p >まだ何も書かれていない予定表 なんでも書ける これから書ける</p>
-		<p class="reference">――『会うまでの時間 自選歌集』、俵万智、2005</p>
+		<p>五月病を極めたので本当の風邪もひける</p>
 	</blockquote>
-	<p>&emsp;私(国際単位系/しのはら恵/シャーロットエース)の個人サイトです。現在新デザインに移行中。内部ファイル構造の変更も兼ねて、数ページずつ順次適用しています。ところどころ不具合があるかと思いますが、ご容赦ください。</p>
+	<p class="reference">――<a href="/profile#hitokoto">今日のひとこと</a>より（2026-05-21更新）</p>
+	<p>&emsp;しのはら恵（またの名を、国際単位系・シャーロットエース）の個人サイトです。現在新デザインに移行中。</p>
 	<style>
 		.linkcard_box{
 			margin: 2rem 0 0;
@@ -32,24 +32,29 @@ const tags :string[] = [];
 			--text-display-boolean:1;
 		}
 		.linkcard{
-			--linkcard-border: var(--charlotteace-deep);
+			--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
+			--linkcard-border: var(--charlotteace-water);
 			--linkcard-border-active: var(--charlotteace-deep);		
 		}
 		@media (prefers-color-scheme: dark) {
 			.linkcard{
-				--linkcard-border: var(--light-gray);
+				--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+				--linkcard-border: var(--charlotteace-theme);
 				--linkcard-border-active: var(--link-theme-color);		
 			}
 		}
 		.linkcard{
 			display:inline-block;
 			width: calc(calc(100% - 2.4rem) / 2);
-			border: 0.2rem solid var(--linkcard-border);
+			border: 1px solid var(--linkcard-border);
+			border-radius: 0.8rem;
+			background-color: var(--linkcard-bg-color);
+			overflow: hidden;
 		}
 		.linkcard .border_left{
 			width: 100%;
 			height: 100%;
-			border-top: 1.2rem solid var(--link-theme-color);
+			border-left: 0.8rem solid var(--link-theme-color);
 			position: relative;
 		}
 		.linkcard .card_data{
@@ -58,7 +63,7 @@ const tags :string[] = [];
 			opacity: var(--text-display-boolean);
 		}
 		.linkcard:hover,.linkcard:active,.linkcard:focus {
-			border: 0.2rem solid var(--linkcard-border-active);
+			border: 1px solid var(--linkcard-border-active);
 			background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
 		}
 		.linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
@@ -78,30 +83,12 @@ const tags :string[] = [];
 		.linkcard, .linkcard:visited{
 			text-decoration: none;
 		}
-		blockquote{
-			background-color: var(--light-gray);
-			margin-top: 4rem;
-			padding: 1.6rem;
-		}
-		@media (prefers-color-scheme: dark) {
-			blockquote{
-				background-color: var(--dark-gray);
-				padding: 1.6rem;
-			}
-		}
-		blockquote p{
-			margin: 0;
-		}
-
+		
 		.banner, .linktext{display: none;}
         @media screen and (max-width: 588px) {
 			.linkcard{
 				width: 100%;
 				min-width: 100%;
-			}
-			.linkcard .border_left{
-				border: none;
-				border-left: 1.2rem solid var(--link-theme-color);
 			}
 		}
 	</style>
@@ -110,7 +97,7 @@ const tags :string[] = [];
 			<div class="border_left">
 				<div class="card_data">
 					<h2>制作物・記事一覧</h2>
-					<p>各所に投稿した記事や関与した制作物についてまとめています。事実上のポータルサイト。結構気合を入れて作ったページです。
+					<p>しのはら恵の成果物について。</p>
 				</div>
 			</div>
 		</a>
@@ -119,7 +106,7 @@ const tags :string[] = [];
 			<div class="border_left">
 				<div class="card_data">
 					<h2>プロフィール</h2>
-					<p>私(国際単位系/シャーロットエース)について書きました。あったほうがいいので作ったページですが、そんなに新しい情報があるかはわかりません。今日のひとことも更新中（不定期更新）。</p>
+					<p>しのはら恵の人生について。</p>
 				</div>
 			</div>
 		</a>

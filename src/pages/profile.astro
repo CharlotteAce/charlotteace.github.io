@@ -1,9 +1,11 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+import IconRemote from '@src/components/IconRemote.astro';
+import IconSNS from '@src/components/IconSNS.astro';
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
-const updateDate = "2026-05-08";
+const updateDate = "2026-05-21";
 const description = "しのはら恵の自己紹介。";
 const tags :string[] = [];
 import { Image } from 'astro:assets';
@@ -93,14 +95,15 @@ import aceFace from '@src/images/charlotteace001.png';
     <p>&emsp;ペンネーム『しのはら恵』は、<a class="color" href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer">『カゲフミ！　vol. 1』</a>の刊行にあたり、本名らしいペンネームが欲しくなり付けた名前。「し（＝SI）」から始まる名字に、「系」と同音で読める「恵」とした。漢字の読み方は指定していない。</p>
     <h3>ファンアートタグ</h3>
     <p>&emsp;<a href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#シャーロット絵ース</a>（シャーロットエース）、<a class="color" href="https://x.com/search?q=%23%E3%81%AB%E3%82%83%E3%82%89%E3%82%93%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#にゃらんかあーと</a>（にゃーんRanker）</p>
-    <h2>今日のひとこと</h2>
+    <h2 id="hitokoto">今日のひとこと</h2>
     <p>
-		&emsp;ウマ娘カリフォルニア編始まってマズいけどね（2026-03-29更新）
+		&emsp;五月病を極めたので本当の風邪もひける（2026-05-21更新）
         
 	</p>
 	<details>
 		<summary><span>過去のひとこと</span></summary>
 		<ul>
+			<li>ウマ娘カリフォルニア編始まってマズいけどね（2026-03-29更新）</li>
 			<li>4足のわらじで自転車操業！（2026-01-31更新）</li>
 			<li>本年もアクセルベタ踏みで参ります、なにとぞ（2026-01-05更新）</li>
 			<li>リファクタリングが、足りん！w（2025-10-26更新）</li>
@@ -355,12 +358,14 @@ import aceFace from '@src/images/charlotteace001.png';
 			--text-display-boolean:1;
 		}
 		.linkcard{
-			--linkcard-border: var(--charlotteace-deep);
+			--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
+			--linkcard-border: var(--charlotteace-water);
 			--linkcard-border-active: var(--charlotteace-deep);		
 		}
 		@media (prefers-color-scheme: dark) {
 			.linkcard{
-				--linkcard-border: var(--light-gray);
+				--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+				--linkcard-border: var(--charlotteace-theme);
 				--linkcard-border-active: var(--link-theme-color);		
 			}
 		}
@@ -368,12 +373,15 @@ import aceFace from '@src/images/charlotteace001.png';
 			display:inline-block;
 			width: 24rem;
 			height: 13.5rem;
-			border: 0.2rem solid var(--linkcard-border);
+			border: 1px solid var(--linkcard-border);
+			border-radius: 0.8rem;
+			background-color: var(--linkcard-bg-color);
+			overflow: hidden;
 		}
 		.linkcard .border_left{
 			width: 100%;
 			height: 100%;
-			border-left: 1.2rem solid var(--link-theme-color);
+			border-left: 0.8rem solid var(--link-theme-color);
 			position: relative;
 		}
 		.linkcard .thumbnail{
@@ -389,7 +397,7 @@ import aceFace from '@src/images/charlotteace001.png';
 			opacity: var(--text-display-boolean);
 		}
 		.linkcard:hover,.linkcard:active,.linkcard:focus {
-			border: 0.2rem solid var(--linkcard-border-active);
+			border: 1px solid var(--linkcard-border-active);
 			background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
 		}
 		.linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{

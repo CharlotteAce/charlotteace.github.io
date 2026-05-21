@@ -101,6 +101,11 @@ details summary:hover,details summary:focus{
 
 h1+h2,h1+h3,h1+p,h2+h3,h2+p,h3+p,p+p{margin: 0;}
 li p {margin-top: 0;}
+.reference {
+  margin-top: 0;
+  margin-bottom: 4rem;
+  text-align: right;
+}
 
 a{
   color: var(--link-font-color);
@@ -227,4 +232,23 @@ div{font-size: 1.6rem;}
 .tag:focus-visible {
   color: var(--header-font-focus);
   background-color: var(--header-bg-focus);
+}
+
+/* 装飾関連 */
+blockquote{
+  --blockquote-bg-color: var(--light-gray);
+}
+@media (prefers-color-scheme: dark) {
+  blockquote{
+    --blockquote-bg-color: var(--dark-gray);
+  }
+}
+blockquote{
+  background-color: color-mix(in srgb, var(--blockquote-bg-color) 80%, transparent);;
+  margin-top: 4rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+}
+blockquote p{
+  margin: 0;
 }
