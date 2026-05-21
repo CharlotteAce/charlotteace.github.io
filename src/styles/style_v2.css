@@ -70,6 +70,9 @@ li{
   margin: 0 0 0 2rem;
   padding:0;
 }
+li p{
+  padding: 0;
+}
 
 ul li {list-style-type: disc;}
 ol li {list-style-type: decimal;}
@@ -244,7 +247,7 @@ blockquote{
   }
 }
 blockquote{
-  background-color: color-mix(in srgb, var(--blockquote-bg-color) 80%, transparent);;
+  background-color: color-mix(in srgb, var(--blockquote-bg-color) 80%, transparent);
   margin-top: 4rem;
   padding: 1.6rem;
   border-radius: 0.8rem;

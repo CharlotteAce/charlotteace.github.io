@@ -1,0 +1,203 @@
+updated: "2026-05-21"
+
+
+memo:
+  status:
+    - "upcoming"
+    - "tentative"
+    - "past"
+    - "cancelled"
+  place: |
+    - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/) ddnnホール ddxx-mmaa
+      - ゆりかもめ「東京ビッグサイト駅」徒歩3分
+      - りんかい線「国際展示場駅」徒歩7分
+    - [幕張メッセ](https://www.m-messe.co.jp/access/) 展示ホールhh
+      - 京葉線「海浜幕張駅」徒歩5分
+    - [東京流通センター](https://www.trc-inc.co.jp/access/) 第NN展示場aaホール
+      - 東京モノレール「流通センター駅」徒歩1分
+    - [府中市市民活動センター プラッツ](https://www.fuchu-platz.jp/use/1001978.html) 5階バルトホール
+      - 京王線「府中駅」直結
+    - [東京大学本郷キャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map01_02.html) nn号館ff階 xxxx教室
+      - 地下鉄南北線「東大前駅」徒歩5分</li>
+      - 地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分
+
+
+events:
+  - title: "コミックマーケット108"
+    circle: "ど"
+    status: "tentative"
+    sortDate: "2026-08-16"
+    body: |
+      - 2026年8月15日(土)　10:30～16:00
+      - アクセスは上記同様 2日間で異なるサークルとして参加します
+        
+  - title: "コミックマーケット108"
+    circle: "天"
+    status: "tentative"
+    sortDate: "2026-08-15"
+    body: |
+      - 2026年8月15日(土)　10:30～16:00
+      - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/) 東ホール予定 ホール未定
+        - ゆりかもめ「東京ビッグサイト駅」徒歩3分
+        - りんかい線「国際展示場駅」徒歩7分
+
+  - title: "THE VOC@LOiD M@STER 63"
+    circle: "逆"
+    status: "upcoming"
+    sortDate: "2026-07-25"
+    body: |
+      - 2026年7月25日(土)　12:30～16:00
+      - [東京流通センター](https://www.trc-inc.co.jp/access/) 第二展示場Eホール
+        - 東京モノレール「流通センター駅」徒歩1分
+
+  - title: "コミックアカデミー28"
+    circle: "天"
+    status: "past"
+    sortDate: "2026-05-16"
+    body: |
+      - 2026年5月16日(土)・17日(日)　10～16時
+      - 東京大学学園祭『第99回五月祭』内企画
+
+  - title: "THE VOC@LOiD 超 M@STER 62"
+    circle: "逆"
+    status: "past"
+    sortDate: "2026-04-26"
+    body: |
+      - 2026年4月26日(日)
+      - 『ニコニコ超会議2026』内企画
+
+  - title: "プリティーステークス45R"
+    circle: "天"
+    status: "past"
+    sortDate: "2026-03-29"
+    body: |
+      - 2026年03月29日(日)
+      - 『スーパーヒロインタイム2026春』合同開催
+
+
+  - title: "コミックマーケット107"
+    circle: "ど"
+    status: "past"
+    sortDate: "2025-12-31"
+    body: |
+      - 2025年12月31日(水)
+      - [新刊『しのはら恵のコスプレ衣装制作レポート』](/contents/cosplay_books#v1)発行
+      - メイド衣装(特定モデルなし) お披露目
+
+  - title: "コミックマーケット107"
+    circle: "天"
+    status: "past"
+    sortDate: "2025-12-30"
+    body: |
+      - 2025年12月30日(火)
+
+  - title: "コミックアカデミー27"
+    circle: "天"
+    status: "past"
+    sortDate: "2025-11-22"
+    body: |
+      - 2025年11月22日(土)～24日(月・休)
+      - 東京大学学園祭『第76回駒場祭』内企画
+
+  - title: "コミックマーケット106"
+    circle: "天"
+    status: "past"
+    sortDate: "2025-08-16"
+    body: |
+      - 2025年8月16日(土)
+      - [新刊『カゲフミ！　vol. 3』](/contents/kagefumi#v3)発行
+
+  - title: "コミックアカデミー26"
+    circle: "天"
+    status: "past"
+    sortDate: "2024-11-23"
+    body: |
+      - 2025年5月24日(土)・25(日)
+      - 東京大学学園祭『第98回五月祭』内企画
+
+  - title: "Umamusume Racing Carnival 02"
+    circle: "天"
+    status: "past"
+    sortDate: "2025-03-30"
+    body: |
+      - 2025年3月30日(日)
+      - [新刊『カゲフミ！　vol. 2』](/contents/kagefumi#v2)発行
+
+  - title: "コミックマーケット105"
+    circle: "天"
+    status: "past"
+    sortDate: "2024-12-29"
+    body: |
+      - 2024年12月29日(日)
+
+  - title: "コミックアカデミー25"
+    circle: "天"
+    status: "past"
+    sortDate: "2024-11-23"
+    body: |
+      - 2024年11月23日(土)・24日(日)
+      - 東京大学学園祭『第75回駒場祭』内企画
+
+  - title: "コミックマーケット104"
+    circle: "天"
+    status: "past"
+    sortDate: "2024-08-11"
+    body: |
+      - 2024年8月11日(土)
+      - [新刊『カゲフミ！　vol. 1』](/contents/kagefumi#v1)発行
+
+  - title: コミックアカデミー24
+    circle: "天"
+    status: "cancelled"
+    sortDate: "2024-05-18"
+    body: |
+      - ~~2024年5月18日(土)・19日(日)~~
+      - ~~東京大学学園祭『第97回五月祭』内企画~~
+      - 都合により出展取りやめとなりました。
+
+  - title: "THE VOC@LOiD 超 M@STER 55"
+    circle: "逆"
+    status: "past"
+    sortDate: "2024-04-23"
+    body: |
+      - 2024年4月23日(土)
+      - 『ニコニコ超会議2024』内企画
+
+  - title: "コミックマーケット103"
+    circle: "天"
+    status: "past"
+    sortDate: "2023-12-30"
+    body: |
+      - 2023年12月30日(土)
+      - マンハッタンカフェ(ウマ娘)私服衣装 お披露目
+
+  - title: "コミックマーケット102"
+    circle: "逆"
+    status: "past"
+    sortDate: "2023-08-14"
+    body: |
+      - 2023年8月14日(土)
+      - 新譜『逆たまごかけごはん アレンジコンピレーション』リリース
+
+  - title: "コミックマーケット102"
+    circle: "天"
+    status: "past"
+    sortDate: "2023-08-13"
+    body: |
+      - 2023年8月13日(土)
+      - マンハッタンカフェ(ウマ娘) [It's on the house.] 衣装 お披露目
+
+  - title: "THE VOC@LOiD 超 M@STER 51"
+    circle: "逆"
+    status: "past"
+    sortDate: "2023-04-30"
+    body: |
+      - 2023年4月30日(日)
+      - 『ニコニコ超会議2023』内企画
+
+  - title: "コミックマーケット101"
+    circle: "天"
+    status: "past"
+    sortDate: "2022-12-30"
+    body: |
+      - 2022年12月30日(金)

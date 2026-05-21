@@ -1,17 +1,29 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+
+// hitokoto
+import hitokotoList from '@src/data/hitokoto.yml';
+interface Hitokoto {
+  text: string;
+  date: string;
+  note?: string;
+}
+const [hitokotoRecent, ...hitokotoArchive]: Hitokoto[] = hitokotoList;
+
 const pageTitle = "トップページ";
 const pageUrl = "/";
 const pubDate = "2023-12-20";
-const updateDate = "2025-11-01";
+const pageUpdateDate = "2026-05-21";
+const updateDatesList = [pageUpdateDate, hitokotoRecent.date];
+const updateDate = updateDatesList.reduce((max, current) => current > max ? current : max);
 const description = "しのはら恵(シャーロットエース)のウェブサイト。";
 const tags :string[] = [];
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
 	<blockquote>
-		<p>五月病を極めたので本当の風邪もひける</p>
+		<p>{hitokotoRecent.text}</p>
 	</blockquote>
-	<p class="reference">――<a href="/profile#hitokoto">今日のひとこと</a>より（2026-05-21更新）</p>
+	<p class="reference">――<a href="/profile#hitokoto">今日のひとこと</a>より（{hitokotoRecent.date}更新）</p>
 	<p>&emsp;しのはら恵（またの名を、国際単位系・シャーロットエース）の個人サイトです。現在新デザインに移行中。</p>
 	<style>
 		.linkcard_box{

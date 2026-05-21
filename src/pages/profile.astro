@@ -1,552 +1,465 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+//import IconRemote from '@src/components/IconRemote.astro';
+//import IconSNS from '@src/components/IconSNS.astro';
+
+// events
+import { marked } from "marked";
+import eventData from "@src/data/events.yml";
+ interface EventData {
+  updated: string;
+  events: EventItem[];
+}
+interface EventItem {
+  title: string;
+  circle: string;
+  status:
+    | "upcoming"
+    | "tentative"
+    | "past"
+    | "cancelled";
+  sortDate: string;
+  body: string;
+}
+const events = eventData as EventData;
+const upcoming = events.events.filter(
+  (e: EventItem) =>
+    e.status === "upcoming"
+);
+const past = events.events.filter(
+  (e: EventItem) =>
+    e.status === "past" ||
+    e.status === "cancelled"
+);
+
+// hitokoto
+import hitokotoList from '@src/data/hitokoto.yml';
+interface Hitokoto {
+  text: string;
+  date: string;
+  note?: string;
+}
+const [hitokotoRecent, ...hitokotoArchive]: Hitokoto[] = hitokotoList;
+
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
 const pubDate = "2023-12-20";
-const updateDate = "2026-05-21";
+const pageUpdateDate = "2026-05-21";
+const updateDatesList = [pageUpdateDate, hitokotoRecent.date, eventData.updated];
+const updateDate = updateDatesList.reduce((max, current) => current > max ? current : max);
 const description = "しのはら恵の自己紹介。";
 const tags :string[] = [];
+
+
+
 import { Image } from 'astro:assets';
 import aceFace from '@src/images/charlotteace001.png';
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
-	<p>&emsp;このページでは私の自己紹介を掲載しています。これといって重要な情報はありませんが……『非公開』とされているものを何らかの手段で知ってしまったみなさんは、どうか心の内側にとどめていただきますよう。今日のひとことは不定期更新です。</p>
-	<h2>シャーロットエース/<wbr>しのはら恵/<wbr>国際単位系</h2>
-	<style>
-		#profile_container{
-			display: flex;
-            justify-content: start;
-            align-items: start;
-		}
-		#ace_face{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 300px;
-			margin: 4rem 4rem 0 0;
-			padding-top: 0.6rem;
-			
-		}
-		#ace_face img{
-			width: 100%;
-			height: auto;
-			border: 0.2rem solid var(--charlotteace-deep);
-		}
-		@media screen and (max-width: 863px){
-			#profile_container{display: block;}
-			#ace_face{
-				width: 100%;
-				max-width: 300px;
-				margin: 4rem auto 0;
-			}
-		}
-	</style>
-	<div id="profile_container">
-		<div id="ace_face">
-			<Image src={aceFace} alt="charlotteace's face" />
-			<small class="alt">Illustration by 春瀬(宇田まなと)</small>
-		</div>
-		<div>
-			<h3>基本データ</h3>
-			<ul>
-				<li>
-					生年月日
-					<ul>
-						<li>非公開</li>
-					</ul>
-				</li>
-				<li>
-					身分
-					<ul>		
-						<li>理工系学科 修士二年</li>
-						<li>同人ライター（<a href="https://charlotteace.github.io/contents/kagefumi" target="_blank" rel="noopener noreferrer">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</a>他）</li>
-						<li>同人編集者兼売り子</li>
-						<li>おたく</li>
-					</ul>
-				</li>
-				<li>
-					所属と活動
-					<ul>		
-						<li><a href="https://portal.circle.ms/Circle/Index/10458074" target="_blank" rel="noopener noreferrer">サークル『天然ウナギ専門店』</a>　ライター、編集者、売り子</li>
-						<li><a href="https://portal.circle.ms/Circle/Index/10456708" target="_blank" rel="noopener noreferrer">サークル『逆たまごかけごはん』</a>　発注担当、売り子</li>
-						<li><a href="https://portal.circle.ms/Circle/Index/10510253" target="_blank" rel="noopener noreferrer">個人サークル『どんぶりめし』</a>　代表</li>
-						<li><a href="https://comitech-official.github.io" target="_blank" rel="noopener noreferrer">工大祭即売会『こみてっく！』(仮称)準備会</a>　副代表</li>
-						<li><a href="https://x.com/nyan_rank" target="_blank" rel="noopener noreferrer">にゃーんRanker</a>　運営者</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
-	
-	<h3>アカウント集</h3>
-	<ul>		
-		<li><a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">@Units_SI - twitter.com</a></li>
-		<li><a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">@_shinoharaK - twitter.com</a></li>
-		<li><a href="https://note.com/units_si" target="_blank" rel="noopener noreferrer">@units_si - note</a></li>
-		<li><a href="https://github.com/CharlotteAce/" target="_blank" rel="noopener noreferrer">CharlotteAce - github</a></li>
-	</ul>
-    <h3>趣味</h3>
-    <p>&emsp;美術館・博物館めぐり、<wbr>旅行、<wbr>鉄道、<wbr>パソカタ、<wbr>料理（つくるほう）、<wbr>食事（たべるほう）、<wbr>野球、<wbr>ピアノ　など</p>
-    <h3>名前の由来</h3>
-    <p>&emsp;最初のハンドルネーム『国際単位系』は、最初のTwitter（当時）アカウント開設時<a class="ref" id="ref-1" href="#footnote-1">*1</a>に、脳内ランダムワード生成で出力された単語。当時2進接頭辞と10進接頭辞の混同問題について考えていたため、適当な単語を考えた時にこれが出てきてしまった。</p>
-    <p>&emsp;ニックネーム『シャーロットエース』は、ウマ娘<a class="ref" id="ref-2" href="#footnote-2">*2</a>らしいニックネームをつけるべく命名された。「SI<a class="ref" id="ref-3" href="#footnote-3">*3</a>」から採った「シ」を頭文字に、私が数年間<a class="ref" id="ref-4" href="#footnote-4">*4</a>打ち込んでいた野球に由来する「エース<a class="ref" id="ref-5" href="#footnote-5">*5</a> 」を組み合わせた。「シャーロット」には別の由来もあるのだが、これをお話するのはまたの機会に。</p>
-    <p>&emsp;ペンネーム『しのはら恵』は、<a class="color" href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer">『カゲフミ！　vol. 1』</a>の刊行にあたり、本名らしいペンネームが欲しくなり付けた名前。「し（＝SI）」から始まる名字に、「系」と同音で読める「恵」とした。漢字の読み方は指定していない。</p>
-    <h3>ファンアートタグ</h3>
-    <p>&emsp;<a href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#シャーロット絵ース</a>（シャーロットエース）、<a class="color" href="https://x.com/search?q=%23%E3%81%AB%E3%82%83%E3%82%89%E3%82%93%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#にゃらんかあーと</a>（にゃーんRanker）</p>
-    <h2 id="hitokoto">今日のひとこと</h2>
+  <p>&emsp;このページでは私の自己紹介を掲載しています。これといって重要な情報はありませんが……『非公開』とされているものを何らかの手段で知ってしまったみなさんは、どうか心の内側にとどめていただきますよう。今日のひとことは不定期更新です。</p>
+  <h2>シャーロットエース/<wbr>しのはら恵/<wbr>国際単位系</h2>
+  <style>
+    #profile_container{
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+    #ace_face{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      margin: 4rem 4rem 0 0;
+      padding-top: 0.6rem;
+      
+    }
+    #ace_face img{
+      width: 100%;
+      height: auto;
+      border: 0.2rem solid var(--charlotteace-deep);
+    }
+    @media screen and (max-width: 863px){
+      #profile_container{display: block;}
+      #ace_face{
+        width: 100%;
+        max-width: 300px;
+        margin: 4rem auto 0;
+      }
+    }
+  </style>
+  <div id="profile_container">
+    <div id="ace_face">
+      <Image src={aceFace} alt="charlotteace's face" />
+      <small class="alt">Illustration by 春瀬(宇田まなと)</small>
+    </div>
+    <div>
+      <h3>基本データ</h3>
+      <ul>
+        <li>
+          生年月日
+          <ul>
+            <li>非公開</li>
+          </ul>
+        </li>
+        <li>
+          身分
+          <ul>    
+            <li>理工系学科 修士二年</li>
+            <li>同人ライター（<a href="https://charlotteace.github.io/contents/kagefumi" target="_blank" rel="noopener noreferrer">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</a>他）</li>
+            <li>同人編集者兼売り子</li>
+            <li>おたく</li>
+          </ul>
+        </li>
+        <li>
+          所属と活動
+          <ul>    
+            <li><a href="https://portal.circle.ms/Circle/Index/10458074" target="_blank" rel="noopener noreferrer">サークル『天然ウナギ専門店』</a>　ライター、編集者、売り子</li>
+            <li><a href="https://portal.circle.ms/Circle/Index/10456708" target="_blank" rel="noopener noreferrer">サークル『逆たまごかけごはん』</a>　発注担当、売り子</li>
+            <li><a href="https://portal.circle.ms/Circle/Index/10510253" target="_blank" rel="noopener noreferrer">個人サークル『どんぶりめし』</a>　代表</li>
+            <li><a href="https://comitech-official.github.io" target="_blank" rel="noopener noreferrer">工大祭即売会『こみてっく！』(仮称)準備会</a>　副代表</li>
+            <li><a href="https://x.com/nyan_rank" target="_blank" rel="noopener noreferrer">にゃーんRanker</a>　運営者</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <h3>アカウント集</h3>
+  <!--a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">
+    <Image src="https://unavatar.io/x/units_si" width={64} height={64} alt="twitterアカウント @units_si のアイコン" />
+    @Units_SI
+  </a>
+  <IconRemote provider="x" username="units_si"/>
+  <IconSNS provider="x" domain="x.com" username="units_si"/-->
+  <ul>    
+    <li><a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">@Units_SI - twitter.com</a></li>
+    <li><a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">@_shinoharaK - twitter.com</a></li>
+    <li><a href="https://note.com/units_si" target="_blank" rel="noopener noreferrer">@units_si - note</a></li>
+    <li><a href="https://github.com/CharlotteAce/" target="_blank" rel="noopener noreferrer">CharlotteAce - github</a></li>
+  </ul>
+  <h3>趣味</h3>
+  <p>&emsp;美術館・博物館めぐり、<wbr>旅行、<wbr>鉄道、<wbr>パソカタ、<wbr>料理（つくるほう）、<wbr>食事（たべるほう）、<wbr>野球、<wbr>ピアノ　など</p>
+  <h3>名前の由来</h3>
+  <p>&emsp;最初のハンドルネーム『国際単位系』は、最初のTwitter（当時）アカウント開設時<a class="ref" id="ref-1" href="#footnote-1">*1</a>に、脳内ランダムワード生成で出力された単語。当時2進接頭辞と10進接頭辞の混同問題について考えていたため、適当な単語を考えた時にこれが出てきてしまった。</p>
+  <p>&emsp;ニックネーム『シャーロットエース』は、ウマ娘<a class="ref" id="ref-2" href="#footnote-2">*2</a>らしいニックネームをつけるべく命名された。「SI<a class="ref" id="ref-3" href="#footnote-3">*3</a>」から採った「シ」を頭文字に、私が数年間<a class="ref" id="ref-4" href="#footnote-4">*4</a>打ち込んでいた野球に由来する「エース<a class="ref" id="ref-5" href="#footnote-5">*5</a> 」を組み合わせた。「シャーロット」には別の由来もあるのだが、これをお話するのはまたの機会に。</p>
+  <p>&emsp;ペンネーム『しのはら恵』は、<a class="color" href="https://charlotteace.booth.pm/items/5999336" target="_blank" rel="noopener noreferrer">『カゲフミ！　vol. 1』</a>の刊行にあたり、本名らしいペンネームが欲しくなり付けた名前。「し（＝SI）」から始まる名字に、「系」と同音で読める「恵」とした。漢字の読み方は指定していない。</p>
+  <h3>ファンアートタグ</h3>
+  <p>&emsp;<a href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#シャーロット絵ース</a>（シャーロットエース）、<a class="color" href="https://x.com/search?q=%23%E3%81%AB%E3%82%83%E3%82%89%E3%82%93%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8%20filter%3Aimages&src=typed_query&f=live" target="_blank" rel="noopener noreferrer">#にゃらんかあーと</a>（にゃーんRanker）</p>
+  <h2 id="hitokoto">今日のひとこと</h2>
+  <p>
+    &emsp;{hitokotoRecent.text}
+    （{hitokotoRecent.date}更新）
+  </p>
+  <details>
+    <summary><span>過去のひとこと</span></summary>
+    <ul>
+      {
+        hitokotoArchive.map((item) => (
+          <li>
+            {item.text}（{item.date}更新{item.note ? `、${item.note}` : ''}）
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+  <h2>イベント出展情報</h2>
+  <p>
+    &emsp;【天】は天然ウナギ専門店、【逆】は逆たまごかけごはん、【ど】はどんぶりめし名義での出展です。
+  </p>
+  {
+    upcoming.map((event) => (
+      <>
+        <h3>
+          【{event.circle}】{event.title}
+        </h3>
+
+        <Fragment
+          set:html={marked.parse(event.body)}
+        />
+      </>
+    ))
+  }
+
+  <!-- p>&emsp;現在決定済みの出展イベントはありません。</p -->
+  
+  <p></p>
+  <details>
+    <summary><span>過去の出展イベント</span></summary>
     <p>
-		&emsp;五月病を極めたので本当の風邪もひける（2026-05-21更新）
-        
-	</p>
-	<details>
-		<summary><span>過去のひとこと</span></summary>
-		<ul>
-			<li>ウマ娘カリフォルニア編始まってマズいけどね（2026-03-29更新）</li>
-			<li>4足のわらじで自転車操業！（2026-01-31更新）</li>
-			<li>本年もアクセルベタ踏みで参ります、なにとぞ（2026-01-05更新）</li>
-			<li>リファクタリングが、足りん！w（2025-10-26更新）</li>
-			<li>うどんとCSSは手打ちに限る（2023-12-20更新、2025-10-17再掲）</li>
-			<li>過労の彦摩呂「労働のわんこそばや～～～！」←いまこれ（2025-08-19更新）</li>
-			<li>お金は労働で稼ぐとして、時間ってどう稼げばいいんですか？？（2025-07-14更新）</li>
-			<li>卒論がまずいおかげでロット部屋の修復に成功しています（2025-01-12更新）</li>
-			<li>え？コミケ当日？？助けて！！！（2024-08-11更新）</li>
-			<li>アドホックな犬、アホドッグ（2024-01-20更新）</li>
-			<li>私の2023年がようやく終わりました（2024-01-07更新）</li>
-			<li>コミケ来てくれた方々ありがとうございました（2023-12-31更新）</li>
-			<li>コミケ来週なのさすがに早すぎる（2023-12-23更新）</li>
-			<li>うどんとCSSは手打ちに限る（2023-12-20更新）</li>
-		</ul>
-	</details>
-	<h2>イベント出展情報</h2>
-	<p>
-		&emsp;【天】は天然ウナギ専門店、【逆】は逆たまごかけごはん、【ど】はどんぶりめし名義での出展です。
-	</p>
-	<h3>【天】コミックアカデミー28</h3>
-    <ul>
-		<li>2026年5月16日(土)・17日(日)　10~16時</li>
-		<li><a href="https://www.u-tokyo.ac.jp/ja/about/campus-guide/map01_02.html" target="_blank" rel="noopener noreferrer">東京大学本郷キャンパス</a> 教室未定
-			<ul>
-				<li>地下鉄南北線「東大前駅」徒歩5分</li>
-				<li>地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分</li>
-			</ul>
-		</li>
-		<li>東京大学学園祭『第99回五月祭』内企画</li>
-	</ul>
+      &emsp;出展イベントの参加レポートや刊行物は<a href="https://charlotteace.github.io/contents/tags/%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8B%95/">こちら</a>から。
+    </p>
+    {
+      past.map((event) => (
+        <>
+          <h3>
+            【{event.circle}】{event.title}
+          </h3>
 
-	<!-- p>&emsp;現在決定済みの出展イベントはありません。</p -->
-	<!--h3>【天】コミックマーケット108【当落未定】</h3>
-    <ul>
-		<li>2026年8月15日(土)　時刻未定</li>
-		<li><a href="https://www.bigsight.jp/visitor/access/" target="_blank" rel="noopener noreferrer">東京ビッグサイト</a> ホール未定
-			<ul>
-				<li>ゆりかもめ「東京ビッグサイト駅」徒歩3分</li>
-				<li>りんかい線「国際展示場駅」徒歩7分</li>
-			</ul>
-		</li>
-	</ul -->
+          <Fragment
+            set:html={marked.parse(event.body)}
+          />
+        </>
+      ))
+    }  
+  </details>
+  <h2>相互リンク</h2>
+  <p>
+    &emsp;現在はこちらからお声掛けした方のみ掲載をしております。申請フォーム公開までしばらくお待ちください。相互リンク掲出ご希望の方はSNSなどで個別にお声掛けください。
+  </p>
+  <details>
+    <summary>ご自身のサイトに、弊サイトのリンクを掲載したい方へ</summary>
+    &emsp;掲出はご自由にどうぞ。リンク先は<a href="https://charlotteace.github.io" target="_blank" rel="noopener noreferrer">トップページ</a>へお願いします。バナーが必要な場合は、<a href="https://charlotteace.github.io/parts/banner/" target="_blank" rel="noopener noreferrer">https://<wbr>charlotteace.<wbr>github.<wbr>io/<wbr>parts/<wbr>banner/</a> を<code>&lt;iframe&gt;</code>属性にてそのまま埋め込んでいただくか、チャプチャのうえでお使いください。バナーサイズについての規程はありません（ご設定のサイズに応じて最適化されます）。ページ全体に<code>&lt;a&gt;</code>属性が設定されているため、埋め込みの場合には、その他の設定はご不要です。
+  </details>
+  <style>
+    .linkcard_box{
+      margin: 2rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.6rem;
+    }
+    .linkcard{
+      --link-sub-color:white;
+      --link-theme-color: var(--charlotteace-theem);
+      --text-display-boolean:0;
+    }
+    .uda{
+      --link-sub-color:white;
+      --link-theme-color:#993c69;
+      --text-display-boolean:0;
+    }
+    .sue{
+      --link-sub-color:white;
+      --link-theme-color:#E74727;
+      --text-display-boolean:0;
+    }
+    .haxibami{
+      --link-sub-color:white;
+      --link-theme-color:oklch(62.73% .209 12.37);
+      --text-display-boolean:1;
+    }
+    @media (prefers-color-scheme: dark) {
+      .haxibami{
+        --link-theme-color:oklch(70.94% .136 258.06);
+      }
+    }
+    .inaniwa{
+      --link-sub-color:var(--main-deep-color);
+      --link-theme-color:#FA981C;
+      --text-display-boolean:1;
+    }
+    .fabon{
+      --link-sub-color:var(--main-deep-color);
+      --link-theme-color:#91ACD1;      
+      --text-display-boolean:1;
+    }
+    .mycel{
+      --link-sub-color:var(--main-deep-color);
+      --link-theme-color:#00F314;
+      --text-display-boolean:0;
+    }
+    .suyalog{
+      --link-sub-color:white;
+      --link-theme-color:oklch(54.6% 0.245 262.881);
+      --text-display-boolean:1;
+    }
+    .licjar{
+      --link-sub-color:var(--main-deep-color);
+      --link-theme-color:#f8c067;
+      --text-display-boolean:1;
+    }
+    .linkcard{
+      --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
+      --linkcard-border: var(--charlotteace-water);
+      --linkcard-border-active: var(--charlotteace-deep);    
+    }
+    @media (prefers-color-scheme: dark) {
+      .linkcard{
+        --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+        --linkcard-border: var(--charlotteace-theme);
+        --linkcard-border-active: var(--link-theme-color);    
+      }
+    }
+    .linkcard{
+      display:inline-block;
+      width: 24rem;
+      height: 13.5rem;
+      border: 1px solid var(--linkcard-border);
+      border-radius: 0.8rem;
+      background-color: var(--linkcard-bg-color);
+      overflow: hidden;
+    }
+    .linkcard .border_left{
+      width: 100%;
+      height: 100%;
+      border-left: 0.8rem solid var(--link-theme-color);
+      position: relative;
+    }
+    .linkcard .thumbnail{
+      position: absolute;
+    }
+    .linkcard:hover .thumbnail,.linkcard:active .thumbnail,.linkcard:focus .thumbnail{
+      opacity: 0.2;
+    }
+    .linkcard .card_data{
+      position: absolute;
+      color: var(--main-font-color);
+      padding:0.8rem 1.6rem;
+      opacity: var(--text-display-boolean);
+    }
+    .linkcard:hover,.linkcard:active,.linkcard:focus {
+      border: 1px solid var(--linkcard-border-active);
+      background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
+    }
+    .linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
+      opacity: 1;
+      color: var(--link-sub-color);
+    }
+    .linkcard .card_data h2{
+      margin: 0;
+      padding: 0;
+    }
+    .linkcard .card_data p{
+      margin: 0.2rem 0 0;
+      padding: 0;
+    }
+    .linkcard .logo{
+      position: absolute;
+      left: 1.6rem;
+      bottom: 0.8rem;
+      height:2.4rem;
+      width:auto;
+      opacity:1;
+    }
+    .linkcard .thumbnail{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: x y;
+      object-position: 50% 50%; /* 中央表示 */
+    }
+    .banner{
+      margin:0;
+      border: 0.2rem solid transparent;
+    }
+    .banner:hover, .banner:active, .banner:focus{
+      border: 0.2rem solid var(--link-theme-color);
+    }
+    .linktext{
+      margin: 0;
+      padding: 0.4rem;
+      border-bottom: 0.2rem solid var(--link-theme-color);
+    }
 
-	<!--h3>【ど】コミックマーケット108【当落未定】</h3>
-    <ul>
-		<li>2026年8月16日(日)　時刻未定</li>
-		<li>アクセスは上記同様 2日間で異なるサークルとして参加します</li>
-	</ul -->
-	
-	<!-- div class=for_copy_paste>
-		<li><a href="https://www.bigsight.jp/visitor/access/" target="_blank" rel="noopener noreferrer">東京ビッグサイト</a> xxnnホール
-			<ul>
-				<li>ゆりかもめ「東京ビッグサイト駅」徒歩3分</li>
-				<li>りんかい線「国際展示場駅」徒歩7分</li>
-			</ul>
-		</li>
-		<li><a href="https://www.m-messe.co.jp/access/" target="_blank" rel="noopener noreferrer">幕張メッセ</a> 展示ホールhh
-			<ul>
-				<li>京葉線「海浜幕張駅」徒歩5分</li>
-			</ul>
-		</li>
-		<li><a href="https://www.u-tokyo.ac.jp/ja/about/campus-guide/map01_02.html" target="_blank" rel="noopener noreferrer">東京大学本郷キャンパス</a> tt号館rr教室
-			<ul>
-				<li>地下鉄南北線「東大前駅」徒歩5分</li>
-				<li>地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分</li>
-			</ul>
-		</li>
-		<li>府中市市民活動センター プラッツ5階 バルトホール
-			<ul>
-				<li>京王線「府中駅」直結</li>
-			</ul>
-		</li>
-	</div -->
+    .banner, .linktext{display: none;}
+    @media screen and (max-width: 588px) {
+      .linkcard_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.6rem;
+      }
+      .linkcard{display: none;}
+      .banner, .linktext{
+        display: block;
+        margin: 0 auto;
+        width: max-content;
+      }
+    }
+  </style>
+  <div class="linkcard_box">
+    <a class="linkcard uda" href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <img class="thumbnail" src="/images/link_exchange/tuda.png" alt="『や-さがされ』のバナー">
+        <div class="card_data">
+          <h2>や-さがされ</h2>
+          <p>宇田まなと/春瀬</p>
+        </div>
+      </div>
+    </a>
+    <div class="linktext uda"><big><a href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">や-さがされ</a></big> - 宇田まなと/春瀬</div>
 
-	<p></p>
-	<details>
-		<summary><span>過去の出展イベント</span></summary>
-		<p>
-			&emsp;出展イベントの参加レポートや刊行物は<a href="https://charlotteace.github.io/contents/tags/%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8B%95/">こちら</a>から。
-		</p>
+    <a class="linkcard sue" href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <img class="thumbnail" src="/images/link_exchange/tsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー">
+        <div class="card_data">
+          <h2>Le Site Web de Suika AKIYAMA</h2>
+          <p>Suika AKIYAMA</p>
+        </div>
+        <img class="logo" src="/images/link_exchange/lsue.png" alt="『Le Site Web de Suika AKIYAMA』のfavicon">
+      </div>
+    </a>
+    <a class="banner sue" href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/bsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー" width="200" height="40"></a>
 
-		<h3>【逆】THE VOC@LOiD 超 M@STER 62</h3>
-		<ul>
-			<li>2026年4月26日(日)</li>
-		</ul>
+    <a class="linkcard haxibami" href="https://h6i.org/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>点点公社</h2>
+          <p>神話募集中 - haxibami</p>
+        </div>
+        <img class="logo" src="/images/link_exchange/lhaxibami.ico" alt="『点点公社』のfavicon">
+      </div>
+    </a>
+    <div class="linktext haxibami"><big><a href="https://h6i.org/" target="_blank" rel="noopener noreferrer">点点公社</a></big> - haxibami</div>
 
-		<h3>【天】プリティーステークス45R</h3>
-		<ul>
-			<li>2026年03月29日(日)</li>
-		</ul>
+    <a class="linkcard inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>いなにわうどん.みんな</h2>
+          <p>いなにわうどん</p>
+        </div>
+      </div>
+    </a>
+    <a class="banner inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/binaniwa.png" alt="『いなにわうどん.みんな』のバナー" width="200" height="40"></a>
 
-		<h3>【ど】コミックマーケット107</h3>
-		<ul>
-			<li>2025年12月31日(水)</li>
-			<li><a href="https://charlotteace.github.io/contents/cosplay_books/#v1">新刊『しのはら恵のコスプレ衣装制作レポート』発行</a></li>
-			<li>メイド衣装(特定モデルなし) お披露目</li>
-		</ul>
+    <a class="linkcard fabon" href="https://www.fabon.info/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>ふぁぼんの<br>ホームページ</h2>
+          <p>ふぁぼん</p>
+        </div>
+        <img class="logo" src="https://www.fabon.info/img/fabon.png" alt="『ふぁぼんのホームページ』のfavicon">
+      </div>
+    </a>
+    <div class="linktext fabon"><big><a href="https://www.fabon.info/" target="_blank" rel="noopener noreferrer">ふぁぼんのホームページ</a></big> - ふぁぼん</div>
 
-		<h3>【天】コミックマーケット107</h3>
-		<ul>
-			<li>2025年12月30日(火)</li>
-		</ul>
+    <a class="linkcard mycel" href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <img class="thumbnail" src="/images/link_exchange/tmycel.png" alt="『mycelithyl-hyphae』のバナー">
+        <div class="card_data">
+          <h2>mycelithyl-hyphae</h2>
+          <p>Mycelithyl</p>
+        </div>
+        <img class="logo" src="/images/link_exchange/lmycel.png" alt="『mycelithyl-hyphae』のfavicon">
+      </div>
+    </a>
+    <a class="banner mycel" href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/bmycel.png" alt="『mycelithyl-hyphae』のバナー" width="200" height="40"></a>
+    
+    <a class="linkcard suyalog" href="https://suyasuyaty.github.io/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>すやすやログ</h2>
+          <p>suyasuyaTY</p>
+        </div>
+      </div>
+    </a>
+    <div class="linktext suyalog"><big><a href="https://suyasuyaty.github.io/" target="_blank" rel="noopener noreferrer">すやすやログ</a></big> - suyasuyaTY</div>
 
-		<h3>【天】コミックアカデミー27</h3>
-		<ul>
-			<li>2025年11月22日(土)～24日(月・休)</li>
-			<li>東京大学学園祭『第76回駒場祭』内企画</li>
-		</ul>
-
-		<h3>【天】コミックマーケット106</h3>
-		<ul>
-			<li>2025年8月16日(土)</li>
-			<li><a href="https://charlotteace.github.io/contents/kagefumi/#v3">新刊『カゲフミ！　vol. 3』発行</a></li>
-		</ul>
-
-		<h3>【天】コミックアカデミー26</h3>
-		<ul>
-			<li>2025年5月24日(土)・25(日)</li>
-			<li>東京大学学園祭『第98回五月祭』内企画</li>
-		</ul>
-
-		<h3>【天】Umamusume Racing Carnival 02</h3>
-		<ul>
-			<li>2025年3月30日(日)</li>
-			<li><a href="https://charlotteace.github.io/contents/kagefumi/#v2">新刊『カゲフミ！　vol. 2』発行</a></li>
-		</ul>
-
-		<h3>【天】コミックマーケット105</h3>
-		<ul>
-			<li>2025年12月29日(日)</li>
-		</ul>
-
-		<h3>【天】コミックアカデミー25</h3>
-		<ul>
-			<li>2025年11月23日(土)・24日(日)</li>
-			<li>東京大学学園祭『第75回駒場祭』内企画</li>
-		</ul>
-
-		<h3>【天】コミックマーケット104</h3>
-		<ul>
-			<li>2024年8月11日(土)</li>
-			<li><a href="https://charlotteace.github.io/contents/kagefumi/#v1">新刊『カゲフミ！　vol. 1』発行</a></li>
-		</ul>
-
-		<h3><s>【天】コミックアカデミー24</s></h3>
-		<ul>
-			<li><s>2024年5月18日(土)・19日(日)</s></li>
-			<li><s>東京大学学園祭『第97回五月祭』内企画</s></li>
-			<li>都合により出展取りやめとなりました。</li>
-		</ul>
-
-		<h3>【逆】THE VOC@LOiD 超 M@STER 55</h3>
-		<ul>
-			<li>2024年4月23日(土)</li>
-			<li>『ニコニコ超会議2024』内企画</li>
-		</ul>
-
-		<h3>【天】コミックマーケット103</h3>
-		<ul>
-			<li>2023年12月30日(土)</li>
-			<li>マンハッタンカフェ(ウマ娘)私服衣装 お披露目</li>
-		</ul>
-		
-		<h3>【逆】コミックマーケット102</h3>
-		<ul>
-			<li>2023年8月14日(土)</li>
-			<li>新譜『逆たまごかけごはん アレンジコンピレーション』リリース</li>
-		</ul>
-		
-		<h3>【天】コミックマーケット102</h3>
-		<ul>
-			<li>2023年8月13日(土)</li>
-			<li>マンハッタンカフェ(ウマ娘) [It's on the house.] 衣装 お披露目</li>
-		</ul>
-
-		<h3>【逆】THE VOC@LOiD 超 M@STER 51</h3>
-		<ul>
-			<li>2023年4月30日(日)</li>
-			<li>『ニコニコ超会議2023』内企画</li>
-		</ul>
-
-		<h3>【天】コミックマーケット101</h3>
-		<ul>
-			<li>2022年12月30日(金)</li>
-		</ul>
-		
-	</details>
-	<h2>相互リンク</h2>
-	<p>
-		&emsp;現在はこちらからお声掛けした方のみ掲載をしております。申請フォーム公開までしばらくお待ちください。相互リンク掲出ご希望の方はSNSなどで個別にお声掛けください。
-	</p>
-	<details>
-		<summary>ご自身のサイトに、弊サイトのリンクを掲載したい方へ</summary>
-		&emsp;掲出はご自由にどうぞ。リンク先は<a href="https://charlotteace.github.io" target="_blank" rel="noopener noreferrer">トップページ</a>へお願いします。バナーが必要な場合は、<a href="https://charlotteace.github.io/parts/banner/" target="_blank" rel="noopener noreferrer">https://<wbr>charlotteace.<wbr>github.<wbr>io/<wbr>parts/<wbr>banner/</a> を<code>&lt;iframe&gt;</code>属性にてそのまま埋め込んでいただくか、チャプチャのうえでお使いください。バナーサイズについての規程はありません（ご設定のサイズに応じて最適化されます）。ページ全体に<code>&lt;a&gt;</code>属性が設定されているため、埋め込みの場合には、その他の設定はご不要です。
-	</details>
-	<style>
-		.linkcard_box{
-			margin: 2rem 0 0;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 1.6rem;
-		}
-		.linkcard{
-			--link-sub-color:white;
-			--link-theme-color: var(--charlotteace-theem);
-			--text-display-boolean:0;
-		}
-		.uda{
-			--link-sub-color:white;
-			--link-theme-color:#993c69;
-			--text-display-boolean:0;
-		}
-		.sue{
-			--link-sub-color:white;
-			--link-theme-color:#E74727;
-			--text-display-boolean:0;
-		}
-		.haxibami{
-			--link-sub-color:white;
-			--link-theme-color:oklch(62.73% .209 12.37);
-			--text-display-boolean:1;
-		}
-		@media (prefers-color-scheme: dark) {
-			.haxibami{
-				--link-theme-color:oklch(70.94% .136 258.06);
-			}
-		}
-		.inaniwa{
-			--link-sub-color:var(--main-deep-color);
-			--link-theme-color:#FA981C;
-			--text-display-boolean:1;
-		}
-		.fabon{
-			--link-sub-color:var(--main-deep-color);
-			--link-theme-color:#91ACD1;			
-			--text-display-boolean:1;
-		}
-		.mycel{
-			--link-sub-color:var(--main-deep-color);
-			--link-theme-color:#00F314;
-			--text-display-boolean:0;
-		}
-		.suyalog{
-			--link-sub-color:white;
-			--link-theme-color:oklch(54.6% 0.245 262.881);
-			--text-display-boolean:1;
-		}
-		.licjar{
-			--link-sub-color:var(--main-deep-color);
-			--link-theme-color:#f8c067;
-			--text-display-boolean:1;
-		}
-		.linkcard{
-			--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
-			--linkcard-border: var(--charlotteace-water);
-			--linkcard-border-active: var(--charlotteace-deep);		
-		}
-		@media (prefers-color-scheme: dark) {
-			.linkcard{
-				--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
-				--linkcard-border: var(--charlotteace-theme);
-				--linkcard-border-active: var(--link-theme-color);		
-			}
-		}
-		.linkcard{
-			display:inline-block;
-			width: 24rem;
-			height: 13.5rem;
-			border: 1px solid var(--linkcard-border);
-			border-radius: 0.8rem;
-			background-color: var(--linkcard-bg-color);
-			overflow: hidden;
-		}
-		.linkcard .border_left{
-			width: 100%;
-			height: 100%;
-			border-left: 0.8rem solid var(--link-theme-color);
-			position: relative;
-		}
-		.linkcard .thumbnail{
-			position: absolute;
-		}
-		.linkcard:hover .thumbnail,.linkcard:active .thumbnail,.linkcard:focus .thumbnail{
-			opacity: 0.2;
-		}
-		.linkcard .card_data{
-			position: absolute;
-			color: var(--main-font-color);
-			padding:0.8rem 1.6rem;
-			opacity: var(--text-display-boolean);
-		}
-		.linkcard:hover,.linkcard:active,.linkcard:focus {
-			border: 1px solid var(--linkcard-border-active);
-			background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
-		}
-		.linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
-			opacity: 1;
-			color: var(--link-sub-color);
-		}
-		.linkcard .card_data h2{
-			margin: 0;
-			padding: 0;
-		}
-		.linkcard .card_data p{
-			margin: 0.2rem 0 0;
-			padding: 0;
-		}
-		.linkcard .logo{
-			position: absolute;
-			left: 1.6rem;
-			bottom: 0.8rem;
-			height:2.4rem;
-			width:auto;
-			opacity:1;
-		}
-		.linkcard .thumbnail{
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: x y;
-			object-position: 50% 50%; /* 中央表示 */
-		}
-		.banner{
-			margin:0;
-			border: 0.2rem solid transparent;
-		}
-		.banner:hover, .banner:active, .banner:focus{
-			border: 0.2rem solid var(--link-theme-color);
-		}
-		.linktext{
-			margin: 0;
-			padding: 0.4rem;
-			border-bottom: 0.2rem solid var(--link-theme-color);
-		}
-
-		.banner, .linktext{display: none;}
-        @media screen and (max-width: 588px) {
-			.linkcard_box{
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				gap: 1.6rem;
-			}
-			.linkcard{display: none;}
-			.banner, .linktext{
-				display: block;
-				margin: 0 auto;
-				width: max-content;
-			}
-		}
-	</style>
-	<div class="linkcard_box">
-		<a class="linkcard uda" href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<img class="thumbnail" src="/images/link_exchange/tuda.png" alt="『や-さがされ』のバナー">
-				<div class="card_data">
-					<h2>や-さがされ</h2>
-					<p>宇田まなと/春瀬</p>
-				</div>
-			</div>
-		</a>
-		<div class="linktext uda"><big><a href="https://gitdmnt.github.io" target="_blank" rel="noopener noreferrer">や-さがされ</a></big> - 宇田まなと/春瀬</div>
-
-		<a class="linkcard sue" href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<img class="thumbnail" src="/images/link_exchange/tsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー">
-				<div class="card_data">
-					<h2>Le Site Web de Suika AKIYAMA</h2>
-					<p>Suika AKIYAMA</p>
-				</div>
-				<img class="logo" src="/images/link_exchange/lsue.png" alt="『Le Site Web de Suika AKIYAMA』のfavicon">
-			</div>
-		</a>
-		<a class="banner sue" href="https://sueakiyama.github.io" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/bsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー" width="200" height="40"></a>
-
-		<a class="linkcard haxibami" href="https://h6i.org/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>点点公社</h2>
-					<p>神話募集中 - haxibami</p>
-				</div>
-				<img class="logo" src="/images/link_exchange/lhaxibami.ico" alt="『点点公社』のfavicon">
-			</div>
-		</a>
-		<div class="linktext haxibami"><big><a href="https://h6i.org/" target="_blank" rel="noopener noreferrer">点点公社</a></big> - haxibami</div>
-
-		<a class="linkcard inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>いなにわうどん.みんな</h2>
-					<p>いなにわうどん</p>
-				</div>
-			</div>
-		</a>
-		<a class="banner inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/binaniwa.png" alt="『いなにわうどん.みんな』のバナー" width="200" height="40"></a>
-
-		<a class="linkcard fabon" href="https://www.fabon.info/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>ふぁぼんの<br>ホームページ</h2>
-					<p>ふぁぼん</p>
-				</div>
-				<img class="logo" src="https://www.fabon.info/img/fabon.png" alt="『ふぁぼんのホームページ』のfavicon">
-			</div>
-		</a>
-		<div class="linktext fabon"><big><a href="https://www.fabon.info/" target="_blank" rel="noopener noreferrer">ふぁぼんのホームページ</a></big> - ふぁぼん</div>
-
-		<a class="linkcard mycel" href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<img class="thumbnail" src="/images/link_exchange/tmycel.png" alt="『mycelithyl-hyphae』のバナー">
-				<div class="card_data">
-					<h2>mycelithyl-hyphae</h2>
-					<p>Mycelithyl</p>
-				</div>
-				<img class="logo" src="/images/link_exchange/lmycel.png" alt="『mycelithyl-hyphae』のfavicon">
-			</div>
-		</a>
-		<a class="banner mycel" href="https://arx-ein.github.io/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/bmycel.png" alt="『mycelithyl-hyphae』のバナー" width="200" height="40"></a>
-		
-		<a class="linkcard suyalog" href="https://suyasuyaty.github.io/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>すやすやログ</h2>
-					<p>suyasuyaTY</p>
-				</div>
-			</div>
-		</a>
-		<div class="linktext suyalog"><big><a href="https://suyasuyaty.github.io/" target="_blank" rel="noopener noreferrer">すやすやログ</a></big> - suyasuyaTY</div>
-
-		<a class="linkcard licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>LICJAR.XYZ</h2>
-					<p>りちゃ</p>
-				</div>
-			</div>
-		</a>
-		<a class="banner licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/blicjar.svg" alt="『LICJAR.XYZ』のバナー" width="200" height="40"></a>
-		
-	</div>
-	<h2>注釈</h2>
-	<p><a class="ref" id="footnote-1" href="#ref-1">*1</a>：最初のアカウントは高校3年の8月に作成した。Twitterをやめていた友人たちのうち何人かはこれを機に戻ってきてしまった。大戦犯である。</p>
-	<p><a class="ref" id="footnote-2" href="#ref-2">*2</a>：私が没頭しているゲーム『ウマ娘 プリティーダービー』に登場する、現実世界の競走馬の名前と高い身体能力をもつ少女たちの種族名。つまるところ競走馬にありそうなニックネームが欲しかったわけだ。</p>
-	<p><a class="ref" id="footnote-3" href="#ref-3">*3</a>：国際単位系はフランス語で Système international d'unités と書き、SIと略す。親しい友人の中には私の事を「しーちゃん」と呼ぶ者もいる。</p>
-	<p><a class="ref" id="footnote-4" href="#ref-4">*4</a>：小学3年の9月から中学3年の8月まで。</p>
-	<p><a class="ref" id="footnote-5" href="#ref-5">*5</a>：小学校の頃に所属していた学童野球チームには、私の同級生はもう一人しかいなかった。彼はキャプテンナンバー#10を背負ってキャッチャーを、私はエースナンバー#1を背負ってピッチャーを務めていた。これでも一応いちチームのエースだったのだ、他に誰もいないから当然であるが。</p>
+    <a class="linkcard licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>LICJAR.XYZ</h2>
+          <p>りちゃ</p>
+        </div>
+      </div>
+    </a>
+    <a class="banner licjar" href="https://licjar.xyz/" target="_blank" rel="noopener noreferrer"><img src="../images/link_exchange/blicjar.svg" alt="『LICJAR.XYZ』のバナー" width="200" height="40"></a>
+    
+  </div>
+  <h2>注釈</h2>
+  <p><a class="ref" id="footnote-1" href="#ref-1">*1</a>：最初のアカウントは高校3年の8月に作成した。Twitterをやめていた友人たちのうち何人かはこれを機に戻ってきてしまった。大戦犯である。</p>
+  <p><a class="ref" id="footnote-2" href="#ref-2">*2</a>：私が没頭しているゲーム『ウマ娘 プリティーダービー』に登場する、現実世界の競走馬の名前と高い身体能力をもつ少女たちの種族名。つまるところ競走馬にありそうなニックネームが欲しかったわけだ。</p>
+  <p><a class="ref" id="footnote-3" href="#ref-3">*3</a>：国際単位系はフランス語で Système international d'unités と書き、SIと略す。親しい友人の中には私の事を「しーちゃん」と呼ぶ者もいる。</p>
+  <p><a class="ref" id="footnote-4" href="#ref-4">*4</a>：小学3年の9月から中学3年の8月まで。</p>
+  <p><a class="ref" id="footnote-5" href="#ref-5">*5</a>：小学校の頃に所属していた学童野球チームには、私の同級生はもう一人しかいなかった。彼はキャプテンナンバー#10を背負ってキャッチャーを、私はエースナンバー#1を背負ってピッチャーを務めていた。これでも一応いちチームのエースだったのだ、他に誰もいないから当然であるが。</p>
 </LayoutBlog>
