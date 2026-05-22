@@ -1,0 +1,30 @@
+---
+import astroConfig from '@root/astro.config.mjs';
+import { normalizeLink } from '@src/utils/normalizeLink';
+
+interface Props {
+  href: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  ...props
+} = Astro.props;
+
+const {
+  href: normalizedHref,
+  attrs: linkAttrs,
+} = normalizeLink(href, {
+  site: astroConfig.site,
+  isProd: import.meta.env.PROD,
+});
+---
+
+<a
+  href={normalizedHref}
+  {...props}
+  {...linkAttrs}
+>
+  <slot />
+</a>
