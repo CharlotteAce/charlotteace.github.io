@@ -1,6 +1,10 @@
 ---
+import A from '@src/components/A.astro';
+
 const { pageUrl } = Astro.props;
 const { pageTitle } = Astro.props;
+
+// const siteUrl = new URL(import.meta.env.SITE ?? '');
 ---
 
 <style>
@@ -63,25 +67,25 @@ const { pageTitle } = Astro.props;
       <li>
         コンテンツ
         <ul>
-          <li><small><a href="https://charlotteace.github.io">トップページ</a></small></li>
-          <li><small><a href="https://charlotteace.github.io/profile">プロフィール</a></small></li>
-          <li><small><a href="https://charlotteace.github.io/contents">制作物・記事一覧</a></small></li>
-          <!--li><small><a href="https://charlotteace.github.io/contents">支援のお願い</a></small></li-->
+          <li><small><A href="/">トップページ</A></small></li>
+          <li><small><A href="/profile">プロフィール</A></small></li>
+          <li><small><A href="/contents">制作物・記事一覧</A></small></li>
+          <!--li><small><A href="/contents">支援のお願い</A></small></li-->
         </ul>
       </li>
       <li>
         アカウント
         <ul>
-          <li><small><a href="https://x.com/Units_SI" target="_blank" rel="noopener noreferrer">X（日常アカウント/国際単位系）</a></small></li>
-          <li><small><a href="https://x.com/_shinoharaK" target="_blank" rel="noopener noreferrer">X（同人活動用/しのはら恵）</a></small></li>
-          <li><small><a href="https://note.com/units_si" target="_blank" rel="noopener noreferrer">note</a></small></li>
-          <li><small><a href="https://github.com/CharlotteAce/" target="_blank" rel="noopener noreferrer">GitHub</a></small></li>
+          <li><small><A href="https://x.com/Units_SI">X（日常アカウント/国際単位系）</A></small></li>
+          <li><small><A href="https://x.com/_shinoharaK">X（同人活動用/しのはら恵）</A></small></li>
+          <li><small><A href="https://note.com/units_si">note</A></small></li>
+          <li><small><A href="https://github.com/CharlotteAce/">GitHub</A></small></li>
         </ul>
       </li>
       <li>
         シェア
         <ul>
-          <li><small><a href={"https://twitter.com/intent/tweet?text=%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E3%82%A8%E3%83%BC%E3%82%B9%E3%81%AE%E9%83%A8%E5%B1%8B%E3%82%92%E8%A8%AA%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A"+encodeURI(pageTitle)+"%20-%20%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E3%82%A8%E3%83%BC%E3%82%B9%E3%81%AE%E9%83%A8%E5%B1%8B%0Ahttps%3A%2F%2Fcharlotteace.github.io"+encodeURI(pageUrl)} target="_blank" rel="noopener noreferrer">Xでポスト</a></small></li>
+          <li><small><A href={"https://twitter.com/intent/tweet?text=%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E3%82%A8%E3%83%BC%E3%82%B9%E3%81%AE%E9%83%A8%E5%B1%8B%E3%82%92%E8%A8%AA%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0A%0A"+encodeURI(pageTitle)+"%20-%20%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E3%82%A8%E3%83%BC%E3%82%B9%E3%81%AE%E9%83%A8%E5%B1%8B%0A"+encodeURI("https://charlotteace.jp"+pageUrl)}>Xでポスト</A></small></li>
         </ul>
       </li>
     </ul>      

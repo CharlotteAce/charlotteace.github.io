@@ -1,7 +1,10 @@
 ---
+import A from '@src/components/A.astro';
+
 const { tags } = Astro.props;
-console.log(tags)
+const siteUrl = new URL(import.meta.env.SITE ?? '');
 ---
+
 <div class="tags">
-    {tags.map((tag:string[]) => (<a class="tag" href={`https://charlotteace.github.io/contents/tags/${tag}`}>{tag}</a>))}
+    {tags.map((tag:string[]) => (<A class="tag" href={`/contents/tags/${tag}`}>{tag}</A>))}
 </div>

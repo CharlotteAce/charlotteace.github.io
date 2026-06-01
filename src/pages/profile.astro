@@ -1,12 +1,13 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+import A from '@src/components/A.astro';
 //import IconRemote from '@src/components/IconRemote.astro';
 //import IconSNS from '@src/components/IconSNS.astro';
 
 // events
 import { marked } from "marked";
 import eventData from "@src/data/events.yml";
- interface EventData {
+interface EventData {
   updated: string;
   events: EventItem[];
 }
@@ -105,7 +106,7 @@ import aceFace from '@src/images/charlotteace001.png';
           身分
           <ul>    
             <li>理工系学科 修士二年</li>
-            <li>同人ライター（<a href="https://charlotteace.github.io/contents/kagefumi" target="_blank" rel="noopener noreferrer">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</a>他）</li>
+            <li>同人ライター（<A href="/contents/kagefumi">ウマ娘聖地巡礼情報誌『カゲフミ！』シリーズ</A>他）</li>
             <li>同人編集者兼売り子</li>
             <li>おたく</li>
           </ul>
@@ -113,7 +114,7 @@ import aceFace from '@src/images/charlotteace001.png';
         <li>
           所属と活動
           <ul>    
-            <li><a href="https://portal.circle.ms/Circle/Index/10458074" target="_blank" rel="noopener noreferrer">サークル『天然ウナギ専門店』</a>　ライター、編集者、売り子</li>
+            <li><A href="https://portal.circle.ms/Circle/Index/10458074">サークル『天然ウナギ専門店』</A>　ライター、編集者、売り子</li>
             <li><a href="https://portal.circle.ms/Circle/Index/10456708" target="_blank" rel="noopener noreferrer">サークル『逆たまごかけごはん』</a>　発注担当、売り子</li>
             <li><a href="https://portal.circle.ms/Circle/Index/10510253" target="_blank" rel="noopener noreferrer">個人サークル『どんぶりめし』</a>　代表</li>
             <li><a href="https://comitech-official.github.io" target="_blank" rel="noopener noreferrer">工大祭即売会『こみてっく！』(仮称)準備会</a>　副代表</li>
@@ -186,7 +187,7 @@ import aceFace from '@src/images/charlotteace001.png';
   <details>
     <summary><span>過去の出展イベント</span></summary>
     <p>
-      &emsp;出展イベントの参加レポートや刊行物は<a href="https://charlotteace.github.io/contents/tags/%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8B%95/">こちら</a>から。
+      &emsp;出展イベントの参加レポートや刊行物は<A href="/contents/tags/%E5%90%8C%E4%BA%BA%E6%B4%BB%E5%8B%95/">こちら</A>から。
     </p>
     {
       past.map((event) => (
@@ -208,7 +209,7 @@ import aceFace from '@src/images/charlotteace001.png';
   </p>
   <details>
     <summary>ご自身のサイトに、弊サイトのリンクを掲載したい方へ</summary>
-    &emsp;掲出はご自由にどうぞ。リンク先は<a href="https://charlotteace.github.io" target="_blank" rel="noopener noreferrer">トップページ</a>へお願いします。バナーが必要な場合は、<a href="https://charlotteace.github.io/parts/banner/" target="_blank" rel="noopener noreferrer">https://<wbr>charlotteace.<wbr>github.<wbr>io/<wbr>parts/<wbr>banner/</a> を<code>&lt;iframe&gt;</code>属性にてそのまま埋め込んでいただくか、チャプチャのうえでお使いください。バナーサイズについての規程はありません（ご設定のサイズに応じて最適化されます）。ページ全体に<code>&lt;a&gt;</code>属性が設定されているため、埋め込みの場合には、その他の設定はご不要です。
+    &emsp;掲出はご自由にどうぞ。リンク先は<A href="https://charlotteace.jp/" target="_blank" rel="noopener noreferrer">トップページ</A>へお願いします。バナーが必要な場合は、<A href="https://charlotteace.jp/parts/banner/" target="_blank" rel="noopener noreferrer">https://<wbr>charlotteace.<wbr>jp/<wbr>parts/<wbr>banner/</A> を<code>&lt;iframe&gt;</code>属性にてそのまま埋め込んでいただくか、チャプチャのうえでお使いください。バナーサイズについての規程はありません（ご設定のサイズに応じて最適化されます）。ページ全体に<code>&lt;a&gt;</code>属性が設定されているため、埋め込みの場合には、その他の設定はご不要です。
   </details>
   <style>
     .linkcard_box{

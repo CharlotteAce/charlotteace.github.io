@@ -1,9 +1,9 @@
 ---
 import AceHead from '@src/layouts/AceHead.astro';
 const pageTitle = "すいかもんゲーム(full)";
-const pageUrl = "https://charlotteace.github.io/contents/suikamongamefull/"
+const pageUrl = "/contents/suikamongamefull/"
 const description = "すいかもんゲームの全画面版。";
-const canonical = "https://charlotteace.github.io/contents/suikamongame/";
+const canonical = "/contents/suikamongame/";
 const noindex = true;
 ---
 
@@ -36,11 +36,11 @@ const noindex = true;
     </style>
       <body>
         <div class="iframe-wrapper">
-          <iframe id="suikamongame" src="../../games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
+          <iframe id="suikamongame" src="/games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
         </div>
       </body>
       <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-      <script is:inline src="../../games/suikamongame/default.js"></script>
+      <script is:inline src="/games/suikamongame/default.js"></script>
   </main>
 </AceHead>
 

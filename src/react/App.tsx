@@ -27,7 +27,7 @@ export default function App() {
         </a>
         {" / "}
         <a
-          href="https://charlotteace.github.io"
+          href="https://charlotteace.jp"
           target="_blank"
           rel="noopener noreferrer"
         >

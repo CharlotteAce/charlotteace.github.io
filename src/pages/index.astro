@@ -1,5 +1,6 @@
 ---
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
+import A from '@src/components/A.astro';
 
 // hitokoto
 import hitokotoList from '@src/data/hitokoto.yml';
@@ -20,107 +21,107 @@ const description = "しのはら恵(シャーロットエース)のウェブサ
 const tags :string[] = [];
 ---
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
-	<blockquote>
-		<p>{hitokotoRecent.text}</p>
-	</blockquote>
-	<p class="reference">――<a href="/profile#hitokoto">今日のひとこと</a>より（{hitokotoRecent.date}更新）</p>
-	<p>&emsp;しのはら恵（またの名を、国際単位系・シャーロットエース）の個人サイトです。現在新デザインに移行中。</p>
-	<style>
-		.linkcard_box{
-			margin: 2rem 0 0;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 1.6rem;
-		}
-		.linkcard{
-			--link-sub-color:white;
-			--link-theme-color: var(--charlotteace-theem);
-			--text-display-boolean:1;
-		}
-		.ace{
-			--link-sub-color:white;
-			--link-theme-color: var(--header-bg-color);
-			--text-display-boolean:1;
-		}
-		.linkcard{
-			--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
-			--linkcard-border: var(--charlotteace-water);
-			--linkcard-border-active: var(--charlotteace-deep);		
-		}
-		@media (prefers-color-scheme: dark) {
-			.linkcard{
-				--linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
-				--linkcard-border: var(--charlotteace-theme);
-				--linkcard-border-active: var(--link-theme-color);		
-			}
-		}
-		.linkcard{
-			display:inline-block;
-			width: calc(calc(100% - 2.4rem) / 2);
-			border: 1px solid var(--linkcard-border);
-			border-radius: 0.8rem;
-			background-color: var(--linkcard-bg-color);
-			overflow: hidden;
-		}
-		.linkcard .border_left{
-			width: 100%;
-			height: 100%;
-			border-left: 0.8rem solid var(--link-theme-color);
-			position: relative;
-		}
-		.linkcard .card_data{
-			color: var(--main-font-color);
-			padding:0.8rem 1.6rem;
-			opacity: var(--text-display-boolean);
-		}
-		.linkcard:hover,.linkcard:active,.linkcard:focus {
-			border: 1px solid var(--linkcard-border-active);
-			background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
-		}
-		.linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
-			opacity: 1;
-			color: var(--link-sub-color);
-		}
-		.linkcard .card_data h2{
-			margin: 0;
-			padding: 0;
-		}
-		.linkcard .card_data p{
-			margin: 0.2rem 0 0;
-			padding: 0;
-		}
-		
-		/* 仮実装 */
-		.linkcard, .linkcard:visited{
-			text-decoration: none;
-		}
-		
-		.banner, .linktext{display: none;}
+  <blockquote>
+    <p>{hitokotoRecent.text}</p>
+  </blockquote>
+  <p class="reference">――<a href="/profile#hitokoto">今日のひとこと</a>より（{hitokotoRecent.date}更新）</p>
+  <p>&emsp;しのはら恵（またの名を、国際単位系・シャーロットエース）の個人サイトです。現在新デザインに移行中。</p>
+  <style>
+    .linkcard_box{
+      margin: 2rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.6rem;
+    }
+    .linkcard{
+      --link-sub-color:white;
+      --link-theme-color: var(--charlotteace-theem);
+      --text-display-boolean:1;
+    }
+    .ace{
+      --link-sub-color:white;
+      --link-theme-color: var(--header-bg-color);
+      --text-display-boolean:1;
+    }
+    .linkcard{
+      --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
+      --linkcard-border: var(--charlotteace-water);
+      --linkcard-border-active: var(--charlotteace-deep);    
+    }
+    @media (prefers-color-scheme: dark) {
+      .linkcard{
+        --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+        --linkcard-border: var(--charlotteace-theme);
+        --linkcard-border-active: var(--link-theme-color);    
+      }
+    }
+    .linkcard{
+      display:inline-block;
+      width: calc(calc(100% - 2.4rem) / 2);
+      border: 1px solid var(--linkcard-border);
+      border-radius: 0.8rem;
+      background-color: var(--linkcard-bg-color);
+      overflow: hidden;
+    }
+    .linkcard .border_left{
+      width: 100%;
+      height: 100%;
+      border-left: 0.8rem solid var(--link-theme-color);
+      position: relative;
+    }
+    .linkcard .card_data{
+      color: var(--main-font-color);
+      padding:0.8rem 1.6rem;
+      opacity: var(--text-display-boolean);
+    }
+    .linkcard:hover,.linkcard:active,.linkcard:focus {
+      border: 1px solid var(--linkcard-border-active);
+      background-color: color-mix(in srgb, var(--link-theme-color) 80%, transparent);
+    }
+    .linkcard:hover .card_data,.linkcard:active .card_data,.linkcard:focus .card_data{
+      opacity: 1;
+      color: var(--link-sub-color);
+    }
+    .linkcard .card_data h2{
+      margin: 0;
+      padding: 0;
+    }
+    .linkcard .card_data p{
+      margin: 0.2rem 0 0;
+      padding: 0;
+    }
+    
+    /* 仮実装 */
+    .linkcard, .linkcard:visited{
+      text-decoration: none;
+    }
+    
+    .banner, .linktext{display: none;}
         @media screen and (max-width: 588px) {
-			.linkcard{
-				width: 100%;
-				min-width: 100%;
-			}
-		}
-	</style>
-	<div class="linkcard_box">
-		<a class="linkcard ace" href="https://charlotteace.github.io/contents/">
-			<div class="border_left">
-				<div class="card_data">
-					<h2>制作物・記事一覧</h2>
-					<p>しのはら恵の成果物について。</p>
-				</div>
-			</div>
-		</a>
+      .linkcard{
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+  </style>
+  <div class="linkcard_box">
+    <A class="linkcard ace" href="/contents/">
+      <div class="border_left">
+        <div class="card_data">
+          <h2>制作物・記事一覧</h2>
+          <p>しのはら恵の成果物について。</p>
+        </div>
+      </div>
+    </A>
 
-		<a class="linkcard ace" href="https://charlotteace.github.io/profile/" >
-			<div class="border_left">
-				<div class="card_data">
-					<h2>プロフィール</h2>
-					<p>しのはら恵の人生について。</p>
-				</div>
-			</div>
-		</a>
-	</div>
+    <A class="linkcard ace" href="/profile/" >
+      <div class="border_left">
+        <div class="card_data">
+          <h2>プロフィール</h2>
+          <p>しのはら恵の人生について。</p>
+        </div>
+      </div>
+    </A>
+  </div>
 </LayoutBlog>

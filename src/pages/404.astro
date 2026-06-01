@@ -1,5 +1,6 @@
 ---
 import AddHeaderFooter from '@src/layouts/AddHeaderFooter.astro';
+import A from '@src/components/A.astro';
 /*import Card from '../components/Card.astro';*/
 const { pageTitle } = Astro.props;
 const canonical = "/";
@@ -13,7 +14,7 @@ const noindex = true;
     </div>
     <div id="main">
       <h2>部屋からのお知らせ</h2>
-      <p>&emsp;このページは存在しません。<a href="https://charlotteace.github.io">トップページ</a>をご覧ください。</p>
+      <p>&emsp;このページは存在しません。<A href="/">トップページ</A>をご覧ください。</p>
         <p>&emsp;現在ページ改修中のため、正しいurlを入力していてもリンクが存在しない場合がございます。更新の反映までしばらくお待ちください。</p>
     </div>
   </div>

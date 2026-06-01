@@ -47,10 +47,10 @@ tags: ['制作物','プログラミング']
 - 耳の当たり判定がない。
     - 仕様です。真球の当たり判定なので本家同様結構転がります。
 
-## [フルスクリーン版はこちら](https://charlotteace.github.io/contents/suikamongamefull)<br><small>（スマホの方はこちらを推奨）</small>
+## [フルスクリーン版はこちら](/contents/suikamongamefull)<br><small>（スマホの方はこちらを推奨）</small>
 <p></p>
 <div class="iframe-wrapper">
-    <iframe id="suikamongame" src="../../games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
+    <iframe id="suikamongame" src="/games/suikamongame/index.html" scrolling="no" frameborder="0"></iframe>
 </div>
 <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script is:inline src="../../games/suikamongame/default.js"></script>
+<script is:inline src="/games/suikamongame/default.js"></script>

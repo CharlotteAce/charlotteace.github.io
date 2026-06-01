@@ -2,6 +2,7 @@
 import LayoutBlog from '@src/layouts/LayoutBlog.astro';
 import LinkCard from '@src/components/LinkCard.astro';
 import externalPosts from '@src/data/blogs.yml';
+import A from '@src/components/A.astro';
 
 interface BlogPost {
   frontmatter: {
@@ -79,7 +80,7 @@ posts.sort((a, b) => {
 
 <LayoutBlog pageTitle={pageTitle} pageUrl={pageUrl} pubDate={pubDate} updateDate={updateDate} description={description} tags={tags}>
   <p>
-    &emsp;{tag}タグのついた制作物・記事の一覧を表示しています。すべての制作物・記事は<a href="https://charlotteace.github.io/contents">こちら</a>から。
+    &emsp;{tag}タグのついた制作物・記事の一覧を表示しています。すべての制作物・記事は<A href="/contents">こちら</A>から。
   </p>
 	<style>
 		.linkcard_box{

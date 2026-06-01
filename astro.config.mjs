@@ -3,9 +3,11 @@ import react from '@astrojs/react';
 import yaml from '@rollup/plugin-yaml';
 
 import rehypeNormalizeLinks from './src/plugins/rehype-normalize-links.mjs';
+const SITE_URL = 'https://charlotteace.jp';
+
 
 export default defineConfig({
-  site: "https://charlotteace.github.io",
+  site: SITE_URL,
   integrations: [react()],
   vite: {
     plugins: [yaml()],
@@ -15,7 +17,7 @@ export default defineConfig({
       [
         rehypeNormalizeLinks,
         {
-          site: 'https://charlotteace.github.io',
+          site: SITE_URL,
           isProd: process.env.NODE_ENV === 'production',
         },
       ],

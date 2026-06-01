@@ -2,6 +2,7 @@
 import AceHead from '@src/layouts/AceHead.astro';
 import { Image } from 'astro:assets';
 import aceLogo from '@src/images/logos/ace.png';
+import A from '@src/components/A.astro';
 const pageTitle = "トップページ";
 const description = "埋め込み用バナー";
 const canonical = "/";
@@ -100,7 +101,7 @@ const noindex = true;
         </p>
         <Image id="logo" src={aceLogo} alt="site's logo" />
       </div>
-      <a href="https://charlotteace.github.io" target="_blank"></a>
+      <A href="/" target="_blank"></A>
 		</div>
   </body>
 </AceHead>
