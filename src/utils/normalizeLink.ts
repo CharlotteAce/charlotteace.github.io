@@ -1,3 +1,6 @@
+// a要素の正規化
+import { buildUrl } from './buildUrl';
+
 export interface NormalizeLinkResult {
   href: string;
   attrs: Record<string, string>;
@@ -12,10 +15,7 @@ export function normalizeLink(
   href: string,
   options: Options = {},
 ): NormalizeLinkResult {
-  const {
-    site,
-    isProd = false,
-  } = options;
+  href = buildUrl(href, options);
 
   // external
   if (
@@ -28,18 +28,6 @@ export function normalizeLink(
         target: '_blank',
         rel: 'noopener noreferrer',
       },
-    };
-  }
-
-  // root-relative
-  if (
-    href.startsWith('/') &&
-    isProd &&
-    site
-  ) {
-    return {
-      href: new URL(href, site).toString(),
-      attrs: {},
     };
   }
 

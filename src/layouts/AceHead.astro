@@ -1,4 +1,6 @@
 ---
+import { buildUrl } from '@src/utils/buildUrl';
+
 const { pageTitle } = Astro.props;
 const { pageUrl } = Astro.props;
 const { description } = Astro.props;
@@ -6,11 +8,18 @@ const { canonical = false } = Astro.props;
 const { noindex = false } = Astro.props;
 /*import "the-new-css-reset";*/
 const favicon = import.meta.env.DEV
-  ? "/favicon-dev.png"
-  : "/favicon.png";
+  ? buildUrl("/favicon-dev.png")
+  : buildUrl("/favicon.png");
 const siteName = "シャーロットエースの部屋";
 const pageName = pageTitle + " - " + siteName;
 const author = "シャーロットエース";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: buildUrl("/"),
+};
 ---
 
 <!DOCTYPE html>
@@ -24,14 +33,10 @@ const author = "シャーロットエース";
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
   
     <!-- Site Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "シャーロットエースの部屋",
-        "url": "https://charlotteace.jp/"
-      }
-    </script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
     <title>{pageName}</title>
     <meta name="description" content={description}>
     <meta name="author" content={author}>
@@ -46,17 +51,17 @@ const author = "シャーロットエース";
     <meta property="og:title" content={pageName}>
     <meta property="og:description" content={description}>
     <meta property="og:url" content={pageUrl}>
-    <meta property="og:image" content="https://charlotteace.jp/favicon.png">
+    <meta property="og:image" content={favicon}>
     <meta property="og:locale" content="jp">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content={pageName}>
     <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content="https://charlotteace.jp/favicon.png">
+    <meta name="twitter:image" content={favicon}>
 
     <!-- canonical -->
-    {canonical && <link rel="canonical" href={canonical} />}
+    {canonical && <link rel="canonical" href={buildUrl(canonical)} />}
 
     <!-- noindex -->
     {noindex && <meta name="robots" content="noindex" />}
