@@ -15,15 +15,14 @@ export function normalizeLink(
   href: string,
   options: Options = {},
 ): NormalizeLinkResult {
-  href = buildUrl(href, options);
+  const isExternal =
+    href.startsWith('http://') ||
+    href.startsWith('https://');
 
   // external
-  if (
-    href.startsWith('http://') ||
-    href.startsWith('https://')
-  ) {
+  if (isExternal) {
     return {
-      href,
+      href: buildUrl(href, options),
       attrs: {
         target: '_blank',
         rel: 'noopener noreferrer',
@@ -33,7 +32,7 @@ export function normalizeLink(
 
   // untouched
   return {
-    href,
+    href: buildUrl(href, options),
     attrs: {},
   };
 }
