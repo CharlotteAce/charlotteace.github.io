@@ -1,11 +1,13 @@
 ---
+import A from '@src/components/A.astro';
+
 import AddHeaderFooter from '@src/layouts/AddHeaderFooter.astro';
 const { frontmatter } = Astro.props;
 ---
 
 <AddHeaderFooter pageTitle={ frontmatter.title } pageUrl={ frontmatter.pageUrl } description={ frontmatter.description } canonical={ frontmatter.contentsUrl } noindex=true>
   <p>
-    閲覧リンクはこちら：<a href={frontmatter.contentsUrl}>{frontmatter.contentsUrl}</a><br>
+    閲覧リンクはこちら：<A href={frontmatter.contentsUrl}>{frontmatter.contentsUrl}</A><br>
     3秒後に自動リダイレクトします。
   </p>
   <meta http-equiv="refresh" content={"3;URL='"+frontmatter.contentsUrl+"'"}>

@@ -1,4 +1,6 @@
 ---
+import A from '@src/components/A.astro';
+
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
@@ -21,7 +23,7 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
 </div-->
 
 
-<a class={"linkcard "+frontmatter.medium} href={frontmatter.contentsUrl} target="_blank" rel="noopener noreferrer">
+<A class={"linkcard "+frontmatter.medium} href={frontmatter.contentsUrl} target="_blank" rel="noopener noreferrer">
   <div class="border_left">
     <Image class="thumbnail" src={thumbnail_images["/src"+frontmatter.image.url]()} alt={frontmatter.image.alt}/>
     <div class="card_data">
@@ -33,7 +35,7 @@ if (!thumbnail_images["/src"+frontmatter.image.url]) throw new Error(`"${"/src"+
     </div>
     <Image class="logo" src={logo_images[logo_url+frontmatter.medium+".png"]()} alt={frontmatter.medium+".com"} />
   </div>
-</a>
+</A>
 
 <style>
   .linkcard{
