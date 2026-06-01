@@ -9,7 +9,7 @@ const { description } = Astro.props;
 const { tags } = Astro.props;
 ---
 
-<AddHeaderFooter pageTitle={pageTitle} pageUrl={pageUrl}>
+<AddHeaderFooter pageTitle={pageTitle} pageUrl={pageUrl} description={ description }>
   <div id="title">
     <h1>{pageTitle}</h1>
     <p id="description">{description}</p>
