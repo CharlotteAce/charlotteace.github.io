@@ -14,7 +14,7 @@ const [hitokotoRecent, ...hitokotoArchive]: Hitokoto[] = hitokotoList;
 const pageTitle = "トップページ";
 const pageUrl = "/";
 const pubDate = "2023-12-20";
-const pageUpdateDate = "2026-05-21";
+const pageUpdateDate = "2026-06-02";
 const updateDatesList = [pageUpdateDate, hitokotoRecent.date];
 const updateDate = updateDatesList.reduce((max, current) => current > max ? current : max);
 const description = "しのはら恵(シャーロットエース)のウェブサイト。";
@@ -26,6 +26,8 @@ const tags :string[] = [];
   </blockquote>
   <p class="reference">――<A href="/profile#hitokoto">今日のひとこと</A>より（{hitokotoRecent.date}更新）</p>
   <p>&emsp;しのはら恵（またの名を、国際単位系・シャーロットエース）の個人サイトです。現在新デザインに移行中。</p>
+  <h2>部屋からのお知らせ</h2>
+  <p>&emsp;ドメインを取得しました。サイトの新URLは<code>https://charlotteace.jp/</code>ですので、掲載中の皆様は張り替えのご協力をお願いします。当面の間、旧ドメインからもリダイレクトされます。</p>
   <style>
     .linkcard_box{
       margin: 2rem 0 0;
@@ -43,18 +45,6 @@ const tags :string[] = [];
       --link-sub-color:white;
       --link-theme-color: var(--header-bg-color);
       --text-display-boolean:1;
-    }
-    .linkcard{
-      --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
-      --linkcard-border: var(--charlotteace-water);
-      --linkcard-border-active: var(--charlotteace-deep);    
-    }
-    @media (prefers-color-scheme: dark) {
-      .linkcard{
-        --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
-        --linkcard-border: var(--charlotteace-theme);
-        --linkcard-border-active: var(--link-theme-color);    
-      }
     }
     .linkcard{
       display:inline-block;

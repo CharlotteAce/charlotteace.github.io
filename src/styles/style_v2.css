@@ -12,7 +12,7 @@
 
   /*ライトモード時*/
   --main-font-color: black;
-  --main-bg-color: var(--charlotteace-pale);
+  --main-bg-color: color-mix(in srgb, var(--charlotteace-pale) 60%, transparent);
   --main-deep-color: black;
   --header-font-color: white;
   --header-bg-color: var(--charlotteace-theme);
@@ -21,6 +21,11 @@
   --header-bg-focus: var(--charlotteace-sky);
   --link-font-color: var(--charlotteace-blue);
   --link-visited-color: var(--dark-gray);
+
+  --linkcard-bg-color: color-mix(in srgb, var(--main-bg-color) 50%, transparent);
+  --linkcard-border: var(--charlotteace-sky);
+  --linkcard-border-active: var(--charlotteace-deep);    
+  --codeblock-bg-color: color-mix(in srgb, var(--charlotteace-theme) 10%, var(--dark-gray));
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -32,6 +37,11 @@
     --header-border-color: var(--charlotteace-theme);
     --link-font-color: var(--charlotteace-sky);
     --link-visited-color: var(--light-gray);
+
+    --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
+    --linkcard-border: var(--charlotteace-theme);
+    --linkcard-border-active: var(--link-theme-color);   
+    --codeblock-bg-color: var(--linkcard-bg-color);
   }
 }
 
@@ -121,6 +131,27 @@ a:hover,a:focus{
   text-decoration: none;
 }
 div{font-size: 1.6rem;}
+
+/* code */
+code {
+  background-color: var(--codeblock-bg-color);
+  margin: -0.8rem 0.4rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  color: white;
+}
+pre.astro-code {
+  background-color: var(--codeblock-bg-color) !important;
+  overflow: visible !important;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+}
+pre.astro-code code {
+  background-color: transparent;
+  line-height: 2.4rem;
+  margin: 0;
+  padding: 0;
+}
 
 #wrapper,.botom,#footer{
   max-width: 960px;

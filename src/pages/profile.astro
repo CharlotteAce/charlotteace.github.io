@@ -147,21 +147,21 @@ import aceFace from '@src/images/charlotteace001.png';
   <h3>ファンアートタグ</h3>
   <p>&emsp;<A href="https://x.com/search?q=%23%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88%E7%B5%B5%E3%83%BC%E3%82%B9%20filter%3Aimages&src=typed_query&f=live">#にゃらんかあーと</A>（にゃーんRanker）</p>
   <h2 id="hitokoto">今日のひとこと</h2>
-  <p>
-    &emsp;{hitokotoRecent.text}
-    （{hitokotoRecent.date}更新）
-  </p>
+  <blockquote>
+    <p>{hitokotoRecent.text}</p>
+  </blockquote>
+  <p class="reference">（{hitokotoRecent.date}更新）</p>
   <details>
     <summary><span>過去のひとこと</span></summary>
-    <ul>
+    <blockquote>
       {
         hitokotoArchive.map((item) => (
-          <li>
+          <p>
             {item.text}（{item.date}更新{item.note ? `、${item.note}` : ''}）
-          </li>
+          </p>
         ))
       }
-    </ul>
+    </blockquote>
   </details>
   <h2>イベント出展情報</h2>
   <p>
