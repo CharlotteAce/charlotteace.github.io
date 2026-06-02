@@ -1,0 +1,85 @@
+- id: uda
+  name: や-さがされ
+  author: 宇田まなと/春瀬
+  url: https://gitdmnt.github.io
+  thumbnail: /images/link_exchange/tuda.png
+
+  themeColor: "#993c69"
+  subColor: white
+  textDisplay: 0
+
+- id: sue
+  name: Le Site Web de Suika AKIYAMA
+  author: Suika AKIYAMA
+  url: https://sueakiyama.github.io
+  thumbnail: /images/link_exchange/tsue.png
+  logo: /images/link_exchange/lsue.png
+  banner: /images/link_exchange/bsue.png
+
+  themeColor: "#E74727"
+  subColor: white
+  textDisplay: 0
+
+- id: haxibami
+  name: 点点公社
+  author: 神話募集中 - haxibami
+  url: https://h6i.org/
+  logo: /images/link_exchange/lhaxibami.ico
+
+  themeColor: "oklch(62.73% .209 12.37)"
+  darkThemeColor: "oklch(70.94% .136 258.06)"
+  subColor: white
+  textDisplay: 1
+
+- id: inaniwa
+  name: いなにわうどん.みんな
+  author: いなにわうどん
+  url: https://xn--n8je9hcf0t4a.xn--q9jyb4c/
+  banner: /images/link_exchange/binaniwa.png
+
+  themeColor: "#FA981C"
+  subColor: "var(--main-deep-color)"
+  textDisplay: 1
+
+- id: fabon
+  name: |-
+    ふぁぼんの
+    ホームページ
+  author: ふぁぼん
+  url: https://www.fabon.info/
+  logo: https://www.fabon.info/img/fabon.png
+
+  themeColor: "#91ACD1"
+  subColor: "var(--main-deep-color)"
+  textDisplay: 1
+
+- id: mycel
+  name: mycelithyl-hyphae
+  author: Mycelithyl
+  url: https://arx-ein.github.io/
+  thumbnail: /images/link_exchange/tmycel.png
+  logo: /images/link_exchange/lmycel.png
+  banner: /images/link_exchange/bmycel.png
+
+  themeColor: "#00F314"
+  subColor: "var(--main-deep-color)"
+  textDisplay: 0
+
+- id: suyalog
+  name: すやすやログ
+  author: suyasuyaTY
+  url: https://suyasuyaty.github.io/
+
+  themeColor: "oklch(54.6% 0.245 262.881)"
+  subColor: white
+  textDisplay: 1
+
+- id: licjar
+  name: LICJAR.XYZ
+  author: りちゃ
+  url: https://licjar.xyz/
+  banner: /images/link_exchange/blicjar.svg
+
+  themeColor: "#f8c067"
+  subColor: "var(--main-deep-color)"
+  textDisplay: 1

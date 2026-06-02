@@ -4,11 +4,7 @@ import A from '@src/components/A.astro';
 
 // hitokoto
 import hitokotoList from '@src/data/hitokoto.yml';
-interface Hitokoto {
-  text: string;
-  date: string;
-  note?: string;
-}
+import type { Hitokoto } from '@src/types/ymlData';
 const [hitokotoRecent, ...hitokotoArchive]: Hitokoto[] = hitokotoList;
 
 const pageTitle = "トップページ";

@@ -7,40 +7,26 @@ import A from '@src/components/A.astro';
 // events
 import { marked } from "marked";
 import eventData from "@src/data/events.yml";
-interface EventData {
-  updated: string;
-  events: EventItem[];
-}
-interface EventItem {
-  title: string;
-  circle: string;
-  status:
-    | "upcoming"
-    | "tentative"
-    | "past"
-    | "cancelled";
-  sortDate: string;
-  body: string;
-}
+import type { EventData } from "@src/types/ymlData";
 const events = eventData as EventData;
 const upcoming = events.events.filter(
-  (e: EventItem) =>
-    e.status === "upcoming"
+  e => e.status === "upcoming"
 );
 const past = events.events.filter(
-  (e: EventItem) =>
+  e =>
     e.status === "past" ||
     e.status === "cancelled"
 );
 
 // hitokoto
 import hitokotoList from '@src/data/hitokoto.yml';
-interface Hitokoto {
-  text: string;
-  date: string;
-  note?: string;
-}
+import type { Hitokoto } from '@src/types/ymlData';
 const [hitokotoRecent, ...hitokotoArchive]: Hitokoto[] = hitokotoList;
+
+// link_exchange
+import linksData from '@src/data/link_exchange.yml';
+import type { LinkExchange } from '@src/types/ymlData';
+const links = linksData as LinkExchange[];
 
 const pageTitle = "プロフィール";
 const pageUrl = "/profile";
@@ -219,63 +205,22 @@ import aceFace from '@src/images/charlotteace001.png';
       justify-content: center;
       gap: 1.6rem;
     }
-    .linkcard{
+    .linkcard, .linktext, .banner {
       --link-sub-color:white;
       --link-theme-color: var(--charlotteace-theem);
+      --link-theme-color-light:var(--charlotteace-theme);
+      --link-theme-color-dark:var(--link-theme-color-light);
+      --link-theme-color:var(--link-theme-color-light);
       --text-display-boolean:0;
     }
-    .uda{
-      --link-sub-color:white;
-      --link-theme-color:#993c69;
-      --text-display-boolean:0;
-    }
-    .sue{
-      --link-sub-color:white;
-      --link-theme-color:#E74727;
-      --text-display-boolean:0;
-    }
-    .haxibami{
-      --link-sub-color:white;
-      --link-theme-color:oklch(62.73% .209 12.37);
-      --text-display-boolean:1;
-    }
-    @media (prefers-color-scheme: dark) {
-      .haxibami{
-        --link-theme-color:oklch(70.94% .136 258.06);
-      }
-    }
-    .inaniwa{
-      --link-sub-color:var(--main-deep-color);
-      --link-theme-color:#FA981C;
-      --text-display-boolean:1;
-    }
-    .fabon{
-      --link-sub-color:var(--main-deep-color);
-      --link-theme-color:#91ACD1;      
-      --text-display-boolean:1;
-    }
-    .mycel{
-      --link-sub-color:var(--main-deep-color);
-      --link-theme-color:#00F314;
-      --text-display-boolean:0;
-    }
-    .suyalog{
-      --link-sub-color:white;
-      --link-theme-color:oklch(54.6% 0.245 262.881);
-      --text-display-boolean:1;
-    }
-    .licjar{
-      --link-sub-color:var(--main-deep-color);
-      --link-theme-color:#f8c067;
-      --text-display-boolean:1;
-    }
-    .linkcard{
+    .linkcard, .linktext, .banner {
       --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-water) 10%, transparent);
       --linkcard-border: var(--charlotteace-water);
       --linkcard-border-active: var(--charlotteace-deep);    
     }
     @media (prefers-color-scheme: dark) {
-      .linkcard{
+      .linkcard, .linktext, .banner {
+        --link-theme-color:var(--link-theme-color-dark);
         --linkcard-bg-color: color-mix(in srgb, var(--charlotteace-theme) 20%, transparent);
         --linkcard-border: var(--charlotteace-theme);
         --linkcard-border-active: var(--link-theme-color);    
@@ -369,93 +314,80 @@ import aceFace from '@src/images/charlotteace001.png';
     }
   </style>
   <div class="linkcard_box">
-    <A class="linkcard uda" href="https://gitdmnt.github.io">
-      <div class="border_left">
-        <img class="thumbnail" src="/images/link_exchange/tuda.png" alt="『や-さがされ』のバナー">
-        <div class="card_data">
-          <h2>や-さがされ</h2>
-          <p>宇田まなと/春瀬</p>
-        </div>
-      </div>
-    </A>
-    <div class="linktext uda"><big><A href="https://gitdmnt.github.io">や-さがされ</A></big> - 宇田まなと/春瀬</div>
+    {
+      links.map((link) => (
+        <>
+          <A
+            class="linkcard"
+            href={link.url}
+            style={`
+              --link-theme-color-light:${link.themeColor};
+              --link-sub-color:${link.subColor};
+              --text-display-boolean:${link.textDisplay};
+              ${link.darkThemeColor ? `--link-theme-color-dark:${link.darkThemeColor};` : ''}
+            `}
+          >
+            <div class="border_left">
 
-    <A class="linkcard sue" href="https://sueakiyama.github.io">
-      <div class="border_left">
-        <img class="thumbnail" src="/images/link_exchange/tsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー">
-        <div class="card_data">
-          <h2>Le Site Web de Suika AKIYAMA</h2>
-          <p>Suika AKIYAMA</p>
-        </div>
-        <img class="logo" src="/images/link_exchange/lsue.png" alt="『Le Site Web de Suika AKIYAMA』のfavicon">
-      </div>
-    </A>
-    <A class="banner sue" href="https://sueakiyama.github.io"><img src="../images/link_exchange/bsue.png" alt="『Le Site Web de Suika AKIYAMA』のバナー" width="200" height="40"></A>
+              {link.thumbnail && (
+                <img
+                  class="thumbnail"
+                  src={link.thumbnail}
+                  alt={link.thumbnailAlt ?? `『${link.name.replace(/\n/g,'')}』のサムネイル`}
+                />
+              )}
 
-    <A class="linkcard haxibami" href="https://h6i.org/">
-      <div class="border_left">
-        <div class="card_data">
-          <h2>点点公社</h2>
-          <p>神話募集中 - haxibami</p>
-        </div>
-        <img class="logo" src="/images/link_exchange/lhaxibami.ico" alt="『点点公社』のfavicon">
-      </div>
-    </A>
-    <div class="linktext haxibami"><big><A href="https://h6i.org/">点点公社</A></big> - haxibami</div>
+              <div class="card_data">
+                <h2>{link.name}</h2>
+                <p>{link.author}</p>
+              </div>
 
-    <A class="linkcard inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/">
-      <div class="border_left">
-        <div class="card_data">
-          <h2>いなにわうどん.みんな</h2>
-          <p>いなにわうどん</p>
-        </div>
-      </div>
-    </A>
-    <A class="banner inaniwa" href="https://xn--n8je9hcf0t4a.xn--q9jyb4c/"><img src="../images/link_exchange/binaniwa.png" alt="『いなにわうどん.みんな』のバナー" width="200" height="40"></A>
+              {link.logo && (
+                <img
+                  class="logo"
+                  src={link.logo}
+                  alt={`『${link.name.replace(/\n/g,'')}』のfavicon`}
+                />
+              )}
 
-    <A class="linkcard fabon" href="https://www.fabon.info/">
-      <div class="border_left">
-        <div class="card_data">
-          <h2>ふぁぼんの<br>ホームページ</h2>
-          <p>ふぁぼん</p>
-        </div>
-        <img class="logo" src="https://www.fabon.info/img/fabon.png" alt="『ふぁぼんのホームページ』のfavicon">
-      </div>
-    </A>
-    <div class="linktext fabon"><big><A href="https://www.fabon.info/">ふぁぼんのホームページ</A></big> - ふぁぼん</div>
+            </div>
+          </A>
 
-    <A class="linkcard mycel" href="https://arx-ein.github.io/">
-      <div class="border_left">
-        <img class="thumbnail" src="/images/link_exchange/tmycel.png" alt="『mycelithyl-hyphae』のバナー">
-        <div class="card_data">
-          <h2>mycelithyl-hyphae</h2>
-          <p>Mycelithyl</p>
-        </div>
-        <img class="logo" src="/images/link_exchange/lmycel.png" alt="『mycelithyl-hyphae』のfavicon">
-      </div>
-    </A>
-    <A class="banner mycel" href="https://arx-ein.github.io/"><img src="../images/link_exchange/bmycel.png" alt="『mycelithyl-hyphae』のバナー" width="200" height="40"></A>
-    
-    <A class="linkcard suyalog" href="https://suyasuyaty.github.io/">
-      <div class="border_left">
-        <div class="card_data">
-          <h2>すやすやログ</h2>
-          <p>suyasuyaTY</p>
-        </div>
-      </div>
-    </A>
-    <div class="linktext suyalog"><big><A href="https://suyasuyaty.github.io/">すやすやログ</A></big> - suyasuyaTY</div>
-
-    <A class="linkcard licjar" href="https://licjar.xyz/">
-      <div class="border_left">
-        <div class="card_data">
-          <h2>LICJAR.XYZ</h2>
-          <p>りちゃ</p>
-        </div>
-      </div>
-    </A>
-    <A class="banner licjar" href="https://licjar.xyz/"><img src="../images/link_exchange/blicjar.svg" alt="『LICJAR.XYZ』のバナー" width="200" height="40"></A>
-    
+          {
+            link.banner
+              ? (
+                <A
+                  class="banner"
+                  href={link.url}
+                  style={`
+                    --link-theme-color:${link.themeColor};
+                    ${link.darkThemeColor ? `--link-theme-color-dark:${link.darkThemeColor};` : ''}
+                  `}
+                >
+                  <img
+                    src={link.banner}
+                    alt={`『${link.name.replace(/\n/g,'')}』のバナー`}
+                    width="200"
+                    height="40"
+                  />
+                </A>
+              )
+              : (
+                <div
+                  class="linktext"
+                  style={`
+                    --link-theme-color-light:${link.themeColor};
+                    ${link.darkThemeColor ? `--link-theme-color-dark:${link.darkThemeColor};` : ''}
+                  `}
+                >
+                  <big><A href={link.url}>{link.name}</A></big>
+                  {' '} - {link.author}
+                </div>
+              )
+          }
+        </>
+      ))
+    }
   </div>
 
   <section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">注釈</h2>
