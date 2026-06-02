@@ -11,7 +11,14 @@ const favicon = import.meta.env.DEV
   ? buildUrl("/favicon-dev.png")
   : buildUrl("/favicon.png");
 const siteName = "シャーロットエースの部屋";
-const pageName = pageTitle + " - " + siteName;
+
+// ページ名が未定義、空欄、"トップページ"、"シャーロットエースの部屋"であるとき、タブ表示名は "シャーロットエースの部屋" となる
+const pageName =
+  !pageTitle?.trim() ||
+  pageTitle === "トップページ" ||
+  pageTitle === "シャーロットエースの部屋"
+    ? siteName
+    : `${pageTitle} - ${siteName}`;
 const author = "シャーロットエース";
 
 const structuredData = {
