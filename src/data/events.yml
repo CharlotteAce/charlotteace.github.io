@@ -22,22 +22,16 @@ memo:
       - 地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分
 
 
-events:
+events:        
   - title: "コミックマーケット108"
-    circle: "ど"
-    status: "tentative"
-    sortDate: "2026-08-16"
-    body: |
-      - 2026年8月15日(土)　10:30～16:00
-      - アクセスは上記同様 2日間で異なるサークルとして参加します
-        
-  - title: "コミックマーケット108"
-    circle: "天"
-    status: "tentative"
+    circle: "天・ど"
+    status: "upcoming"
     sortDate: "2026-08-15"
     body: |
-      - 2026年8月15日(土)　10:30～16:00
-      - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/) 東ホール予定 ホール未定
+      - 2026年8月15日(土)・16日(日)　10:30～16:00
+        - 【天】8/15 東地区 東3ホール フ-06b
+        - 【ど】8/16 南地区 南1ホール p-06a 
+      - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/)
         - ゆりかもめ「東京ビッグサイト駅」徒歩3分
         - りんかい線「国際展示場駅」徒歩7分
 
