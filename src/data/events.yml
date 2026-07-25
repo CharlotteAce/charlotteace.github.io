@@ -20,9 +20,35 @@ memo:
     - [東京大学本郷キャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map01_02.html) nn号館ff階 xxxx教室
       - 地下鉄南北線「東大前駅」徒歩5分</li>
       - 地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分
+    - [東京科学大学大岡山キャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map02_02.html)
+      -京王井の頭線「駒場東大前」駅前
+    - [東京科学大学大岡山キャンパス](https://www.isct.ac.jp/ja/001/access#anchor01) Dnn号館ff階 Dnn-xxx教室
+      - 東急目黒線・大井町線「大岡山駅」駅前
 
 
-events:        
+events:
+  - title: "コミックアカデミー29"
+    circle: "天"
+    status: "tentative"
+    sortDate: "2026-11-21"
+    body: |
+      - 2026年11月21日(土)～23日(月祝)　10:00～16:00(仮) 教室未定
+      - [東京大学駒場Iキャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map02_02.html)
+        -京王井の頭線「駒場東大前」駅前
+      - 東京大学学園祭『第77回駒場祭』内企画
+      - [公式サイト](https://comiaca.com/)
+
+  - title: "こみてっく！2026"
+    circle: "天・ど"
+    status: "tentative"
+    sortDate: "2026-10-10"
+    body: |
+      - 2026年10月10日(土)・11日(日)　10:00～16:00
+        - 両日「nnブース」にて参加予定
+      - [東京科学大学大岡山キャンパス](https://www.isct.ac.jp/ja/001/access#anchor01)
+        - 東急目黒線・大井町線「大岡山駅」駅前
+      - [公式サイト](https://comitech-official.github.io/)
+
   - title: "コミックマーケット108"
     circle: "天・ど"
     status: "upcoming"
@@ -37,13 +63,10 @@ events:
 
   - title: "THE VOC@LOiD M@STER 63"
     circle: "逆"
-    status: "upcoming"
+    status: "past"
     sortDate: "2026-07-25"
     body: |
       - 2026年7月25日(土)　12:30～16:00
-      - [東京流通センター](https://www.trc-inc.co.jp/access/) 第二展示場Eホール B02
-        - 東京モノレール「流通センター駅」徒歩1分
-      - [公式サイト](https://ketto.com/tvm/tvm63youkou.htm)
 
   - title: "コミックアカデミー28"
     circle: "天"
