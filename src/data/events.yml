@@ -8,7 +8,7 @@ memo:
     - "past"
     - "cancelled"
   place: |
-    - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/) ddnnホール ddxx-mmaa
+    - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/) dd地区 ddnnホール ddxx-mmaa
       - ゆりかもめ「東京ビッグサイト駅」徒歩3分
       - りんかい線「国際展示場駅」徒歩7分
     - [幕張メッセ](https://www.m-messe.co.jp/access/) 展示ホールhh
@@ -27,6 +27,19 @@ memo:
 
 
 events:
+  - title: "コミックマーケット109(参加未定)"
+    circle: "天・逆・ど"
+    status: "tentative"
+    sortDate: "2026-12-29"
+    body: |
+      - 2026年8月15日(土)・16日(日)　10:30～16:00
+        - 【天】12/29 dd地区 ddnnホール ddxx-mmaa
+        - 【逆】12/30 dd地区 ddnnホール ddxx-mmaa
+        - 【ど】12/31 dd地区 ddnnホール ddxx-mmaa
+      - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/)
+        - ゆりかもめ「東京ビッグサイト駅」徒歩3分
+        - りんかい線「国際展示場駅」徒歩7分
+
   - title: "コミックアカデミー29"
     circle: "天"
     status: "tentative"
@@ -40,33 +53,37 @@ events:
 
   - title: "こみてっく！2026"
     circle: "天・ど"
-    status: "tentative"
+    status: "upcoming"
     sortDate: "2026-10-10"
     body: |
       - 2026年10月10日(土)・11日(日)　10:00～16:00
-        - 両日「nnブース」にて参加予定
-      - [東京科学大学大岡山キャンパス](https://www.isct.ac.jp/ja/001/access#anchor01)
+      - [東京科学大学大岡山キャンパス](https://www.isct.ac.jp/ja/001/access#anchor01)  西9号館 W9-327教室
+        - 両サークル隣接配置です。
         - 東急目黒線・大井町線「大岡山駅」駅前
+      - 両日 07abブース
       - [公式サイト](https://comitech-official.github.io/)
 
   - title: "コミックマーケット108"
-    circle: "天・ど"
-    status: "upcoming"
+    circle: "ど"
+    status: "past"
+    sortDate: "2026-08-16"
+    body: |
+      - 2026年8月16日(日)
+
+  - title: "コミックマーケット108"
+    circle: "天"
+    status: "past"
     sortDate: "2026-08-15"
     body: |
-      - 2026年8月15日(土)・16日(日)　10:30～16:00
-        - 【天】8/15 東地区 東3ホール フ-06b
-        - 【ど】8/16 南地区 南1ホール p-06a 
-      - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/)
-        - ゆりかもめ「東京ビッグサイト駅」徒歩3分
-        - りんかい線「国際展示場駅」徒歩7分
+      - 2025年8月15日(土)
+      - マンハッタンカフェ(ウマ娘) 「ケンタッキーフライドチキン」コラボ衣装 お披露目
 
   - title: "THE VOC@LOiD M@STER 63"
     circle: "逆"
     status: "past"
     sortDate: "2026-07-25"
     body: |
-      - 2026年7月25日(土)　12:30～16:00
+      - 2026年7月25日(土)
 
   - title: "コミックアカデミー28"
     circle: "天"
