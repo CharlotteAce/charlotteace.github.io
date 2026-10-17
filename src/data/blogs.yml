@@ -491,16 +491,16 @@
     - "ウマ娘"
 
 - slug: "202510170001"
-  title: "工大祭即売会「こみてっく！」(仮称)公式サイト"
+  title: "工大祭即売会「こみてっく！」公式サイト"
   pubDate: "2025-10-17"
   updateDate: "2025-10-17"
-  description: "工大祭同人即売会「こみてっく！」(仮称)のウェブサイト。"
-  contentsUrl: "https://comitech-official.github.io"
+  description: "工大祭同人即売会「こみてっく！」のウェブサイト。"
+  contentsUrl: "https://comitech-official.github.io?from=charlotteaceroom"
   contentsNum: 202510170001
   medium: "comitech"
   image:
     url: "/images/thumbnails/202510170001.png"
-    alt: "こみてっく！(仮)のogp"
+    alt: "こみてっく！のogp"
   width:
     four: "e"
     three: "e"
@@ -530,3 +530,23 @@
     - "同人活動"
     - "コスプレ"
     - "衣装制作"
+ 
+- slug: "202610170001"
+  title: "こみてっく！2026アフターレポート"
+  pubDate: "2026-10-17"
+  updateDate: "2026-10-17"
+  description: "こみてっく！2026 開催の記録"
+  contentsUrl: "https://comitech-official.github.io/te01/report?from=charlotteaceroom"
+  contentsNum: 202610170001
+  medium: "comitech"
+  image:
+    url: "/images/thumbnails/202610170001.png"
+    alt: "こみてっく！のogp"
+  width:
+    four: "e"
+    three: "e"
+    two: "e"
+  tags:
+    - "制作物"
+    - "同人活動"
+    - "プログラミング"
