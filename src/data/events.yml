@@ -20,21 +20,21 @@ memo:
       - 地下鉄南北線「東大前駅」徒歩5分</li>
       - 地下鉄丸ノ内線・大江戸線「本郷三丁目駅」徒歩15分
     - [東京科学大学大岡山キャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map02_02.html)
-      -京王井の頭線「駒場東大前」駅前
+      - 京王井の頭線「駒場東大前」駅前
     - [東京科学大学大岡山キャンパス](https://www.isct.ac.jp/ja/001/access#anchor01) Dnn号館ff階 Dnn-xxx教室
       - 東急目黒線・大井町線「大岡山駅」駅前
 
 
 events:
-  - title: "コミックマーケット109(参加未定)"
-    circle: "天・逆・ど"
-    status: "tentative"
+  - title: "コミックマーケット109"
+    circle: "天・ど"
+    status: "upcoming"
     sortDate: "2026-12-29"
     body: |
-      - 2026年8月15日(土)・16日(日)　10:30～16:00
-        - 【天】12/29 dd地区 ddnnホール ddxx-mmaa
-        - 【逆】12/30 dd地区 ddnnホール ddxx-mmaa
-        - 【ど】12/31 dd地区 ddnnホール ddxx-mmaa
+      - 2026年12月29日(火)・31日(水)　10:30～16:00
+        - 【天】12/29(火) 南地区 南2ホール d27a
+        - 【ど】12/31(木) 南地区 南2ホール e17a
+        - しのはらは2日目(12/30(水))に出展いたしません。ご注意ください。
       - [東京ビッグサイト](https://www.bigsight.jp/visitor/access/)
         - ゆりかもめ「東京ビッグサイト駅」徒歩3分
         - りんかい線「国際展示場駅」徒歩7分
@@ -47,8 +47,9 @@ events:
       - 2026年11月21日(土)～23日(月祝)
         - 11/21(土) 10:30～17:30
         - 11/22(日)・23(月祝) 10:30～16:30
-      - [東京大学駒場Iキャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map02_02.html) 12号館1階 1213教室
-        -京王井の頭線「駒場東大前」駅前
+        - 終了時刻は1日目のみ異なります。
+      - [東京大学駒場Iキャンパス](https://www.u-tokyo.ac.jp/ja/about/campus-guide/map02_02.html) 12号館1階 1213教室 
+        - 京王井の頭線「駒場東大前」駅前
       - 東京大学学園祭『第77回駒場祭』内企画
       - [公式サイト](https://comiaca.com/)
 
